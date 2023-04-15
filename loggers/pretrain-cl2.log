@@ -1,0 +1,16 @@
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/T36_contrastive_all_v2_tf/ mask: score
+experiment setup: True True
+start training epoch: 0
+> /home/balaji/crossView_CL/trainCrossView_contrastitive.py(145)<module>()
+-> optimizer.step()
+(Pdb) 
+Traceback (most recent call last):
+  File "trainCrossView_contrastitive.py", line 145, in <module>
+    optimizer.step()
+  File "trainCrossView_contrastitive.py", line 145, in <module>
+    optimizer.step()
+  File "/usr/lib/python3.6/bdb.py", line 51, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python3.6/bdb.py", line 70, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit

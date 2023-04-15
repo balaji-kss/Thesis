@@ -1,0 +1,306 @@
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/T36_contrastive_all_v2/ mask: score
+experiment setup: True True
+start training epoch: 0
+training time(mins): 6.925705742835999
+epoch: 0 contrastive loss: 3.2398289523872674
+start training epoch: 1
+training time(mins): 7.990407800674438
+epoch: 1 contrastive loss: 3.3314815806407556
+start training epoch: 2
+training time(mins): 7.228929650783539
+epoch: 2 contrastive loss: 3.3063842198427986
+start training epoch: 3
+training time(mins): 6.981522134939829
+epoch: 3 contrastive loss: 3.2083912456736847
+start training epoch: 4
+training time(mins): 6.942929947376252
+epoch: 4 contrastive loss: 3.2779368676391303
+start training epoch: 5
+training time(mins): 6.943783748149872
+epoch: 5 contrastive loss: 3.3260961443770167
+start training epoch: 6
+training time(mins): 7.0850869218508405
+epoch: 6 contrastive loss: 3.2718951585246066
+start training epoch: 7
+training time(mins): 7.223766465981801
+epoch: 7 contrastive loss: 3.2278494110294416
+start training epoch: 8
+training time(mins): 6.9081333915392555
+epoch: 8 contrastive loss: 3.247109527681388
+start training epoch: 9
+training time(mins): 6.966686467329661
+epoch: 9 contrastive loss: 3.2705917709013996
+start training epoch: 10
+training time(mins): 6.883557760715485
+epoch: 10 contrastive loss: 3.3707675816966036
+start training epoch: 11
+training time(mins): 7.254202258586884
+epoch: 11 contrastive loss: 3.2693992666169707
+start training epoch: 12
+training time(mins): 7.150517559051513
+epoch: 12 contrastive loss: 3.249542654729357
+start training epoch: 13
+training time(mins): 6.925913349787394
+epoch: 13 contrastive loss: 3.2280398513756547
+start training epoch: 14
+training time(mins): 6.891764426231385
+epoch: 14 contrastive loss: 3.2999504757862463
+start training epoch: 15
+training time(mins): 7.64410492181778
+epoch: 15 contrastive loss: 3.2730274901670566
+start training epoch: 16
+training time(mins): 6.91412429412206
+epoch: 16 contrastive loss: 3.1883904045703364
+start training epoch: 17
+training time(mins): 6.938507429758707
+epoch: 17 contrastive loss: 3.238703321008121
+start training epoch: 18
+training time(mins): 7.177581520875295
+epoch: 18 contrastive loss: 3.262178804360184
+start training epoch: 19
+training time(mins): 7.126092116038005
+epoch: 19 contrastive loss: 3.2446929590374816
+start training epoch: 20
+training time(mins): 6.891527446111043
+epoch: 20 contrastive loss: 3.274380744672289
+start training epoch: 21
+training time(mins): 7.115108525753021
+epoch: 21 contrastive loss: 3.1872500999301088
+start training epoch: 22
+training time(mins): 7.08139629761378
+epoch: 22 contrastive loss: 3.317480428546083
+start training epoch: 23
+training time(mins): 6.993823218345642
+epoch: 23 contrastive loss: 3.2952284427250134
+start training epoch: 24
+training time(mins): 7.2763990680376684
+epoch: 24 contrastive loss: 3.2633942505892586
+start training epoch: 25
+training time(mins): 7.224498351414998
+epoch: 25 contrastive loss: 3.238879423515469
+start training epoch: 26
+training time(mins): 7.365074046452841
+epoch: 26 contrastive loss: 3.283775621769475
+start training epoch: 27
+training time(mins): 7.07446498076121
+epoch: 27 contrastive loss: 3.2338275371813308
+start training epoch: 28
+training time(mins): 7.304224975903829
+epoch: 28 contrastive loss: 3.197010035608329
+start training epoch: 29
+training time(mins): 7.1835838794708256
+epoch: 29 contrastive loss: 3.3270269655713847
+start training epoch: 30
+training time(mins): 7.394674825668335
+epoch: 30 contrastive loss: 3.2199685807321585
+start training epoch: 31
+training time(mins): 7.1560364961624146
+epoch: 31 contrastive loss: 3.239890556709439
+start training epoch: 32
+training time(mins): 7.126010378201802
+epoch: 32 contrastive loss: 3.2577441486657834
+start training epoch: 33
+training time(mins): 7.235153730710348
+epoch: 33 contrastive loss: 3.2794961251464545
+start training epoch: 34
+training time(mins): 7.119070219993591
+epoch: 34 contrastive loss: 3.214435238464206
+start training epoch: 35
+training time(mins): 7.1516398350397745
+epoch: 35 contrastive loss: 3.231154778424431
+start training epoch: 36
+training time(mins): 7.045473615328471
+epoch: 36 contrastive loss: 3.258471538038815
+start training epoch: 37
+training time(mins): 6.916042947769165
+epoch: 37 contrastive loss: 3.2703691662526597
+start training epoch: 38
+training time(mins): 7.016078094641368
+epoch: 38 contrastive loss: 3.285049648845897
+start training epoch: 39
+training time(mins): 7.071698888142904
+epoch: 39 contrastive loss: 3.228197046354705
+start training epoch: 40
+training time(mins): 7.141606998443604
+epoch: 40 contrastive loss: 3.198737576896069
+start training epoch: 41
+training time(mins): 6.914638205369314
+epoch: 41 contrastive loss: 3.30465463329764
+start training epoch: 42
+training time(mins): 7.019022615750631
+epoch: 42 contrastive loss: 3.2531954739608016
+start training epoch: 43
+training time(mins): 6.938603460788727
+epoch: 43 contrastive loss: 3.277396648537879
+start training epoch: 44
+training time(mins): 7.205971229076385
+epoch: 44 contrastive loss: 3.2446403655351377
+start training epoch: 45
+training time(mins): 7.319281832377116
+epoch: 45 contrastive loss: 3.2110690007022784
+start training epoch: 46
+training time(mins): 7.076154478391012
+epoch: 46 contrastive loss: 3.2224226348540363
+start training epoch: 47
+training time(mins): 7.099459540843964
+epoch: 47 contrastive loss: 3.213462979185815
+start training epoch: 48
+training time(mins): 7.125466712315878
+epoch: 48 contrastive loss: 3.285392857065388
+start training epoch: 49
+training time(mins): 7.068074460824331
+epoch: 49 contrastive loss: 3.259592224569882
+start training epoch: 50
+training time(mins): 7.035566385587057
+epoch: 50 contrastive loss: 3.241420170840095
+start training epoch: 51
+training time(mins): 7.016303678353627
+epoch: 51 contrastive loss: 3.2627917458029354
+start training epoch: 52
+training time(mins): 6.979059553146362
+epoch: 52 contrastive loss: 3.2395091360690547
+start training epoch: 53
+training time(mins): 6.993403744697571
+epoch: 53 contrastive loss: 3.224731543484856
+start training epoch: 54
+training time(mins): 7.007231271266937
+epoch: 54 contrastive loss: 3.307079981355106
+start training epoch: 55
+training time(mins): 7.074581940968831
+epoch: 55 contrastive loss: 3.2498779250126257
+start training epoch: 56
+training time(mins): 6.983264549573263
+epoch: 56 contrastive loss: 3.3017122301400876
+start training epoch: 57
+training time(mins): 6.983308168252309
+epoch: 57 contrastive loss: 3.244750116385666
+start training epoch: 58
+training time(mins): 6.960471506913503
+epoch: 58 contrastive loss: 3.282200352818358
+start training epoch: 59
+training time(mins): 7.200271169344584
+epoch: 59 contrastive loss: 3.262018220097411
+start training epoch: 60
+training time(mins): 6.906600157419841
+epoch: 60 contrastive loss: 3.254329097037222
+start training epoch: 61
+training time(mins): 7.034008971850077
+epoch: 61 contrastive loss: 3.2749533863628613
+start training epoch: 62
+training time(mins): 7.101449660460154
+epoch: 62 contrastive loss: 3.273098932761772
+start training epoch: 63
+training time(mins): 6.797830851872762
+epoch: 63 contrastive loss: 3.273049233006496
+start training epoch: 64
+training time(mins): 6.810807140668233
+epoch: 64 contrastive loss: 3.282059802728541
+start training epoch: 65
+training time(mins): 6.939765663941701
+epoch: 65 contrastive loss: 3.3269491265801823
+start training epoch: 66
+training time(mins): 6.86738182703654
+epoch: 66 contrastive loss: 3.208911605909759
+start training epoch: 67
+training time(mins): 7.009871598084768
+epoch: 67 contrastive loss: 3.2554292047725006
+start training epoch: 68
+training time(mins): 7.177055509885152
+epoch: 68 contrastive loss: 3.2909986166393055
+start training epoch: 69
+training time(mins): 6.987451918919882
+epoch: 69 contrastive loss: 3.29499642755471
+start training epoch: 70
+training time(mins): 7.215675008296967
+epoch: 70 contrastive loss: 3.2269554675794114
+start training epoch: 71
+training time(mins): 7.066969788074493
+epoch: 71 contrastive loss: 3.3033859215530694
+start training epoch: 72
+training time(mins): 7.210417938232422
+epoch: 72 contrastive loss: 3.175038781820559
+start training epoch: 73
+training time(mins): 6.991642030080159
+epoch: 73 contrastive loss: 3.2840820831411026
+start training epoch: 74
+training time(mins): 7.085661133130391
+epoch: 74 contrastive loss: 3.326572321209253
+start training epoch: 75
+training time(mins): 7.1872909228007
+epoch: 75 contrastive loss: 3.2044986930547976
+start training epoch: 76
+training time(mins): 6.882054336865743
+epoch: 76 contrastive loss: 3.3422723225518767
+start training epoch: 77
+training time(mins): 6.9791517217954
+epoch: 77 contrastive loss: 3.209797272495195
+start training epoch: 78
+training time(mins): 7.0879504680633545
+epoch: 78 contrastive loss: 3.1600886933943806
+start training epoch: 79
+training time(mins): 7.054013673464457
+epoch: 79 contrastive loss: 3.198167415226207
+start training epoch: 80
+training time(mins): 6.973177043596904
+epoch: 80 contrastive loss: 3.2876394145628987
+start training epoch: 81
+training time(mins): 7.028103562196096
+epoch: 81 contrastive loss: 3.2595488487505446
+start training epoch: 82
+training time(mins): 6.886632529894511
+epoch: 82 contrastive loss: 3.2421644926071167
+start training epoch: 83
+training time(mins): 7.097343424956004
+epoch: 83 contrastive loss: 3.2438021524279725
+start training epoch: 84
+training time(mins): 7.095461849371592
+epoch: 84 contrastive loss: 3.2962284462124694
+start training epoch: 85
+training time(mins): 7.0823743422826135
+epoch: 85 contrastive loss: 3.2837407425338148
+start training epoch: 86
+training time(mins): 7.031605923175812
+epoch: 86 contrastive loss: 3.2326202930188646
+start training epoch: 87
+training time(mins): 7.007719361782074
+epoch: 87 contrastive loss: 3.300128319684197
+start training epoch: 88
+training time(mins): 7.231576057275136
+epoch: 88 contrastive loss: 3.232267933733323
+start training epoch: 89
+training time(mins): 7.108336281776428
+epoch: 89 contrastive loss: 3.289461846445121
+start training epoch: 90
+training time(mins): 7.1570332487424215
+epoch: 90 contrastive loss: 3.2766924301783242
+start training epoch: 91
+training time(mins): 7.055142513910929
+epoch: 91 contrastive loss: 3.2478203235888015
+start training epoch: 92
+training time(mins): 7.101867755254109
+epoch: 92 contrastive loss: 3.314852815048367
+start training epoch: 93
+training time(mins): 7.120825401941935
+epoch: 93 contrastive loss: 3.2863203380622115
+start training epoch: 94
+training time(mins): 6.7958041826883955
+epoch: 94 contrastive loss: 3.264337093222375
+start training epoch: 95
+training time(mins): 7.139140244325002
+epoch: 95 contrastive loss: 3.3415888781641043
+start training epoch: 96
+training time(mins): 7.616073954105377
+epoch: 96 contrastive loss: 3.2752105885860967
+start training epoch: 97
+training time(mins): 7.008550675710042
+epoch: 97 contrastive loss: 3.27104403925877
+start training epoch: 98
+training time(mins): 7.009944331645966
+epoch: 98 contrastive loss: 3.3323274617101633
+start training epoch: 99
+training time(mins): 5.645780813694
+epoch: 99 contrastive loss: 3.2330360856710696
+start training epoch: 100
+training time(mins): 5.731102971235911
+epoch: 100 contrastive loss: 3.3157132443259743
+done

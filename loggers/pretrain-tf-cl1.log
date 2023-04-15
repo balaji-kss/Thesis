@@ -1,0 +1,14 @@
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/T36_contrastive_all_v2_tf1/ mask: score
+embed_dim:  8050
+embed_proj_dim:  8050
+ff_dim:  2048
+num_heads:  7
+num_layers:  2
+dropout:  0.1
+seq_len:  4
+gpu id:  1
+Classifier lr:  0.001
+Transformer lr:  0.001
+Sparse Coding lr:  0.0001
+experiment setup: True True
+start training epoch: 0

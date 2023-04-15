@@ -1,0 +1,19 @@
+gumbel thresh: 0.505
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/T36_contrastive_fineTune_fixed_tf_end/ gpu: 0
+embed_dim:  8050
+embed_proj_dim:  8050
+ff_dim:  2048
+num_heads:  7
+num_layers:  2
+dropout:  0.1
+seq_len:  6
+pre_train: /home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/T36_contrastive_all_v2_tf/100.pth
+start training epoch: 0
+Traceback (most recent call last):
+  File "trainDIR_CV_withCL.py", line 161, in <module>
+    loss.backward()
+  File "/home/yuexi/pyenv_1.6/lib/python3.6/site-packages/torch/_tensor.py", line 307, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/yuexi/pyenv_1.6/lib/python3.6/site-packages/torch/autograd/__init__.py", line 156, in backward
+    allow_unreachable=True, accumulate_grad=True)  # allow_unreachable flag
+RuntimeError: CUDA out of memory. Tried to allocate 248.00 MiB (GPU 0; 10.76 GiB total capacity; 9.25 GiB already allocated; 147.44 MiB free; 9.43 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
