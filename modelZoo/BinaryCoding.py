@@ -284,12 +284,25 @@ class Dyan_Tenc_multi(nn.Module):
         self.dataType = dataType
         self.fistaLam = fistaLam
         self.Inference = Inference
-        
+        self.is_clstoken = True
+        self.mean = False
+
+        if self.is_clstoken:
+            self.seq_len = 5
+        else:
+            self.seq_len = 4
+
+        print('is_clstoken ', self.is_clstoken)
+        print('mean  ', self.mean)
+        print('seq_len ', self.seq_len)
+
         self.sparseCoding = DyanEncoder(self.Drr, self.Dtheta, lam=self.fistaLam, gpu_id=self.gpu_id)
 
         self.BinaryCoding = GumbelSigmoid()
 
-        self.transformer_encoder = TransformerEncoder(embed_dim=161*50, embed_proj_dim=161*50, ff_dim=2048, num_heads=7, num_layers=2, dropout=0.1, seq_len=4, is_input_proj=False, is_output_proj=False)
+        self.cls_token = nn.Parameter(torch.randn(1, 1, 161*50))
+
+        self.transformer_encoder = TransformerEncoder(embed_dim=161*50, embed_proj_dim=161*50, ff_dim=2048, num_heads=7, num_layers=2, dropout=0.1, seq_len=self.seq_len, is_input_proj=False, is_output_proj=False)
 
         self.Classifier = classificationGlobal(num_class=self.num_class, Npole=self.Npole, dataType=self.dataType)
 
@@ -310,13 +323,22 @@ class Dyan_Tenc_multi(nn.Module):
         B, N, T = sparseFeat.shape # (4 * B, 161, 50)
         # print(nclips, B, N, T)
 
+        bs = B//nclips
+
         sparseFeat = sparseFeat.reshape(B, N * T) # (4 * B, 161 * 50)        
-        sparseFeat = sparseFeat.reshape(B//nclips, nclips, N * T) # (B, 4, 161 * 50)
-        
+        sparseFeat = sparseFeat.reshape(bs, nclips, N * T) # (B, 4, 161 * 50)    
+
+        if self.is_clstoken:
+            sparseFeat = torch.cat([self.cls_token.expand(bs, -1, -1), sparseFeat], dim=1)
+
         tenc_out = self.transformer_encoder(sparseFeat, src_mask=None, src_key_padding_mask=None) # (B, 4, 161 * 50)
 
-        tenc_out = tenc_out.reshape(B//nclips, nclips, N, T)
-        tenc_out = tenc_out.reshape(B, N, T)
+        if self.mean:
+            tenc_out = tenc_out.mean(dim = 1)
+        else:
+            tenc_out = tenc_out[:, 0]
+
+        tenc_out = tenc_out.reshape(bs, N, T)
 
         label, lastFeat = self.Classifier(tenc_out)
 
@@ -529,9 +551,9 @@ class contrastiveNet(nn.Module):
             embedding1 = self.relu(self.proj(lastFeat1))
             embedding2 = self.relu(self.proj(lastFeat2))
 
-            
-            embed1 = torch.mean(embedding1.reshape(bz, nClip, embedding1.shape[-1]),1)
-            embed2 = torch.mean(embedding2.reshape(bz, nClip, embedding2.shape[-1]),1)
+            embed1 = torch.mean(embedding1.reshape(bz, 1, embedding1.shape[-1]),1)
+            embed2 = torch.mean(embedding2.reshape(bz, 1, embedding2.shape[-1]),1)
+
             z1 = F.normalize(embed1, dim=1)
             z2 = F.normalize(embed2, dim=1)
 

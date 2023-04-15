@@ -1,0 +1,23 @@
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/tf-cls-token/ mask: score
+is_clstoken  True
+mean   False
+seq_len  5
+embed_dim:  8050
+embed_proj_dim:  8050
+ff_dim:  2048
+num_heads:  7
+num_layers:  2
+dropout:  0.1
+seq_len:  5
+gpu id:  2
+Classifier lr:  0.001
+Transformer lr:  0.001
+Sparse Coding lr:  0.0001
+experiment setup: True True
+start training epoch: 0
+training time(mins): 7.9603478829065955
+epoch: 0 contrastive loss: 3.2191875448413922
+start training epoch: 1
+training time(mins): 7.805093606313069
+epoch: 1 contrastive loss: 3.2432798941930137
+start training epoch: 2

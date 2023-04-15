@@ -499,3 +499,55 @@ start training epoch: 98
 epoch: 98 |loss: 0.12907671446950114 |cls: 0.05952814821074227 |mse: 0.008472616040850417 |bi: 0.015478021808360753
 training time(h): 0.19347384863429598
 start training epoch: 99
+epoch: 99 |loss: 0.14304000088585572 |cls: 0.06650312214733063 |mse: 0.008485127602600388 |bi: 0.015486300340172841
+training time(h): 0.2047120651933882
+start training epoch: 100
+epoch: 100 |loss: 0.19777411841705703 |cls: 0.09385216068639829 |mse: 0.008518900784898049 |bi: 0.015508933902353222
+training time(h): 0.21318616973029242
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+testing epoch: 100 Acc:0.9720
+Traceback (most recent call last):
+  File "trainDIR_CV_withCL.py", line 199, in <module>
+  File "/home/yuexi/pyenv_1.6/lib/python3.6/site-packages/torch/cuda/memory.py", line 114, in empty_cache
+    torch._C._cuda_emptyCache()
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
