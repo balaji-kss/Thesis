@@ -1,0 +1,884 @@
+gumbel thresh: 0.505
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/DIR-cls-token/ gpu: 3
+is_clstoken  True
+mean   False
+seq_len  5
+input projection present encoder:  4025
+output projection present encoder:  4025
+embed_dim:  8050
+embed_proj_dim:  4025
+ff_dim:  2048
+num_heads:  7
+num_layers:  2
+dropout:  0.1
+seq_len:  5
+keys  odict_keys(['backbone.sparseCoding.rr', 'backbone.sparseCoding.theta', 'backbone.transformer_encoder.cls_token', 'backbone.transformer_encoder.input_layer.weight', 'backbone.transformer_encoder.input_layer.bias', 'backbone.transformer_encoder.output_layer.weight', 'backbone.transformer_encoder.output_layer.bias', 'backbone.transformer_encoder.pos_encoder.pe', 'backbone.transformer_encoder.encoder_layer.self_attn.in_proj_weight', 'backbone.transformer_encoder.encoder_layer.self_attn.in_proj_bias', 'backbone.transformer_encoder.encoder_layer.self_attn.out_proj.weight', 'backbone.transformer_encoder.encoder_layer.self_attn.out_proj.bias', 'backbone.transformer_encoder.encoder_layer.linear1.weight', 'backbone.transformer_encoder.encoder_layer.linear1.bias', 'backbone.transformer_encoder.encoder_layer.linear2.weight', 'backbone.transformer_encoder.encoder_layer.linear2.bias', 'backbone.transformer_encoder.encoder_layer.norm1.weight', 'backbone.transformer_encoder.encoder_layer.norm1.bias', 'backbone.transformer_encoder.encoder_layer.norm2.weight', 'backbone.transformer_encoder.encoder_layer.norm2.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.linear1.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.linear1.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.linear2.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.linear2.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.norm1.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.norm1.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.norm2.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.norm2.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.linear1.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.linear1.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.linear2.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.linear2.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.norm1.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.norm1.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.norm2.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.norm2.bias', 'backbone.Classifier.conv1.weight', 'backbone.Classifier.conv1.bias', 'backbone.Classifier.bn1.weight', 'backbone.Classifier.bn1.bias', 'backbone.Classifier.bn1.running_mean', 'backbone.Classifier.bn1.running_var', 'backbone.Classifier.bn1.num_batches_tracked', 'backbone.Classifier.conv2.weight', 'backbone.Classifier.conv2.bias', 'backbone.Classifier.bn2.weight', 'backbone.Classifier.bn2.bias', 'backbone.Classifier.bn2.running_mean', 'backbone.Classifier.bn2.running_var', 'backbone.Classifier.bn2.num_batches_tracked', 'backbone.Classifier.conv3.weight', 'backbone.Classifier.conv3.bias', 'backbone.Classifier.bn3.weight', 'backbone.Classifier.bn3.bias', 'backbone.Classifier.bn3.running_mean', 'backbone.Classifier.bn3.running_var', 'backbone.Classifier.bn3.num_batches_tracked', 'backbone.Classifier.conv4.weight', 'backbone.Classifier.conv4.bias', 'backbone.Classifier.bn4.weight', 'backbone.Classifier.bn4.bias', 'backbone.Classifier.bn4.running_mean', 'backbone.Classifier.bn4.running_var', 'backbone.Classifier.bn4.num_batches_tracked', 'backbone.Classifier.conv5.weight', 'backbone.Classifier.conv5.bias', 'backbone.Classifier.bn5.weight', 'backbone.Classifier.bn5.bias', 'backbone.Classifier.bn5.running_mean', 'backbone.Classifier.bn5.running_var', 'backbone.Classifier.bn5.num_batches_tracked', 'backbone.Classifier.conv6.weight', 'backbone.Classifier.conv6.bias', 'backbone.Classifier.bn6.weight', 'backbone.Classifier.bn6.bias', 'backbone.Classifier.bn6.running_mean', 'backbone.Classifier.bn6.running_var', 'backbone.Classifier.bn6.num_batches_tracked', 'backbone.Classifier.fc.weight', 'backbone.Classifier.fc.bias', 'backbone.Classifier.fc2.weight', 'backbone.Classifier.fc2.bias', 'backbone.Classifier.fc3.weight', 'backbone.Classifier.fc3.bias', 'backbone.Classifier.cls.0.weight', 'backbone.Classifier.cls.0.bias', 'proj.weight', 'proj.bias'])
+rr  tensor([1.0738, 0.9827, 0.9756, 1.1247, 0.9363, 1.0295, 1.0171, 0.8772, 1.1414,
+        0.8764, 1.0417, 1.0411, 0.9704, 0.8741, 1.0286, 0.8505, 1.1323, 1.0011,
+        0.8609, 0.8905, 0.9876, 1.0116, 0.9802, 0.8808, 1.0316, 1.0559, 1.1463,
+        1.0903, 0.9350, 1.0455, 0.9752, 0.8884, 0.8512, 1.0178, 1.0932, 1.1434,
+        1.1080, 0.9231, 1.1499, 0.9333, 0.9124, 0.8827, 1.0343, 1.0172, 0.8646,
+        1.1115, 0.8968, 1.1214, 1.1036, 1.0951, 0.9496, 1.1026, 1.0418, 0.9571,
+        1.0756, 1.0673, 0.8579, 1.1263, 1.0073, 1.1280, 1.0781, 0.8988, 0.9347,
+        1.0849, 1.0072, 0.9259, 1.0844, 0.8510, 0.8943, 0.8692, 1.0417, 1.1310,
+        0.9874, 0.8866, 0.9528, 0.9757, 0.9415, 1.1430, 0.9416, 1.1242],
+       device='cuda:3')
+theta  tensor([1.3939, 2.4549, 1.6436, 1.5352, 0.7960, 3.0716, 2.6964, 2.0584, 0.7135,
+        2.3078, 1.8680, 1.5814, 2.5930, 2.1385, 0.6050, 1.4292, 1.4744, 0.3818,
+        2.0396, 2.8664, 0.4994, 2.8990, 1.4337, 2.9520, 2.1435, 1.2748, 0.3789,
+        2.3218, 1.4669, 1.7877, 1.0691, 2.8505, 0.6513, 2.9708, 2.0885, 3.0277,
+        1.2882, 1.7110, 2.6468, 2.2400, 1.1219, 0.2007, 0.5942, 0.7402, 2.4891,
+        0.8861, 1.3891, 2.8232, 2.3094, 0.7382, 2.3175, 1.3819, 0.8533, 0.4777,
+        3.0391, 1.8822, 1.2420, 3.1185, 0.1625, 0.9867, 1.3501, 2.3475, 1.5333,
+        1.8721, 1.7133, 1.3431, 0.9326, 3.1381, 1.3014, 2.0869, 1.4987, 1.2876,
+        2.5508, 0.4858, 1.6475, 0.5840, 1.7340, 1.2651, 3.0234, 2.8446],
+       device='cuda:3')
+cls  tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1.], device='cuda:3')
+pre_train: /home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/tf-cls-token1/60.pth
+loaded rr  tensor([1.0490, 0.9657, 0.9566, 1.0597, 0.9185, 1.0123, 0.9985, 0.8618, 1.0235,
+        0.8606, 1.0256, 1.0221, 0.9525, 0.8587, 0.9811, 0.8365, 1.0627, 0.9750,
+        0.8460, 0.8751, 0.9400, 0.9922, 0.9641, 0.8658, 1.0078, 1.0428, 0.9998,
+        1.0775, 0.9197, 1.0146, 0.9634, 0.8730, 0.8373, 1.0002, 1.0247, 1.0807,
+        1.0812, 0.9073, 1.0779, 0.9156, 0.8964, 0.8807, 0.9802, 1.0122, 0.8499,
+        1.0216, 0.8819, 1.1212, 1.0778, 1.0239, 0.9312, 1.0520, 0.9755, 0.9279,
+        1.0629, 1.0487, 0.8435, 1.0803, 0.9964, 1.0218, 1.0455, 0.8828, 0.9190,
+        1.0519, 0.9838, 0.9102, 1.0256, 0.8368, 0.8790, 0.8541, 1.0245, 1.0839,
+        0.9676, 0.8634, 0.9353, 0.9628, 0.9250, 1.0697, 0.9259, 1.1223],
+       device='cuda:3')
+loaded theta  tensor([1.3736, 2.4155, 1.6154, 1.5051, 0.7836, 3.0194, 2.6499, 2.0226, 0.7482,
+        2.2689, 1.8374, 1.5482, 2.5492, 2.1020, 0.5772, 1.4051, 1.4533, 0.3708,
+        2.0049, 2.8179, 0.5293, 2.8504, 1.4098, 2.9031, 2.1030, 1.2608, 0.3729,
+        2.2759, 1.4422, 1.7613, 1.0601, 2.8020, 0.6425, 2.9248, 2.0664, 2.9866,
+        1.2745, 1.6827, 2.6090, 2.2025, 1.1031, 0.1906, 0.5704, 0.7453, 2.4477,
+        0.9114, 1.3663, 2.7902, 2.2753, 0.7488, 2.2784, 1.3688, 0.8398, 0.4666,
+        2.9923, 1.8510, 1.2215, 3.0642, 0.0381, 0.9258, 1.3276, 2.3079, 1.5071,
+        1.8457, 1.6865, 1.3210, 0.9191, 3.0854, 1.2799, 2.0507, 1.4731, 1.2784,
+        2.5074, 0.4892, 1.6198, 0.5712, 1.7054, 1.2667, 2.9734, 2.7928],
+       device='cuda:3')
+cls  tensor([0.8523, 0.8360, 0.8518, 0.8803, 0.8069, 0.8563, 0.8428, 0.8079, 0.8316,
+        0.8365, 0.8352, 0.8482, 0.8312, 0.8385, 0.8454, 0.8515, 0.8458, 0.8488,
+        0.8642, 0.8553, 0.8581, 0.8402, 0.8514, 0.8255, 0.8359, 0.8507, 0.8475,
+        0.8631, 0.8769, 0.8290, 0.8200, 0.8453, 0.8349, 0.8382, 0.8558, 0.8453,
+        0.8748, 0.8470, 0.8384, 0.8516, 0.8338, 0.8568, 0.8379, 0.8154, 0.8661,
+        0.8501, 0.8400, 0.8454, 0.8247, 0.8448, 0.8334, 0.8644, 0.8416, 0.8417,
+        0.8269, 0.8337, 0.8613, 0.8521, 0.8486, 0.8366, 0.8453, 0.8389, 0.8523,
+        0.8497, 0.8386, 0.8240, 0.8557, 0.8450, 0.8730, 0.8352, 0.8291, 0.8569,
+        0.8350, 0.8397, 0.8436, 0.8450, 0.8642, 0.8351, 0.8551, 0.8462, 0.8400,
+        0.8545, 0.8428, 0.8533, 0.8282, 0.8404, 0.8611, 0.8544, 0.8607, 0.8492,
+        0.8535, 0.8521, 0.8464, 0.8450, 0.8602, 0.8335, 0.8356, 0.8487, 0.8573,
+        0.8468, 0.8304, 0.8327, 0.8250, 0.8674, 0.8137, 0.8649, 0.8342, 0.8495,
+        0.8328, 0.8574, 0.8403, 0.8544, 0.8297, 0.8449, 0.8393, 0.8130, 0.8369,
+        0.8444, 0.8248, 0.8356, 0.8409, 0.8338, 0.8378, 0.8251, 0.8500, 0.8415,
+        0.8482, 0.8460, 0.8197, 0.8570, 0.8263, 0.8349, 0.8468, 0.8432, 0.8469,
+        0.8323, 0.8407, 0.8343, 0.8528, 0.8632, 0.8349, 0.8525, 0.8367, 0.8563,
+        0.8221, 0.8167, 0.8344, 0.8552, 0.8467, 0.8387, 0.8615, 0.8420, 0.8572,
+        0.8609, 0.8372, 0.8321, 0.8429, 0.8246, 0.8235, 0.8215, 0.8477, 0.8533,
+        0.8452, 0.8689, 0.8524, 0.8423, 0.8674, 0.8437, 0.8524, 0.8399, 0.8296,
+        0.8389, 0.8416, 0.8541, 0.8518, 0.8341, 0.8212, 0.8500, 0.8408, 0.8350,
+        0.8553, 0.8318, 0.8411, 0.8585, 0.8570, 0.8131, 0.8555, 0.8611, 0.8395,
+        0.8507, 0.8312, 0.8522, 0.8528, 0.8132, 0.8264, 0.8308, 0.8361, 0.8305,
+        0.8302, 0.8341, 0.8488, 0.8508, 0.8594, 0.8436, 0.8488, 0.8341, 0.8456,
+        0.8826, 0.8285, 0.8405, 0.8461, 0.8628, 0.8693, 0.8457, 0.8522, 0.8335,
+        0.8560, 0.8448, 0.8551, 0.8520, 0.8427, 0.8496, 0.8210, 0.8582, 0.8486,
+        0.8620, 0.8244, 0.8489, 0.8274, 0.8483, 0.8469, 0.8409, 0.8298, 0.8162,
+        0.8449, 0.8435, 0.8357, 0.8347, 0.8295, 0.8654, 0.8724, 0.8513, 0.8481,
+        0.8141, 0.8382, 0.8202, 0.8327, 0.8466, 0.8833, 0.8169, 0.8515, 0.8412,
+        0.8233, 0.8604, 0.8246, 0.8394], device='cuda:3')
+p  backbone.sparseCoding.rr True
+p  backbone.sparseCoding.theta True
+p  backbone.transformer_encoder.cls_token True
+p  backbone.transformer_encoder.input_layer.weight True
+p  backbone.transformer_encoder.input_layer.bias True
+p  backbone.transformer_encoder.output_layer.weight True
+p  backbone.transformer_encoder.output_layer.bias True
+p  backbone.transformer_encoder.encoder_layer.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.encoder_layer.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.encoder_layer.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.encoder_layer.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.encoder_layer.linear1.weight True
+p  backbone.transformer_encoder.encoder_layer.linear1.bias True
+p  backbone.transformer_encoder.encoder_layer.linear2.weight True
+p  backbone.transformer_encoder.encoder_layer.linear2.bias True
+p  backbone.transformer_encoder.encoder_layer.norm1.weight True
+p  backbone.transformer_encoder.encoder_layer.norm1.bias True
+p  backbone.transformer_encoder.encoder_layer.norm2.weight True
+p  backbone.transformer_encoder.encoder_layer.norm2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm2.bias True
+p  backbone.Classifier.conv1.weight True
+p  backbone.Classifier.conv1.bias True
+p  backbone.Classifier.bn1.weight True
+p  backbone.Classifier.bn1.bias True
+p  backbone.Classifier.conv2.weight True
+p  backbone.Classifier.conv2.bias True
+p  backbone.Classifier.bn2.weight True
+p  backbone.Classifier.bn2.bias True
+p  backbone.Classifier.conv3.weight True
+p  backbone.Classifier.conv3.bias True
+p  backbone.Classifier.bn3.weight True
+p  backbone.Classifier.bn3.bias True
+p  backbone.Classifier.conv4.weight True
+p  backbone.Classifier.conv4.bias True
+p  backbone.Classifier.bn4.weight True
+p  backbone.Classifier.bn4.bias True
+p  backbone.Classifier.conv5.weight True
+p  backbone.Classifier.conv5.bias True
+p  backbone.Classifier.bn5.weight True
+p  backbone.Classifier.bn5.bias True
+p  backbone.Classifier.conv6.weight True
+p  backbone.Classifier.conv6.bias True
+p  backbone.Classifier.bn6.weight True
+p  backbone.Classifier.bn6.bias True
+p  backbone.Classifier.fc.weight True
+p  backbone.Classifier.fc.bias True
+p  backbone.Classifier.fc2.weight True
+p  backbone.Classifier.fc2.bias True
+p  backbone.Classifier.fc3.weight True
+p  backbone.Classifier.fc3.bias True
+p  backbone.Classifier.cls.0.weight True
+p  backbone.Classifier.cls.0.bias True
+p  proj.weight True
+p  proj.bias True
+after rr  tensor([1.0490, 0.9657, 0.9566, 1.0597, 0.9185, 1.0123, 0.9985, 0.8618, 1.0235,
+        0.8606, 1.0256, 1.0221, 0.9525, 0.8587, 0.9811, 0.8365, 1.0627, 0.9750,
+        0.8460, 0.8751, 0.9400, 0.9922, 0.9641, 0.8658, 1.0078, 1.0428, 0.9998,
+        1.0775, 0.9197, 1.0146, 0.9634, 0.8730, 0.8373, 1.0002, 1.0247, 1.0807,
+        1.0812, 0.9073, 1.0779, 0.9156, 0.8964, 0.8807, 0.9802, 1.0122, 0.8499,
+        1.0216, 0.8819, 1.1212, 1.0778, 1.0239, 0.9312, 1.0520, 0.9755, 0.9279,
+        1.0629, 1.0487, 0.8435, 1.0803, 0.9964, 1.0218, 1.0455, 0.8828, 0.9190,
+        1.0519, 0.9838, 0.9102, 1.0256, 0.8368, 0.8790, 0.8541, 1.0245, 1.0839,
+        0.9676, 0.8634, 0.9353, 0.9628, 0.9250, 1.0697, 0.9259, 1.1223],
+       device='cuda:3')
+after theta  tensor([1.3736, 2.4155, 1.6154, 1.5051, 0.7836, 3.0194, 2.6499, 2.0226, 0.7482,
+        2.2689, 1.8374, 1.5482, 2.5492, 2.1020, 0.5772, 1.4051, 1.4533, 0.3708,
+        2.0049, 2.8179, 0.5293, 2.8504, 1.4098, 2.9031, 2.1030, 1.2608, 0.3729,
+        2.2759, 1.4422, 1.7613, 1.0601, 2.8020, 0.6425, 2.9248, 2.0664, 2.9866,
+        1.2745, 1.6827, 2.6090, 2.2025, 1.1031, 0.1906, 0.5704, 0.7453, 2.4477,
+        0.9114, 1.3663, 2.7902, 2.2753, 0.7488, 2.2784, 1.3688, 0.8398, 0.4666,
+        2.9923, 1.8510, 1.2215, 3.0642, 0.0381, 0.9258, 1.3276, 2.3079, 1.5071,
+        1.8457, 1.6865, 1.3210, 0.9191, 3.0854, 1.2799, 2.0507, 1.4731, 1.2784,
+        2.5074, 0.4892, 1.6198, 0.5712, 1.7054, 1.2667, 2.9734, 2.7928],
+       device='cuda:3')
+cls  tensor([0.8523, 0.8360, 0.8518, 0.8803, 0.8069, 0.8563, 0.8428, 0.8079, 0.8316,
+        0.8365, 0.8352, 0.8482, 0.8312, 0.8385, 0.8454, 0.8515, 0.8458, 0.8488,
+        0.8642, 0.8553, 0.8581, 0.8402, 0.8514, 0.8255, 0.8359, 0.8507, 0.8475,
+        0.8631, 0.8769, 0.8290, 0.8200, 0.8453, 0.8349, 0.8382, 0.8558, 0.8453,
+        0.8748, 0.8470, 0.8384, 0.8516, 0.8338, 0.8568, 0.8379, 0.8154, 0.8661,
+        0.8501, 0.8400, 0.8454, 0.8247, 0.8448, 0.8334, 0.8644, 0.8416, 0.8417,
+        0.8269, 0.8337, 0.8613, 0.8521, 0.8486, 0.8366, 0.8453, 0.8389, 0.8523,
+        0.8497, 0.8386, 0.8240, 0.8557, 0.8450, 0.8730, 0.8352, 0.8291, 0.8569,
+        0.8350, 0.8397, 0.8436, 0.8450, 0.8642, 0.8351, 0.8551, 0.8462, 0.8400,
+        0.8545, 0.8428, 0.8533, 0.8282, 0.8404, 0.8611, 0.8544, 0.8607, 0.8492,
+        0.8535, 0.8521, 0.8464, 0.8450, 0.8602, 0.8335, 0.8356, 0.8487, 0.8573,
+        0.8468, 0.8304, 0.8327, 0.8250, 0.8674, 0.8137, 0.8649, 0.8342, 0.8495,
+        0.8328, 0.8574, 0.8403, 0.8544, 0.8297, 0.8449, 0.8393, 0.8130, 0.8369,
+        0.8444, 0.8248, 0.8356, 0.8409, 0.8338, 0.8378, 0.8251, 0.8500, 0.8415,
+        0.8482, 0.8460, 0.8197, 0.8570, 0.8263, 0.8349, 0.8468, 0.8432, 0.8469,
+        0.8323, 0.8407, 0.8343, 0.8528, 0.8632, 0.8349, 0.8525, 0.8367, 0.8563,
+        0.8221, 0.8167, 0.8344, 0.8552, 0.8467, 0.8387, 0.8615, 0.8420, 0.8572,
+        0.8609, 0.8372, 0.8321, 0.8429, 0.8246, 0.8235, 0.8215, 0.8477, 0.8533,
+        0.8452, 0.8689, 0.8524, 0.8423, 0.8674, 0.8437, 0.8524, 0.8399, 0.8296,
+        0.8389, 0.8416, 0.8541, 0.8518, 0.8341, 0.8212, 0.8500, 0.8408, 0.8350,
+        0.8553, 0.8318, 0.8411, 0.8585, 0.8570, 0.8131, 0.8555, 0.8611, 0.8395,
+        0.8507, 0.8312, 0.8522, 0.8528, 0.8132, 0.8264, 0.8308, 0.8361, 0.8305,
+        0.8302, 0.8341, 0.8488, 0.8508, 0.8594, 0.8436, 0.8488, 0.8341, 0.8456,
+        0.8826, 0.8285, 0.8405, 0.8461, 0.8628, 0.8693, 0.8457, 0.8522, 0.8335,
+        0.8560, 0.8448, 0.8551, 0.8520, 0.8427, 0.8496, 0.8210, 0.8582, 0.8486,
+        0.8620, 0.8244, 0.8489, 0.8274, 0.8483, 0.8469, 0.8409, 0.8298, 0.8162,
+        0.8449, 0.8435, 0.8357, 0.8347, 0.8295, 0.8654, 0.8724, 0.8513, 0.8481,
+        0.8141, 0.8382, 0.8202, 0.8327, 0.8466, 0.8833, 0.8169, 0.8515, 0.8412,
+        0.8233, 0.8604, 0.8246, 0.8394], device='cuda:3')
+start training epoch: 0
+epoch: 0 |loss: 3.7159724878147244 |cls: 1.8517491952516139 |mse: 0.011263423424679786 |bi: 0.012106698610296007
+training time(min): 9.718700381120046
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 0 Acc:0.2263
+start training epoch: 1
+epoch: 1 |loss: 2.9810081948526204 |cls: 1.4854976935312152 |mse: 0.0085443712578126 |bi: 0.014684436966490466
+training time(min): 10.12101009686788
+start training epoch: 2
+epoch: 2 |loss: 2.8260296382941306 |cls: 1.407319602323696 |mse: 0.00985140263219364 |bi: 0.015390261120046489
+training time(min): 10.590274500846864
+start training epoch: 3
+epoch: 3 |loss: 2.775915268342942 |cls: 1.381273731123656 |mse: 0.011875215373947867 |bi: 0.014925946619769093
+training time(min): 10.215668006738026
+start training epoch: 4
+epoch: 4 |loss: 3.0966006298549473 |cls: 1.5437383048702031 |mse: 0.007661061321414309 |bi: 0.014629649351263652
+training time(min): 10.117944316069286
+start training epoch: 5
+epoch: 5 |loss: 2.5571592072956264 |cls: 1.275027149124071 |mse: 0.005375723056431525 |bi: 0.017291889151238138
+training time(min): 9.972741214434306
+start training epoch: 6
+epoch: 6 |loss: 2.399921858916059 |cls: 1.1963683905778453 |mse: 0.0051886370729334885 |bi: 0.019964470786362654
+training time(min): 10.379810913403828
+start training epoch: 7
+epoch: 7 |loss: 2.444006143603474 |cls: 1.2166542802006006 |mse: 0.00896532109072723 |bi: 0.017322543180853245
+training time(min): 10.158778782685598
+start training epoch: 8
+epoch: 8 |loss: 2.380290044238791 |cls: 1.1830106388079002 |mse: 0.013115557043420267 |bi: 0.011532035541677033
+training time(min): 9.871534049510956
+start training epoch: 9
+epoch: 9 |loss: 2.1306046871468425 |cls: 1.0595238752430305 |mse: 0.009984930676182557 |bi: 0.015720010227596504
+training time(min): 10.261512835820517
+start training epoch: 10
+epoch: 10 |loss: 2.8411527967546135 |cls: 1.4126759089995176 |mse: 0.014600356333176023 |bi: 0.012006290095087024
+training time(min): 9.864362053076427
+start training epoch: 11
+epoch: 11 |loss: 2.6517868323717266 |cls: 1.3169953590258956 |mse: 0.017064290137113858 |bi: 0.0073182668929803185
+training time(min): 10.177645881970724
+start training epoch: 12
+epoch: 12 |loss: 2.2246303660795093 |cls: 1.104230715194717 |mse: 0.014998604210632038 |bi: 0.011703267593475175
+training time(min): 10.08518302043279
+start training epoch: 13
+epoch: 13 |loss: 2.2282104496844113 |cls: 1.106082790531218 |mse: 0.015090981922185165 |bi: 0.009538839613014716
+training time(min): 9.790222450097401
+start training epoch: 14
+epoch: 14 |loss: 2.118683031992987 |cls: 1.052071632933803 |mse: 0.01320255285827443 |bi: 0.013371953617024701
+training time(min): 10.29683841864268
+start training epoch: 15
+epoch: 15 |loss: 1.9185993063729256 |cls: 0.9520358341978863 |mse: 0.012622376927538426 |bi: 0.019052575287787477
+training time(min): 10.080768736203511
+start training epoch: 16
+epoch: 16 |loss: 1.8303851757664233 |cls: 0.9075137801701203 |mse: 0.013679174566277652 |bi: 0.016784433037173585
+training time(min): 10.359934322039287
+start training epoch: 17
+epoch: 17 |loss: 1.9245775212766603 |cls: 0.9543002701830119 |mse: 0.014494655251837685 |bi: 0.014823271054410725
+training time(min): 9.979420506954193
+start training epoch: 18
+epoch: 18 |loss: 1.9164747716858983 |cls: 0.9508087706635706 |mse: 0.013310828039720946 |bi: 0.015464071964743198
+training time(min): 9.986671121915181
+start training epoch: 19
+epoch: 19 |loss: 2.3188983220607042 |cls: 1.1511416414286941 |mse: 0.015147039897783543 |bi: 0.014679971125588054
+training time(min): 10.445278751850129
+start training epoch: 20
+epoch: 20 |loss: 2.127796712098643 |cls: 1.0565537014044821 |mse: 0.013319139946361247 |bi: 0.013701641975785606
+training time(min): 10.23967787027359
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 20 Acc:0.3254
+start training epoch: 21
+epoch: 21 |loss: 2.4844011657405645 |cls: 1.225466507137753 |mse: 0.032320562644599704 |bi: 0.011475868036541215
+training time(min): 9.937577048937479
+start training epoch: 22
+epoch: 22 |loss: 4.933672867715359 |cls: 2.30282669281587 |mse: 0.32798824943893123 |bi: 0.000312302863108016
+training time(min): 9.844911285241444
+start training epoch: 23
+epoch: 23 |loss: 4.947100527584553 |cls: 2.304219590499997 |mse: 0.3386613414622843 |bi: 0.0
+training time(min): 10.179828306039175
+start training epoch: 24
+epoch: 24 |loss: 4.944519206881523 |cls: 2.303033087402582 |mse: 0.33845301473047584 |bi: 0.0
+training time(min): 10.411299391587574
+start training epoch: 25
+epoch: 25 |loss: 4.9438709039241076 |cls: 2.302738616243005 |mse: 0.3383936737664044 |bi: 0.0
+training time(min): 10.37458000977834
+start training epoch: 26
+epoch: 26 |loss: 4.94340874068439 |cls: 2.3024805234745145 |mse: 0.3384476890787482 |bi: 0.0
+training time(min): 10.487920327981312
+start training epoch: 27
+epoch: 27 |loss: 4.945040110498667 |cls: 2.3033240623772144 |mse: 0.3383919777115807 |bi: 0.0
+training time(min): 10.305342757701874
+start training epoch: 28
+epoch: 28 |loss: 4.942799583077431 |cls: 2.302197034470737 |mse: 0.33840550971217453 |bi: 0.0
+training time(min): 9.88385866880417
+start training epoch: 29
+epoch: 29 |loss: 4.943179715424776 |cls: 2.3023719461634755 |mse: 0.3384358212351799 |bi: 0.0
+training time(min): 8.640982512633006
+start training epoch: 30
+epoch: 30 |loss: 3.7507337883580476 |cls: 1.783683153684251 |mse: 0.18282119786454132 |bi: 0.00546292705705298
+training time(min): 7.469119568665822
+start training epoch: 31
+epoch: 31 |loss: 1.8015978758921847 |cls: 0.8926715621491894 |mse: 0.01501126440052758 |bi: 0.0124349161178543
+training time(min): 7.443522314230601
+start training epoch: 32
+epoch: 32 |loss: 1.5216080355457962 |cls: 0.7535392527934164 |mse: 0.01309251972270431 |bi: 0.014370140015671495
+training time(min): 7.4768217007319135
+start training epoch: 33
+epoch: 33 |loss: 1.7561543982010335 |cls: 0.871921811834909 |mse: 0.010616250836392283 |bi: 0.016945262491390167
+training time(min): 7.564614494641622
+start training epoch: 34
+epoch: 34 |loss: 1.6504151567351073 |cls: 0.8197088408633135 |mse: 0.009178556555070827 |bi: 0.018189219665146084
+training time(min): 7.484643864631653
+start training epoch: 35
+epoch: 35 |loss: 2.1429457396734506 |cls: 1.0653253155760467 |mse: 0.01027011638325348 |bi: 0.020249925801181234
+training time(min): 7.573731366793314
+start training epoch: 36
+epoch: 36 |loss: 3.0045998881105334 |cls: 1.4502201983705163 |mse: 0.10307770947292738 |bi: 0.010817802933161147
+training time(min): 7.544171595573426
+start training epoch: 37
+epoch: 37 |loss: 4.947329107671976 |cls: 2.3044250337406993 |mse: 0.33847904903814197 |bi: 0.0
+training time(min): 7.201984226703644
+start training epoch: 38
+epoch: 38 |loss: 4.944584343582392 |cls: 2.303076962940395 |mse: 0.3384304082719609 |bi: 0.0
+training time(min): 6.597859195868174
+start training epoch: 39
+epoch: 39 |loss: 4.942568376660347 |cls: 2.3019919972866774 |mse: 0.3385843967553228 |bi: 0.0
+training time(min): 6.796919508775075
+start training epoch: 40
+epoch: 40 |loss: 4.942592550069094 |cls: 2.3020136104896665 |mse: 0.3385653101140633 |bi: 0.0
+training time(min): 6.680332549413046
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 40 Acc:0.1056
+start training epoch: 41
+epoch: 41 |loss: 4.941359208896756 |cls: 2.3014525175094604 |mse: 0.3384541744599119 |bi: 0.0
+training time(min): 6.675022610028585
+start training epoch: 42
+epoch: 42 |loss: 4.941635444760323 |cls: 2.301555499434471 |mse: 0.3385244484525174 |bi: 0.0
+training time(min): 6.476207494735718
+start training epoch: 43
+epoch: 43 |loss: 4.941500905901194 |cls: 2.3016153248026967 |mse: 0.3382702595554292 |bi: 0.0
+training time(min): 6.5069190184275305
+start training epoch: 44
+epoch: 44 |loss: 4.941267607733607 |cls: 2.30139484629035 |mse: 0.33847791817970574 |bi: 0.0
+training time(min): 6.61439977089564
+start training epoch: 45
+epoch: 45 |loss: 4.9411751590669155 |cls: 2.301383038982749 |mse: 0.33840907912235707 |bi: 0.0
+training time(min): 6.6710450649261475
+start training epoch: 46
+epoch: 46 |loss: 4.940999051555991 |cls: 2.3012774335220456 |mse: 0.3384441980160773 |bi: 0.0
+training time(min): 6.725453186035156
+start training epoch: 47
+epoch: 47 |loss: 4.941072262823582 |cls: 2.3013183446601033 |mse: 0.33843557187356055 |bi: 0.0
+training time(min): 6.894677233695984
+start training epoch: 48
+epoch: 48 |loss: 4.940723607316613 |cls: 2.3010644540190697 |mse: 0.3385946903144941 |bi: 0.0
+training time(min): 6.806940519809723
+start training epoch: 49
+epoch: 49 |loss: 4.941183295100927 |cls: 2.3013484962284565 |mse: 0.33848629402928054 |bi: 0.0
+training time(min): 6.650333213806152
+start training epoch: 50
+epoch: 50 |loss: 4.938852868974209 |cls: 2.3001301921904087 |mse: 0.3385924941394478 |bi: 0.0
+training time(min): 6.650346052646637
+start training epoch: 51
+epoch: 51 |loss: 4.938966557383537 |cls: 2.3002402121201158 |mse: 0.33848613733425736 |bi: 0.0
+training time(min): 6.645113070805867
+start training epoch: 52
+epoch: 52 |loss: 4.938914813101292 |cls: 2.30022313632071 |mse: 0.3384685622295365 |bi: 0.0
+training time(min): 6.579018191496531
+start training epoch: 53
+epoch: 53 |loss: 4.938904378563166 |cls: 2.300225163809955 |mse: 0.33845404360909015 |bi: 0.0
+training time(min): 6.95631312529246
+start training epoch: 54
+epoch: 54 |loss: 4.939026556909084 |cls: 2.300268487073481 |mse: 0.3384895861381665 |bi: 0.0
+training time(min): 6.717999581495921
+start training epoch: 55
+epoch: 55 |loss: 4.939010262489319 |cls: 2.300260310061276 |mse: 0.33848964143544436 |bi: 0.0
+training time(min): 6.727892827987671
+start training epoch: 56
+epoch: 56 |loss: 4.938812509179115 |cls: 2.3002030989155173 |mse: 0.338406297727488 |bi: 0.0
+training time(min): 6.72554802497228
+start training epoch: 57
+epoch: 57 |loss: 4.939004635438323 |cls: 2.3001763578504324 |mse: 0.33865191938821226 |bi: 0.0
+training time(min): 6.7201947887738545
+start training epoch: 58
+epoch: 58 |loss: 4.937165508046746 |cls: 2.299390056170523 |mse: 0.33838538476265967 |bi: 0.0
+training time(min): 6.634831821918487
+start training epoch: 59
+epoch: 59 |loss: 4.939083389937878 |cls: 2.300205647945404 |mse: 0.3386720939306542 |bi: 0.0
+training time(min): 6.834254968166351
+start training epoch: 60
+epoch: 60 |loss: 4.938883172348142 |cls: 2.300224870443344 |mse: 0.3384334375150502 |bi: 0.0
+training time(min): 6.733721160888672
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 60 Acc:0.1056
+start training epoch: 61
+epoch: 61 |loss: 4.938566325232387 |cls: 2.3001026175916195 |mse: 0.33836109715048224 |bi: 0.0
+training time(min): 6.6307619174321495
+start training epoch: 62
+epoch: 62 |loss: 4.939048618078232 |cls: 2.300275164656341 |mse: 0.33849829831160605 |bi: 0.0
+training time(min): 6.662273379166921
+start training epoch: 63
+epoch: 63 |loss: 4.9386355467140675 |cls: 2.3001371575519443 |mse: 0.3383612324250862 |bi: 0.0
+training time(min): 6.517183363437653
+start training epoch: 64
+epoch: 64 |loss: 4.938686951994896 |cls: 2.3000890128314495 |mse: 0.338508932502009 |bi: 0.0
+training time(min): 6.553430891036987
+start training epoch: 65
+epoch: 65 |loss: 4.938832048326731 |cls: 2.300150953233242 |mse: 0.33853014395572245 |bi: 0.0
+training time(min): 6.668896150588989
+start training epoch: 66
+epoch: 66 |loss: 4.938731089234352 |cls: 2.3000664096325636 |mse: 0.33859826799016446 |bi: 0.0
+training time(min): 6.809005598227183
+start training epoch: 67
+epoch: 67 |loss: 4.938961016014218 |cls: 2.3002292718738317 |mse: 0.338502483908087 |bi: 0.0
+training time(min): 6.653204830487569
+start training epoch: 68
+epoch: 68 |loss: 4.938700571656227 |cls: 2.3001718828454614 |mse: 0.3383567889686674 |bi: 0.0
+training time(min): 6.68751448392868
+start training epoch: 69
+epoch: 69 |loss: 4.93881518766284 |cls: 2.3001659410074353 |mse: 0.33848330134060234 |bi: 0.0
+training time(min): 6.760791929562886
+start training epoch: 70
+epoch: 70 |loss: 4.9371293392032385 |cls: 2.299331326968968 |mse: 0.33846667292527854 |bi: 0.0
+training time(min): 6.587065982818603
+start training epoch: 71
+epoch: 71 |loss: 4.937178041785955 |cls: 2.299292389303446 |mse: 0.3385932734236121 |bi: 0.0
+training time(min): 6.552260466416677
+start training epoch: 72
+epoch: 72 |loss: 4.938422096893191 |cls: 2.2999847773462534 |mse: 0.3384525312576443 |bi: 0.0
+training time(min): 6.6395065943400065
+start training epoch: 73
+epoch: 73 |loss: 4.938306204974651 |cls: 2.299959366209805 |mse: 0.33838746964465827 |bi: 0.0
+training time(min): 6.765182665983835
+start training epoch: 74
+epoch: 74 |loss: 4.938729988411069 |cls: 2.300143108703196 |mse: 0.3384437747299671 |bi: 0.0
+training time(min): 6.615192886193594
+start training epoch: 75
+epoch: 75 |loss: 4.93836272507906 |cls: 2.2999862963333726 |mse: 0.33839014102704823 |bi: 0.0
+training time(min): 6.756754863262176
+start training epoch: 76
+epoch: 76 |loss: 4.9385014194995165 |cls: 2.299961334094405 |mse: 0.33857874607201666 |bi: 0.0
+training time(min): 6.744300508499146
+start training epoch: 77
+epoch: 77 |loss: 4.937105629593134 |cls: 2.2992879915982485 |mse: 0.3385296685155481 |bi: 0.0
+training time(min): 6.663102900981903
+start training epoch: 78
+epoch: 78 |loss: 4.938561584800482 |cls: 2.300115954130888 |mse: 0.3383296752581373 |bi: 0.0
+training time(min): 6.7985034584999084
+start training epoch: 79
+epoch: 79 |loss: 4.938563102856278 |cls: 2.300014798529446 |mse: 0.3385335055645555 |bi: 0.0
+training time(min): 6.663998440901438
+start training epoch: 80
+epoch: 80 |loss: 4.938560705631971 |cls: 2.3000205224379897 |mse: 0.33851964422501624 |bi: 0.0
+training time(min): 6.780682679017385
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 80 Acc:0.1056
+start training epoch: 81
+epoch: 81 |loss: 4.938648033887148 |cls: 2.3001008834689856 |mse: 0.33844626625068486 |bi: 0.0
+training time(min): 6.695542116959889
+start training epoch: 82
+epoch: 82 |loss: 4.938483336940408 |cls: 2.2999642277136445 |mse: 0.3385548694059253 |bi: 0.0
+training time(min): 6.684352791309356
+start training epoch: 83
+epoch: 83 |loss: 4.938820142298937 |cls: 2.300219831056893 |mse: 0.33838047948665917 |bi: 0.0
+training time(min): 6.702828375498454
+start training epoch: 84
+epoch: 84 |loss: 4.938781380653381 |cls: 2.3001299938187003 |mse: 0.33852138300426304 |bi: 0.0
+training time(min): 6.866492652893067
+start training epoch: 85
+epoch: 85 |loss: 4.938893796876073 |cls: 2.300176485441625 |mse: 0.338540842756629 |bi: 0.0
+training time(min): 6.549722361564636
+start training epoch: 86
+epoch: 86 |loss: 4.938489558175206 |cls: 2.2999724047258496 |mse: 0.33854474930558354 |bi: 0.0
+training time(min): 6.519908197720846
+start training epoch: 87
+epoch: 87 |loss: 4.938768949359655 |cls: 2.3001109082251787 |mse: 0.3385471198707819 |bi: 0.0
+training time(min): 6.641354560852051
+start training epoch: 88
+epoch: 88 |loss: 4.938600596040487 |cls: 2.3000798262655735 |mse: 0.3384409431600943 |bi: 0.0
+training time(min): 6.6122097134590145
+start training epoch: 89
+epoch: 89 |loss: 4.938487876206636 |cls: 2.2999628176912665 |mse: 0.3385622601490468 |bi: 0.0
+training time(min): 6.565966049830119
+start training epoch: 90
+epoch: 90 |loss: 4.938336182385683 |cls: 2.299941373988986 |mse: 0.338453441625461 |bi: 0.0
+training time(min): 6.737101968129476
+start training epoch: 91
+epoch: 91 |loss: 4.938523942604661 |cls: 2.300056029111147 |mse: 0.3384118793765083 |bi: 0.0
+training time(min): 6.7935655077298485
+start training epoch: 92
+epoch: 92 |loss: 4.938243983313441 |cls: 2.2999648405238986 |mse: 0.3383142921375111 |bi: 0.0
+training time(min): 6.58665711482366
+start training epoch: 93
+epoch: 93 |loss: 4.938577400520444 |cls: 2.3001328855752945 |mse: 0.3383116304175928 |bi: 0.0
+training time(min): 6.61915605465571
+start training epoch: 94
+epoch: 94 |loss: 4.938355593010783 |cls: 2.2999639874324203 |mse: 0.33842762175481766 |bi: 0.0
+training time(min): 6.685530432065328
+start training epoch: 95
+epoch: 95 |loss: 4.938727181404829 |cls: 2.3000895231962204 |mse: 0.33854812546633184 |bi: 0.0
+training time(min): 6.616553537050883
+start training epoch: 96
+epoch: 96 |loss: 4.938324669376016 |cls: 2.3000072930008173 |mse: 0.33831007848493755 |bi: 0.0
+training time(min): 6.756067132949829
+start training epoch: 97
+epoch: 97 |loss: 4.938427435234189 |cls: 2.299975541420281 |mse: 0.33847635774873197 |bi: 0.0
+training time(min): 6.454685266812643
+start training epoch: 98
+epoch: 98 |loss: 4.938794404268265 |cls: 2.300181567668915 |mse: 0.3384312797570601 |bi: 0.0
+training time(min): 6.679529098669688
+start training epoch: 99
+epoch: 99 |loss: 4.938580283895135 |cls: 2.3000649623572826 |mse: 0.3384503609267995 |bi: 0.0
+training time(min): 6.74464449485143
+start training epoch: 100
+epoch: 100 |loss: 4.938619339838624 |cls: 2.3001077426597476 |mse: 0.3384038397343829 |bi: 0.0
+training time(min): 6.705369627475738
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 100 Acc:0.1056
+done

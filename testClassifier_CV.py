@@ -60,7 +60,7 @@ def testing(dataloader,net, gpu_id, sampling, mode, withMask, gumbel_thresh):
                 else:
                     actPred, _ , _= net(input_skeletons, t)
 
-            actPred = actPred.reshape(skeletons.shape[0], nClip, actPred.shape[-1])
+            actPred = actPred.reshape(skeletons.shape[0], -1, actPred.shape[-1])
             actPred = torch.mean(actPred, 1)
             pred = torch.argmax(actPred, 1)
 

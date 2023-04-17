@@ -276,7 +276,7 @@ def load_fineTune_model(state_dict,net):
 
     # pdb.set_trace()
     for p in net.parameters():
-        p.requires_grad = False
+        p.requires_grad = True
     net.backbone.Classifier.cls[0].weight.requires_grad = True
     net.backbone.Classifier.cls[0].bias.requires_grad = True
 

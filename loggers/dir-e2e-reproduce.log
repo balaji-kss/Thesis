@@ -1,0 +1,831 @@
+gumbel thresh: 0.505
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/DIR-cls-reproduce/ gpu: 4
+keys  odict_keys(['backbone.sparseCoding.rr', 'backbone.sparseCoding.theta', 'backbone.Classifier.conv1.weight', 'backbone.Classifier.conv1.bias', 'backbone.Classifier.bn1.weight', 'backbone.Classifier.bn1.bias', 'backbone.Classifier.bn1.running_mean', 'backbone.Classifier.bn1.running_var', 'backbone.Classifier.bn1.num_batches_tracked', 'backbone.Classifier.conv2.weight', 'backbone.Classifier.conv2.bias', 'backbone.Classifier.bn2.weight', 'backbone.Classifier.bn2.bias', 'backbone.Classifier.bn2.running_mean', 'backbone.Classifier.bn2.running_var', 'backbone.Classifier.bn2.num_batches_tracked', 'backbone.Classifier.conv3.weight', 'backbone.Classifier.conv3.bias', 'backbone.Classifier.bn3.weight', 'backbone.Classifier.bn3.bias', 'backbone.Classifier.bn3.running_mean', 'backbone.Classifier.bn3.running_var', 'backbone.Classifier.bn3.num_batches_tracked', 'backbone.Classifier.conv4.weight', 'backbone.Classifier.conv4.bias', 'backbone.Classifier.bn4.weight', 'backbone.Classifier.bn4.bias', 'backbone.Classifier.bn4.running_mean', 'backbone.Classifier.bn4.running_var', 'backbone.Classifier.bn4.num_batches_tracked', 'backbone.Classifier.conv5.weight', 'backbone.Classifier.conv5.bias', 'backbone.Classifier.bn5.weight', 'backbone.Classifier.bn5.bias', 'backbone.Classifier.bn5.running_mean', 'backbone.Classifier.bn5.running_var', 'backbone.Classifier.bn5.num_batches_tracked', 'backbone.Classifier.conv6.weight', 'backbone.Classifier.conv6.bias', 'backbone.Classifier.bn6.weight', 'backbone.Classifier.bn6.bias', 'backbone.Classifier.bn6.running_mean', 'backbone.Classifier.bn6.running_var', 'backbone.Classifier.bn6.num_batches_tracked', 'backbone.Classifier.fc.weight', 'backbone.Classifier.fc.bias', 'backbone.Classifier.fc2.weight', 'backbone.Classifier.fc2.bias', 'backbone.Classifier.fc3.weight', 'backbone.Classifier.fc3.bias', 'backbone.Classifier.cls.0.weight', 'backbone.Classifier.cls.0.bias', 'proj.weight', 'proj.bias'])
+rr  tensor([1.0738, 0.9827, 0.9756, 1.1247, 0.9363, 1.0295, 1.0171, 0.8772, 1.1414,
+        0.8764, 1.0417, 1.0411, 0.9704, 0.8741, 1.0286, 0.8505, 1.1323, 1.0011,
+        0.8609, 0.8905, 0.9876, 1.0116, 0.9802, 0.8808, 1.0316, 1.0559, 1.1463,
+        1.0903, 0.9350, 1.0455, 0.9752, 0.8884, 0.8512, 1.0178, 1.0932, 1.1434,
+        1.1080, 0.9231, 1.1499, 0.9333, 0.9124, 0.8827, 1.0343, 1.0172, 0.8646,
+        1.1115, 0.8968, 1.1214, 1.1036, 1.0951, 0.9496, 1.1026, 1.0418, 0.9571,
+        1.0756, 1.0673, 0.8579, 1.1263, 1.0073, 1.1280, 1.0781, 0.8988, 0.9347,
+        1.0849, 1.0072, 0.9259, 1.0844, 0.8510, 0.8943, 0.8692, 1.0417, 1.1310,
+        0.9874, 0.8866, 0.9528, 0.9757, 0.9415, 1.1430, 0.9416, 1.1242],
+       device='cuda:4')
+theta  tensor([1.3939, 2.4549, 1.6436, 1.5352, 0.7960, 3.0716, 2.6964, 2.0584, 0.7135,
+        2.3078, 1.8680, 1.5814, 2.5930, 2.1385, 0.6050, 1.4292, 1.4744, 0.3818,
+        2.0396, 2.8664, 0.4994, 2.8990, 1.4337, 2.9520, 2.1435, 1.2748, 0.3789,
+        2.3218, 1.4669, 1.7877, 1.0691, 2.8505, 0.6513, 2.9708, 2.0885, 3.0277,
+        1.2882, 1.7110, 2.6468, 2.2400, 1.1219, 0.2007, 0.5942, 0.7402, 2.4891,
+        0.8861, 1.3891, 2.8232, 2.3094, 0.7382, 2.3175, 1.3819, 0.8533, 0.4777,
+        3.0391, 1.8822, 1.2420, 3.1185, 0.1625, 0.9867, 1.3501, 2.3475, 1.5333,
+        1.8721, 1.7133, 1.3431, 0.9326, 3.1381, 1.3014, 2.0869, 1.4987, 1.2876,
+        2.5508, 0.4858, 1.6475, 0.5840, 1.7340, 1.2651, 3.0234, 2.8446],
+       device='cuda:4')
+cls  tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1.], device='cuda:4')
+pre_train: /home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/dir-cl-reproduce-e2e/60.pth
+loaded rr  tensor([1.0466, 0.9657, 0.9582, 1.0536, 0.9181, 1.0116, 0.9982, 0.8619, 1.0345,
+        0.8609, 1.0248, 1.0219, 0.9525, 0.8587, 0.9783, 0.8362, 1.0599, 0.9457,
+        0.8459, 0.8754, 0.9342, 0.9939, 0.9641, 0.8659, 1.0103, 1.0372, 0.9893,
+        1.0668, 0.9196, 1.0145, 0.9521, 0.8733, 0.8376, 1.0009, 1.0399, 1.0641,
+        1.0720, 0.9075, 1.0666, 0.9160, 0.8955, 0.8849, 0.9572, 0.9996, 0.8500,
+        1.0244, 0.8819, 1.0672, 1.0691, 1.0388, 0.9321, 1.0470, 0.9853, 0.9380,
+        1.0550, 1.0469, 0.8429, 1.0655, 0.9929, 1.0145, 1.0448, 0.8826, 0.9191,
+        1.0526, 0.9880, 0.9103, 1.0239, 0.8366, 0.8792, 0.8543, 1.0243, 1.0749,
+        0.9665, 0.8649, 0.9366, 0.9387, 0.9252, 1.0580, 0.9259, 1.0706],
+       device='cuda:4')
+loaded theta  tensor([1.3694, 2.4136, 1.6155, 1.5038, 0.7828, 3.0196, 2.6509, 2.0233, 0.7425,
+        2.2688, 1.8362, 1.5494, 2.5499, 2.1024, 0.6089, 1.4052, 1.4556, 0.2825,
+        2.0049, 2.8180, 0.5044, 2.8499, 1.4095, 2.9026, 2.1051, 1.2571, 0.3300,
+        2.2765, 1.4421, 1.7605, 1.0540, 2.8023, 0.6404, 2.9232, 2.0551, 2.9818,
+        1.2731, 1.6824, 2.6062, 2.2020, 1.1030, 0.1920, 0.6023, 0.7396, 2.4470,
+        0.9161, 1.3655, 2.7812, 2.2713, 0.7426, 2.2782, 1.3698, 0.8374, 0.4474,
+        2.9905, 1.8514, 1.2216, 3.0645, 0.0701, 0.9346, 1.3285, 2.3080, 1.5073,
+        1.8432, 1.6845, 1.3202, 0.9165, 3.0854, 1.2803, 2.0513, 1.4723, 1.2793,
+        2.5087, 0.4788, 1.6194, 0.5721, 1.7047, 1.2529, 2.9725, 2.7943],
+       device='cuda:4')
+cls  tensor([0.8520, 0.8397, 0.8501, 0.8754, 0.7883, 0.8427, 0.8373, 0.7870, 0.8402,
+        0.8397, 0.8296, 0.8432, 0.8315, 0.8401, 0.8495, 0.8529, 0.8607, 0.8495,
+        0.8665, 0.8561, 0.8539, 0.8337, 0.8524, 0.8291, 0.8142, 0.8477, 0.8493,
+        0.8667, 0.8791, 0.8463, 0.8235, 0.8473, 0.8324, 0.8576, 0.8580, 0.8529,
+        0.8653, 0.8614, 0.8392, 0.8543, 0.8272, 0.8624, 0.8366, 0.8219, 0.8589,
+        0.8432, 0.8567, 0.8478, 0.8313, 0.8539, 0.8394, 0.8596, 0.8365, 0.8414,
+        0.8264, 0.8343, 0.8494, 0.8342, 0.8465, 0.8528, 0.8445, 0.8493, 0.8566,
+        0.8489, 0.8345, 0.8406, 0.8612, 0.8492, 0.8844, 0.8322, 0.8421, 0.8651,
+        0.8270, 0.8312, 0.8348, 0.8505, 0.8670, 0.8402, 0.8627, 0.8451, 0.8356,
+        0.8593, 0.8459, 0.8704, 0.8336, 0.8484, 0.8706, 0.8554, 0.8534, 0.8534,
+        0.8551, 0.8561, 0.8772, 0.8505, 0.8432, 0.8348, 0.8400, 0.8451, 0.8511,
+        0.8381, 0.8320, 0.8375, 0.8213, 0.8595, 0.8170, 0.8484, 0.8344, 0.8493,
+        0.8279, 0.8552, 0.8248, 0.8521, 0.8249, 0.8457, 0.8294, 0.8204, 0.8358,
+        0.8450, 0.8374, 0.8265, 0.8452, 0.8454, 0.8430, 0.8247, 0.8510, 0.8394,
+        0.8458, 0.8383, 0.8211, 0.8531, 0.8147, 0.8389, 0.8432, 0.8408, 0.8314,
+        0.8203, 0.8350, 0.8509, 0.8509, 0.8443, 0.8419, 0.8610, 0.8361, 0.8417,
+        0.8252, 0.8120, 0.8316, 0.8659, 0.8630, 0.8430, 0.8606, 0.8366, 0.8481,
+        0.8532, 0.8315, 0.8348, 0.8367, 0.8360, 0.8308, 0.8168, 0.8441, 0.8653,
+        0.8208, 0.8733, 0.8602, 0.8451, 0.8651, 0.8374, 0.8616, 0.8305, 0.8294,
+        0.8336, 0.8480, 0.8553, 0.8490, 0.8501, 0.8277, 0.8528, 0.8285, 0.8349,
+        0.8622, 0.8294, 0.8556, 0.8644, 0.8648, 0.8280, 0.8439, 0.8686, 0.8404,
+        0.8559, 0.8377, 0.8688, 0.8412, 0.8149, 0.8166, 0.8389, 0.8281, 0.8379,
+        0.8301, 0.8303, 0.8498, 0.8317, 0.8441, 0.8459, 0.8515, 0.8210, 0.8442,
+        0.8822, 0.8257, 0.8487, 0.8531, 0.8636, 0.8815, 0.8440, 0.8572, 0.8109,
+        0.8448, 0.8355, 0.8697, 0.8672, 0.8403, 0.8490, 0.8241, 0.8391, 0.8539,
+        0.8529, 0.8177, 0.8541, 0.8224, 0.8425, 0.8512, 0.8373, 0.8167, 0.8216,
+        0.8448, 0.8501, 0.8286, 0.8295, 0.8299, 0.8508, 0.8849, 0.8362, 0.8457,
+        0.8115, 0.8341, 0.8229, 0.8295, 0.8443, 0.9004, 0.8102, 0.8351, 0.8341,
+        0.8282, 0.8478, 0.8409, 0.8417], device='cuda:4')
+p  backbone.sparseCoding.rr True
+p  backbone.sparseCoding.theta True
+p  backbone.Classifier.conv1.weight True
+p  backbone.Classifier.conv1.bias True
+p  backbone.Classifier.bn1.weight True
+p  backbone.Classifier.bn1.bias True
+p  backbone.Classifier.conv2.weight True
+p  backbone.Classifier.conv2.bias True
+p  backbone.Classifier.bn2.weight True
+p  backbone.Classifier.bn2.bias True
+p  backbone.Classifier.conv3.weight True
+p  backbone.Classifier.conv3.bias True
+p  backbone.Classifier.bn3.weight True
+p  backbone.Classifier.bn3.bias True
+p  backbone.Classifier.conv4.weight True
+p  backbone.Classifier.conv4.bias True
+p  backbone.Classifier.bn4.weight True
+p  backbone.Classifier.bn4.bias True
+p  backbone.Classifier.conv5.weight True
+p  backbone.Classifier.conv5.bias True
+p  backbone.Classifier.bn5.weight True
+p  backbone.Classifier.bn5.bias True
+p  backbone.Classifier.conv6.weight True
+p  backbone.Classifier.conv6.bias True
+p  backbone.Classifier.bn6.weight True
+p  backbone.Classifier.bn6.bias True
+p  backbone.Classifier.fc.weight True
+p  backbone.Classifier.fc.bias True
+p  backbone.Classifier.fc2.weight True
+p  backbone.Classifier.fc2.bias True
+p  backbone.Classifier.fc3.weight True
+p  backbone.Classifier.fc3.bias True
+p  backbone.Classifier.cls.0.weight True
+p  backbone.Classifier.cls.0.bias True
+p  proj.weight True
+p  proj.bias True
+after rr  tensor([1.0466, 0.9657, 0.9582, 1.0536, 0.9181, 1.0116, 0.9982, 0.8619, 1.0345,
+        0.8609, 1.0248, 1.0219, 0.9525, 0.8587, 0.9783, 0.8362, 1.0599, 0.9457,
+        0.8459, 0.8754, 0.9342, 0.9939, 0.9641, 0.8659, 1.0103, 1.0372, 0.9893,
+        1.0668, 0.9196, 1.0145, 0.9521, 0.8733, 0.8376, 1.0009, 1.0399, 1.0641,
+        1.0720, 0.9075, 1.0666, 0.9160, 0.8955, 0.8849, 0.9572, 0.9996, 0.8500,
+        1.0244, 0.8819, 1.0672, 1.0691, 1.0388, 0.9321, 1.0470, 0.9853, 0.9380,
+        1.0550, 1.0469, 0.8429, 1.0655, 0.9929, 1.0145, 1.0448, 0.8826, 0.9191,
+        1.0526, 0.9880, 0.9103, 1.0239, 0.8366, 0.8792, 0.8543, 1.0243, 1.0749,
+        0.9665, 0.8649, 0.9366, 0.9387, 0.9252, 1.0580, 0.9259, 1.0706],
+       device='cuda:4')
+after theta  tensor([1.3694, 2.4136, 1.6155, 1.5038, 0.7828, 3.0196, 2.6509, 2.0233, 0.7425,
+        2.2688, 1.8362, 1.5494, 2.5499, 2.1024, 0.6089, 1.4052, 1.4556, 0.2825,
+        2.0049, 2.8180, 0.5044, 2.8499, 1.4095, 2.9026, 2.1051, 1.2571, 0.3300,
+        2.2765, 1.4421, 1.7605, 1.0540, 2.8023, 0.6404, 2.9232, 2.0551, 2.9818,
+        1.2731, 1.6824, 2.6062, 2.2020, 1.1030, 0.1920, 0.6023, 0.7396, 2.4470,
+        0.9161, 1.3655, 2.7812, 2.2713, 0.7426, 2.2782, 1.3698, 0.8374, 0.4474,
+        2.9905, 1.8514, 1.2216, 3.0645, 0.0701, 0.9346, 1.3285, 2.3080, 1.5073,
+        1.8432, 1.6845, 1.3202, 0.9165, 3.0854, 1.2803, 2.0513, 1.4723, 1.2793,
+        2.5087, 0.4788, 1.6194, 0.5721, 1.7047, 1.2529, 2.9725, 2.7943],
+       device='cuda:4')
+cls  tensor([0.8520, 0.8397, 0.8501, 0.8754, 0.7883, 0.8427, 0.8373, 0.7870, 0.8402,
+        0.8397, 0.8296, 0.8432, 0.8315, 0.8401, 0.8495, 0.8529, 0.8607, 0.8495,
+        0.8665, 0.8561, 0.8539, 0.8337, 0.8524, 0.8291, 0.8142, 0.8477, 0.8493,
+        0.8667, 0.8791, 0.8463, 0.8235, 0.8473, 0.8324, 0.8576, 0.8580, 0.8529,
+        0.8653, 0.8614, 0.8392, 0.8543, 0.8272, 0.8624, 0.8366, 0.8219, 0.8589,
+        0.8432, 0.8567, 0.8478, 0.8313, 0.8539, 0.8394, 0.8596, 0.8365, 0.8414,
+        0.8264, 0.8343, 0.8494, 0.8342, 0.8465, 0.8528, 0.8445, 0.8493, 0.8566,
+        0.8489, 0.8345, 0.8406, 0.8612, 0.8492, 0.8844, 0.8322, 0.8421, 0.8651,
+        0.8270, 0.8312, 0.8348, 0.8505, 0.8670, 0.8402, 0.8627, 0.8451, 0.8356,
+        0.8593, 0.8459, 0.8704, 0.8336, 0.8484, 0.8706, 0.8554, 0.8534, 0.8534,
+        0.8551, 0.8561, 0.8772, 0.8505, 0.8432, 0.8348, 0.8400, 0.8451, 0.8511,
+        0.8381, 0.8320, 0.8375, 0.8213, 0.8595, 0.8170, 0.8484, 0.8344, 0.8493,
+        0.8279, 0.8552, 0.8248, 0.8521, 0.8249, 0.8457, 0.8294, 0.8204, 0.8358,
+        0.8450, 0.8374, 0.8265, 0.8452, 0.8454, 0.8430, 0.8247, 0.8510, 0.8394,
+        0.8458, 0.8383, 0.8211, 0.8531, 0.8147, 0.8389, 0.8432, 0.8408, 0.8314,
+        0.8203, 0.8350, 0.8509, 0.8509, 0.8443, 0.8419, 0.8610, 0.8361, 0.8417,
+        0.8252, 0.8120, 0.8316, 0.8659, 0.8630, 0.8430, 0.8606, 0.8366, 0.8481,
+        0.8532, 0.8315, 0.8348, 0.8367, 0.8360, 0.8308, 0.8168, 0.8441, 0.8653,
+        0.8208, 0.8733, 0.8602, 0.8451, 0.8651, 0.8374, 0.8616, 0.8305, 0.8294,
+        0.8336, 0.8480, 0.8553, 0.8490, 0.8501, 0.8277, 0.8528, 0.8285, 0.8349,
+        0.8622, 0.8294, 0.8556, 0.8644, 0.8648, 0.8280, 0.8439, 0.8686, 0.8404,
+        0.8559, 0.8377, 0.8688, 0.8412, 0.8149, 0.8166, 0.8389, 0.8281, 0.8379,
+        0.8301, 0.8303, 0.8498, 0.8317, 0.8441, 0.8459, 0.8515, 0.8210, 0.8442,
+        0.8822, 0.8257, 0.8487, 0.8531, 0.8636, 0.8815, 0.8440, 0.8572, 0.8109,
+        0.8448, 0.8355, 0.8697, 0.8672, 0.8403, 0.8490, 0.8241, 0.8391, 0.8539,
+        0.8529, 0.8177, 0.8541, 0.8224, 0.8425, 0.8512, 0.8373, 0.8167, 0.8216,
+        0.8448, 0.8501, 0.8286, 0.8295, 0.8299, 0.8508, 0.8849, 0.8362, 0.8457,
+        0.8115, 0.8341, 0.8229, 0.8295, 0.8443, 0.9004, 0.8102, 0.8351, 0.8341,
+        0.8282, 0.8478, 0.8409, 0.8417], device='cuda:4')
+start training epoch: 0
+epoch: 0 |loss: 2.8237421843223274 |cls: 1.4077075090026483 |mse: 0.006506049109702872 |bi: 0.018211162016086746
+training time(min): 9.481706698735556
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 0 Acc:0.4418
+start training epoch: 1
+epoch: 1 |loss: 1.9409208493307233 |cls: 0.9663130486151204 |mse: 0.006470665469805681 |bi: 0.018240845565742347
+training time(min): 10.161556363105774
+start training epoch: 2
+epoch: 2 |loss: 1.6121754947816953 |cls: 0.8020277097821236 |mse: 0.006220588539690652 |bi: 0.018994883739651414
+training time(min): 10.383668824036915
+start training epoch: 3
+epoch: 3 |loss: 1.3148143827565946 |cls: 0.6530035068863072 |mse: 0.006959374138205021 |bi: 0.018479928996384842
+training time(min): 10.020414471626282
+start training epoch: 4
+epoch: 4 |loss: 1.1998508793476503 |cls: 0.5956345257145585 |mse: 0.006661175991212076 |bi: 0.019206550598028116
+training time(min): 10.461767570177715
+start training epoch: 5
+epoch: 5 |loss: 0.9300942440750077 |cls: 0.46076209928287426 |mse: 0.006664474023637013 |bi: 0.019055736924201483
+training time(min): 10.387093122800191
+start training epoch: 6
+epoch: 6 |loss: 0.9621979297808139 |cls: 0.47697462244104827 |mse: 0.006311374002507364 |bi: 0.019373051523871254
+training time(min): 10.5548011302948
+start training epoch: 7
+epoch: 7 |loss: 0.8256176791765029 |cls: 0.40885954033001326 |mse: 0.006052573627130187 |bi: 0.018460246079484932
+training time(min): 10.334724787871043
+start training epoch: 8
+epoch: 8 |loss: 0.7935416369291488 |cls: 0.39258737187992665 |mse: 0.00651078716146003 |bi: 0.018561041299108183
+training time(min): 10.490992550055186
+start training epoch: 9
+epoch: 9 |loss: 0.6747967841656646 |cls: 0.333356427585386 |mse: 0.006219937752575788 |bi: 0.018639909347257344
+training time(min): 10.449879936377208
+start training epoch: 10
+epoch: 10 |loss: 0.77868448686786 |cls: 0.38518102782109054 |mse: 0.006373124602760072 |bi: 0.019493074709316716
+training time(min): 10.356718842188517
+start training epoch: 11
+epoch: 11 |loss: 0.5269467378384434 |cls: 0.2594746301365376 |mse: 0.0060829450012533925 |bi: 0.019145318281516666
+training time(min): 10.246694938341777
+start training epoch: 12
+epoch: 12 |loss: 0.7762285637072637 |cls: 0.38397555653136806 |mse: 0.006389396682607185 |bi: 0.018880554671341088
+training time(min): 10.21162990729014
+start training epoch: 13
+epoch: 13 |loss: 2.272450393094914 |cls: 1.1215975667291787 |mse: 0.027840766751978663 |bi: 0.014145022661978146
+training time(min): 10.18661892414093
+start training epoch: 14
+epoch: 14 |loss: 1.348463444475783 |cls: 0.6676764622825431 |mse: 0.011502567473144154 |bi: 0.016079518631158862
+training time(min): 10.172345972061157
+start training epoch: 15
+epoch: 15 |loss: 0.9815029283345211 |cls: 0.48508376082463656 |mse: 0.009674628094671789 |bi: 0.01660779493613518
+training time(min): 9.825073862075806
+start training epoch: 16
+epoch: 16 |loss: 0.8779591165657621 |cls: 0.433937204630638 |mse: 0.008365600737306522 |bi: 0.0171910560784454
+training time(min): 10.304778003692627
+start training epoch: 17
+epoch: 17 |loss: 1.3462994231958874 |cls: 0.6679650328296702 |mse: 0.008669249237755139 |bi: 0.017001073698338587
+training time(min): 10.280261890093486
+start training epoch: 18
+epoch: 18 |loss: 1.3525816408509854 |cls: 0.672726212782436 |mse: 0.005265714833058155 |bi: 0.01863503409185796
+training time(min): 10.055982192357382
+start training epoch: 19
+epoch: 19 |loss: 2.9565757469681557 |cls: 1.3992042994941585 |mse: 0.15697681896472204 |bi: 0.01190325819015925
+training time(min): 10.269479537010193
+start training epoch: 20
+epoch: 20 |loss: 4.953725451603532 |cls: 2.3075080765411258 |mse: 0.3387092971242964 |bi: 0.0
+training time(min): 10.306671742598216
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 20 Acc:0.1056
+start training epoch: 21
+epoch: 21 |loss: 4.947800459340215 |cls: 2.3047010945156217 |mse: 0.3383982479572296 |bi: 0.0
+training time(min): 9.789588749408722
+start training epoch: 22
+epoch: 22 |loss: 4.945508288219571 |cls: 2.3035950921475887 |mse: 0.33831808622926474 |bi: 0.0
+training time(min): 9.874277579784394
+start training epoch: 23
+epoch: 23 |loss: 4.944745367392898 |cls: 2.303152682259679 |mse: 0.3384399904171005 |bi: 0.0
+training time(min): 10.574104976654052
+start training epoch: 24
+epoch: 24 |loss: 4.94395018927753 |cls: 2.3027533777058125 |mse: 0.3384434496983886 |bi: 0.0
+training time(min): 10.412044767538706
+start training epoch: 25
+epoch: 25 |loss: 4.9432465974241495 |cls: 2.302393219433725 |mse: 0.33846014470327646 |bi: 0.0
+training time(min): 10.25245134830475
+start training epoch: 26
+epoch: 26 |loss: 4.943204749375582 |cls: 2.302382425405085 |mse: 0.33843990066088736 |bi: 0.0
+training time(min): 10.361660281817118
+start training epoch: 27
+epoch: 27 |loss: 4.943046282976866 |cls: 2.302338215522468 |mse: 0.33836985484231263 |bi: 0.0
+training time(min): 10.095542911688486
+start training epoch: 28
+epoch: 28 |loss: 4.943489940837026 |cls: 2.3025070149451494 |mse: 0.3384759185137227 |bi: 0.0
+training time(min): 10.156057540575663
+start training epoch: 29
+epoch: 29 |loss: 4.944181155413389 |cls: 2.3028908064588904 |mse: 0.3383995461044833 |bi: 0.0
+training time(min): 9.083154435952505
+start training epoch: 30
+epoch: 30 |loss: 4.942970866337419 |cls: 2.302258362993598 |mse: 0.33845414919778705 |bi: 0.0
+training time(min): 7.545883854230245
+start training epoch: 31
+epoch: 31 |loss: 4.9430120177567005 |cls: 2.3022472290322185 |mse: 0.3385175564326346 |bi: 0.0
+training time(min): 7.472246694564819
+start training epoch: 32
+epoch: 32 |loss: 4.941303510218859 |cls: 2.301415373571217 |mse: 0.3384727647062391 |bi: 0.0
+training time(min): 7.409417525927226
+start training epoch: 33
+epoch: 33 |loss: 4.940763955935836 |cls: 2.3011938901618123 |mse: 0.33837616187520325 |bi: 0.0
+training time(min): 7.567237039407094
+start training epoch: 34
+epoch: 34 |loss: 4.941163565963507 |cls: 2.301374865695834 |mse: 0.338413848541677 |bi: 0.0
+training time(min): 7.488856728871664
+start training epoch: 35
+epoch: 35 |loss: 4.941212203353643 |cls: 2.301361868157983 |mse: 0.3384884790284559 |bi: 0.0
+training time(min): 7.3631498177846275
+start training epoch: 36
+epoch: 36 |loss: 4.940612746402621 |cls: 2.3011249164119363 |mse: 0.3383629214949906 |bi: 0.0
+training time(min): 7.3867740074793495
+start training epoch: 37
+epoch: 37 |loss: 4.9415581449866295 |cls: 2.3015132257714868 |mse: 0.3385317000793293 |bi: 0.0
+training time(min): 7.055408775806427
+start training epoch: 38
+epoch: 38 |loss: 4.940410315990448 |cls: 2.3010058365762234 |mse: 0.338398658670485 |bi: 0.0
+training time(min): 6.801819479465484
+start training epoch: 39
+epoch: 39 |loss: 4.941236786544323 |cls: 2.3014158559963107 |mse: 0.33840507292188704 |bi: 0.0
+training time(min): 6.728250888983409
+start training epoch: 40
+epoch: 40 |loss: 4.940907979384065 |cls: 2.301239438354969 |mse: 0.3384290962712839 |bi: 0.0
+training time(min): 6.621215411027273
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 40 Acc:0.1056
+start training epoch: 41
+epoch: 41 |loss: 4.940921695902944 |cls: 2.301304418593645 |mse: 0.3383128547575325 |bi: 0.0
+training time(min): 6.721138008435568
+start training epoch: 42
+epoch: 42 |loss: 4.940736120566726 |cls: 2.3011815855279565 |mse: 0.3383729486959055 |bi: 0.0
+training time(min): 6.68344570795695
+start training epoch: 43
+epoch: 43 |loss: 4.940701516345143 |cls: 2.301092700101435 |mse: 0.33851610182318836 |bi: 0.0
+training time(min): 6.790204691886902
+start training epoch: 44
+epoch: 44 |loss: 4.941177360713482 |cls: 2.3013954097405076 |mse: 0.3383865504292771 |bi: 0.0
+training time(min): 6.694074165821076
+start training epoch: 45
+epoch: 45 |loss: 4.9410122986882925 |cls: 2.3013010593131185 |mse: 0.33841019903775305 |bi: 0.0
+training time(min): 6.685430939992269
+start training epoch: 46
+epoch: 46 |loss: 4.940733328461647 |cls: 2.3011221326887608 |mse: 0.33848905574996024 |bi: 0.0
+training time(min): 6.596806947390238
+start training epoch: 47
+epoch: 47 |loss: 4.940769929438829 |cls: 2.301140467636287 |mse: 0.33848898799624294 |bi: 0.0
+training time(min): 6.700302271048228
+start training epoch: 48
+epoch: 48 |loss: 4.941493511199951 |cls: 2.301442882977426 |mse: 0.33860774419736117 |bi: 0.0
+training time(min): 6.7558949073155725
+start training epoch: 49
+epoch: 49 |loss: 4.940771104767919 |cls: 2.30123046413064 |mse: 0.3383101747604087 |bi: 0.0
+training time(min): 6.893640164534251
+start training epoch: 50
+epoch: 50 |loss: 4.9389037899672985 |cls: 2.3002456352114677 |mse: 0.33841251174453646 |bi: 0.0
+training time(min): 6.869832082589467
+start training epoch: 51
+epoch: 51 |loss: 4.938723880797625 |cls: 2.30016809143126 |mse: 0.33838769828435034 |bi: 0.0
+training time(min): 6.624482043584188
+start training epoch: 52
+epoch: 52 |loss: 4.9386450089514256 |cls: 2.300127130933106 |mse: 0.3383907474344596 |bi: 0.0
+training time(min): 6.959851276874542
+start training epoch: 53
+epoch: 53 |loss: 4.937442174181342 |cls: 2.299440055154264 |mse: 0.33856206585187465 |bi: 0.0
+training time(min): 6.729344975948334
+start training epoch: 54
+epoch: 54 |loss: 4.938552821055055 |cls: 2.300098069012165 |mse: 0.3383566833799705 |bi: 0.0
+training time(min): 6.791114974021911
+start training epoch: 55
+epoch: 55 |loss: 4.939014123752713 |cls: 2.3002446489408612 |mse: 0.3385248195845634 |bi: 0.0
+training time(min): 6.91377739906311
+start training epoch: 56
+epoch: 56 |loss: 4.938780095428228 |cls: 2.300163491629064 |mse: 0.3384531158953905 |bi: 0.0
+training time(min): 6.626900692780812
+start training epoch: 57
+epoch: 57 |loss: 4.938802821561694 |cls: 2.3001528959721327 |mse: 0.3384970362531021 |bi: 0.0
+training time(min): 6.744983959197998
+start training epoch: 58
+epoch: 58 |loss: 4.938797337934375 |cls: 2.3001956837251782 |mse: 0.33840596105437726 |bi: 0.0
+training time(min): 6.669815385341645
+start training epoch: 59
+epoch: 59 |loss: 4.939079532399774 |cls: 2.3002818915992975 |mse: 0.3385157500160858 |bi: 0.0
+training time(min): 6.6778514862060545
+start training epoch: 60
+epoch: 60 |loss: 4.9388895239681005 |cls: 2.30012568179518 |mse: 0.33863816736266017 |bi: 0.0
+training time(min): 6.59804246822993
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 60 Acc:0.1056
+start training epoch: 61
+epoch: 61 |loss: 4.938835142180324 |cls: 2.3002015156671405 |mse: 0.33843210607301444 |bi: 0.0
+training time(min): 6.551837607224782
+start training epoch: 62
+epoch: 62 |loss: 4.938901986926794 |cls: 2.3002445278689265 |mse: 0.3384129193145782 |bi: 0.0
+training time(min): 6.610580937067668
+start training epoch: 63
+epoch: 63 |loss: 4.93884863704443 |cls: 2.3001911994069815 |mse: 0.33846625371370465 |bi: 0.0
+training time(min): 6.59766462246577
+start training epoch: 64
+epoch: 64 |loss: 4.9390839375555515 |cls: 2.3002616008743644 |mse: 0.338560760486871 |bi: 0.0
+training time(min): 6.816276967525482
+start training epoch: 65
+epoch: 65 |loss: 4.938692469149828 |cls: 2.300192360766232 |mse: 0.3383077580947429 |bi: 0.0
+training time(min): 6.670570011933645
+start training epoch: 66
+epoch: 66 |loss: 4.93865642696619 |cls: 2.300068191252649 |mse: 0.33852004422806203 |bi: 0.0
+training time(min): 6.598103082180023
+start training epoch: 67
+epoch: 67 |loss: 4.938746482133865 |cls: 2.3001090977340937 |mse: 0.3385282816598192 |bi: 0.0
+training time(min): 6.652475965023041
+start training epoch: 68
+epoch: 68 |loss: 4.938669776543975 |cls: 2.3001197054982185 |mse: 0.3384303472703323 |bi: 0.0
+training time(min): 6.725119137763977
+start training epoch: 69
+epoch: 69 |loss: 4.938767550513148 |cls: 2.300238967873156 |mse: 0.33828961406834424 |bi: 0.0
+training time(min): 6.617741326491038
+start training epoch: 70
+epoch: 70 |loss: 4.938716499134898 |cls: 2.300099211744964 |mse: 0.3385180931072682 |bi: 0.0
+training time(min): 6.658680458863576
+start training epoch: 71
+epoch: 71 |loss: 4.938432352617383 |cls: 2.299991329200566 |mse: 0.338449694798328 |bi: 0.0
+training time(min): 7.101588841279348
+start training epoch: 72
+epoch: 72 |loss: 4.9370330683887005 |cls: 2.299309577792883 |mse: 0.33841389731969684 |bi: 0.0
+training time(min): 6.573561712106069
+start training epoch: 73
+epoch: 73 |loss: 4.938630422577262 |cls: 2.3000659216195345 |mse: 0.33849857398308814 |bi: 0.0
+training time(min): 6.595019340515137
+start training epoch: 74
+epoch: 74 |loss: 4.937149703502655 |cls: 2.299308060668409 |mse: 0.3385335875209421 |bi: 0.0
+training time(min): 6.546378735701243
+start training epoch: 75
+epoch: 75 |loss: 4.938460158184171 |cls: 2.300098947249353 |mse: 0.3382622499484569 |bi: 0.0
+training time(min): 6.662796258926392
+start training epoch: 76
+epoch: 76 |loss: 4.938422990962863 |cls: 2.299990735948086 |mse: 0.33844153257086873 |bi: 0.0
+training time(min): 6.770985301335653
+start training epoch: 77
+epoch: 77 |loss: 4.938477847725153 |cls: 2.3000661712139845 |mse: 0.3383455140283331 |bi: 0.0
+training time(min): 6.786797813574473
+start training epoch: 78
+epoch: 78 |loss: 4.93841627985239 |cls: 2.2999617559835315 |mse: 0.3384927675360814 |bi: 0.0
+training time(min): 6.616395040353139
+start training epoch: 79
+epoch: 79 |loss: 4.938561055809259 |cls: 2.300078121945262 |mse: 0.33840480097569525 |bi: 0.0
+training time(min): 6.642348889509837
+start training epoch: 80
+epoch: 80 |loss: 4.938622411340475 |cls: 2.3001441722735763 |mse: 0.33833408600185066 |bi: 0.0
+training time(min): 6.743040947119395
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 80 Acc:0.1056
+start training epoch: 81
+epoch: 81 |loss: 4.93859445117414 |cls: 2.3000103486701846 |mse: 0.3385737503413111 |bi: 0.0
+training time(min): 6.601417517662048
+start training epoch: 82
+epoch: 82 |loss: 4.938503025099635 |cls: 2.2999904258176684 |mse: 0.3385221764910966 |bi: 0.0
+training time(min): 7.105835509300232
+start training epoch: 83
+epoch: 83 |loss: 4.9387459475547075 |cls: 2.3000997891649604 |mse: 0.3385463753947988 |bi: 0.0
+training time(min): 6.625255076090495
+start training epoch: 84
+epoch: 84 |loss: 4.938758157193661 |cls: 2.3000984750688076 |mse: 0.33856121834833175 |bi: 0.0
+training time(min): 6.724655199050903
+start training epoch: 85
+epoch: 85 |loss: 4.938783518970013 |cls: 2.3001497639343143 |mse: 0.33848400495480746 |bi: 0.0
+training time(min): 6.740063019593557
+start training epoch: 86
+epoch: 86 |loss: 4.938863014802337 |cls: 2.300143769942224 |mse: 0.3385754784103483 |bi: 0.0
+training time(min): 6.681581465403239
+start training epoch: 87
+epoch: 87 |loss: 4.937211943790317 |cls: 2.2993076480925083 |mse: 0.3385966516798362 |bi: 0.0
+training time(min): 6.49436184167862
+start training epoch: 88
+epoch: 88 |loss: 4.938277270644903 |cls: 2.299976786598563 |mse: 0.33832370722666383 |bi: 0.0
+training time(min): 6.749392171700795
+start training epoch: 89
+epoch: 89 |loss: 4.938865704461932 |cls: 2.300148327834904 |mse: 0.3385690632276237 |bi: 0.0
+training time(min): 6.8483367999394735
+start training epoch: 90
+epoch: 90 |loss: 4.938492111861706 |cls: 2.3000093530863523 |mse: 0.33847339753992856 |bi: 0.0
+training time(min): 6.6826844930648805
+start training epoch: 91
+epoch: 91 |loss: 4.938848111778498 |cls: 2.300144291482866 |mse: 0.3385595214786008 |bi: 0.0
+training time(min): 6.5927403450012205
+start training epoch: 92
+epoch: 92 |loss: 4.93878342397511 |cls: 2.300099689513445 |mse: 0.33858403703197837 |bi: 0.0
+training time(min): 6.83325666586558
+start training epoch: 93
+epoch: 93 |loss: 4.937111139297485 |cls: 2.2993067922070622 |mse: 0.33849755756091326 |bi: 0.0
+training time(min): 6.880620352427164
+start training epoch: 94
+epoch: 94 |loss: 4.938318045809865 |cls: 2.299988716840744 |mse: 0.3383406162029132 |bi: 0.0
+training time(min): 6.845770208040873
+start training epoch: 95
+epoch: 95 |loss: 4.938915278762579 |cls: 2.300097683444619 |mse: 0.3387199202552438 |bi: 0.0
+training time(min): 6.745310723781586
+start training epoch: 96
+epoch: 96 |loss: 4.938614649698138 |cls: 2.300064127892256 |mse: 0.3384863934479654 |bi: 0.0
+training time(min): 6.7410471677780155
+start training epoch: 97
+epoch: 97 |loss: 4.9385640770196915 |cls: 2.3000753512606025 |mse: 0.3384133889339864 |bi: 0.0
+training time(min): 6.837610340118408
+start training epoch: 98
+epoch: 98 |loss: 4.938516933470964 |cls: 2.3000964717939496 |mse: 0.3383240004768595 |bi: 0.0
+training time(min): 6.692144680023193
+start training epoch: 99
+epoch: 99 |loss: 4.938458375632763 |cls: 2.299976789392531 |mse: 0.33850479347165674 |bi: 0.0
+training time(min): 6.620309213797252
+start training epoch: 100
+epoch: 100 |loss: 4.938406990841031 |cls: 2.2999597061425447 |mse: 0.3384875829797238 |bi: 0.0
+training time(min): 6.708143270015716
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 100 Acc:0.1056
+done

@@ -526,8 +526,8 @@ class contrastiveNet(nn.Module):
             embedding1 = self.relu(self.proj(lastFeat1))
             embedding2 = self.relu(self.proj(lastFeat2))
 
-            embed1 = torch.mean(embedding1.reshape(bz, 1, embedding1.shape[-1]),1)
-            embed2 = torch.mean(embedding2.reshape(bz, 1, embedding2.shape[-1]),1)
+            embed1 = torch.mean(embedding1.reshape(bz, -1, embedding1.shape[-1]), 1)
+            embed2 = torch.mean(embedding2.reshape(bz, -1, embedding2.shape[-1]), 1)
 
             z1 = F.normalize(embed1, dim=1)
             z2 = F.normalize(embed2, dim=1)

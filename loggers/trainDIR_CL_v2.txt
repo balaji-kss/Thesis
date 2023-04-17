@@ -544,10 +544,3 @@ sample: 36
 sample: 37
 sample: 38
 testing epoch: 100 Acc:0.9720
-Traceback (most recent call last):
-  File "trainDIR_CV_withCL.py", line 199, in <module>
-  File "/home/yuexi/pyenv_1.6/lib/python3.6/site-packages/torch/cuda/memory.py", line 114, in empty_cache
-    torch._C._cuda_emptyCache()
-RuntimeError: CUDA error: out of memory
-CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
-For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
