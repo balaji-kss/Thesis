@@ -10,7 +10,7 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 
-gpu_id = 0
+gpu_id = 3
 map_loc = "cuda:"+str(gpu_id)
 
 # T = 36
@@ -36,8 +36,8 @@ if sampling == 'Single':
     num_workers = 8
     bz = 60
 else:
-    num_workers = 4
-    bz = 3
+    num_workers = 8
+    bz = 8
 
 T = 36 # input clip length
 mode = 'dy+bi+cl'
@@ -52,7 +52,7 @@ print('gumbel thresh:',gumbel_thresh)
 'change to your own model path'
 modelRoot = './ModelFile/crossView_NUCLA/'
 
-saveModel = modelRoot + sampling + '/' + mode + '/T36_contrastive_fineTune_fixed_tf_end/'
+saveModel = modelRoot + sampling + '/' + mode + '/DIR-CV-tenc-cls-token/'
 if not os.path.exists(saveModel):
     os.makedirs(saveModel)
 print('mode:',mode, 'model path:', saveModel,  'gpu:', gpu_id)
@@ -79,15 +79,37 @@ testloader = DataLoader(testSet, batch_size=bz, shuffle=True, num_workers=num_wo
 
 
 net = contrastiveNet(dim_embed=128, Npole=N+1, Drr=Drr, Dtheta=Dtheta, Inference=True, gpu_id=gpu_id, dim=2, dataType='2D', fistaLam=fistaLam, fineTune=True).cuda(gpu_id)
+print('keys ', net.state_dict().keys())
+print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
+print('rr ', net.state_dict()['backbone.sparseCoding.rr'])
+print('theta ', net.state_dict()['backbone.sparseCoding.theta'])
+print('att ', net.state_dict()['backbone.transformer_encoder.transformer_encoder.layers.1.linear2.weight'])
+print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
+# print('pe ', net.state_dict()['backbone.transformer_encoder.pos_encoder.pe'])
 
 'load pre-trained contrastive model'
 #pre_train = modelRoot + sampling + '/' + mode + '/T36_contrastive_fineTune_all/' + '40.pth'        
 # pre_train = './pretrained/' + dataset +'/' + setup + '/' +sampling + '/pretrainedRHdyan_CL.pth'
-pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/T36_contrastive_all_v2_tf/100.pth'
+pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/tf-cls-token-mean1/20.pth'
 print('pre_train:', pre_train)
 state_dict = torch.load(pre_train, map_location=map_loc)
 
+# print('loaded keys ', state_dict['state_dict'].keys())
+print('loaded cls token ', state_dict['state_dict']['backbone.transformer_encoder.cls_token'])
+print('loaded rr ', state_dict['state_dict']['backbone.sparseCoding.rr'])
+print('loaded theta ', state_dict['state_dict']['backbone.sparseCoding.theta'])
+print('loaded att ', state_dict['state_dict']['backbone.transformer_encoder.transformer_encoder.layers.1.linear2.weight'])
+print('cls ', state_dict['state_dict']['backbone.Classifier.bn1.weight'])
+# print('loaded pe ', state_dict['state_dict']['backbone.transformer_encoder.pos_encoder.pe'])
+
 net = load_fineTune_model(state_dict, net)
+
+print('after cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
+print('after rr ', net.state_dict()['backbone.sparseCoding.rr'])
+print('after theta ', net.state_dict()['backbone.sparseCoding.theta'])
+print('after att ', net.state_dict()['backbone.transformer_encoder.transformer_encoder.layers.1.linear2.weight'])
+print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
+# print('after pe ', net.state_dict()['backbone.transformer_encoder.pos_encoder.pe'])
 
 'frozen all layers except last classification layer'
 
@@ -147,7 +169,7 @@ for epoch in range(0, Epoch+1):
         # print('input_skeletons shape ', input_skeletons.shape)
         actPred, lastFeat, binaryCode, output_skeletons = net(input_skeletons, bi_thresh=gumbel_thresh, nClip=nClip)
         bi_gt = torch.zeros_like(binaryCode).cuda(gpu_id)
-        actPred = actPred.reshape(skeletons.shape[0], nClip, num_class)
+        actPred = actPred.reshape(skeletons.shape[0], 1, num_class)
         actPred = torch.mean(actPred, 1)
         target_skeletons = skeletons.reshape(skeletons.shape[0]*skeletons.shape[1],t,-1)
         loss = lam1 * Criterion(actPred, gt_label) + lam2 * mseLoss(output_skeletons, target_skeletons.squeeze(-1)) \
@@ -174,7 +196,7 @@ for epoch in range(0, Epoch+1):
     print('epoch:', epoch, '|loss:', loss_val, '|cls:', np.mean(np.array(lossCls)), '|mse:', np.mean(np.array(lossMSE)),
           '|bi:', np.mean(np.array(lossBi)))
     end_time = time.time()
-    print('training time(h):', (end_time - start_time) / 3600)
+    print('training time(min):', (end_time - start_time) / 60)
 
 
     scheduler.step()

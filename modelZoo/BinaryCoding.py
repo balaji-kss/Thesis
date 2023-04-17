@@ -284,25 +284,12 @@ class Dyan_Tenc_multi(nn.Module):
         self.dataType = dataType
         self.fistaLam = fistaLam
         self.Inference = Inference
-        self.is_clstoken = True
-        self.mean = False
-
-        if self.is_clstoken:
-            self.seq_len = 5
-        else:
-            self.seq_len = 4
-
-        print('is_clstoken ', self.is_clstoken)
-        print('mean  ', self.mean)
-        print('seq_len ', self.seq_len)
 
         self.sparseCoding = DyanEncoder(self.Drr, self.Dtheta, lam=self.fistaLam, gpu_id=self.gpu_id)
 
         self.BinaryCoding = GumbelSigmoid()
 
-        self.cls_token = nn.Parameter(torch.randn(1, 1, 161*50))
-
-        self.transformer_encoder = TransformerEncoder(embed_dim=161*50, embed_proj_dim=161*50, ff_dim=2048, num_heads=7, num_layers=2, dropout=0.1, seq_len=self.seq_len, is_input_proj=False, is_output_proj=False)
+        self.transformer_encoder = TransformerEncoder(embed_dim=161*50, embed_proj_dim=161*25, ff_dim=2048, num_heads=7, num_layers=2, dropout=0.1, is_input_proj=True, is_output_proj=True)
 
         self.Classifier = classificationGlobal(num_class=self.num_class, Npole=self.Npole, dataType=self.dataType)
 
@@ -328,17 +315,9 @@ class Dyan_Tenc_multi(nn.Module):
         sparseFeat = sparseFeat.reshape(B, N * T) # (4 * B, 161 * 50)        
         sparseFeat = sparseFeat.reshape(bs, nclips, N * T) # (B, 4, 161 * 50)    
 
-        if self.is_clstoken:
-            sparseFeat = torch.cat([self.cls_token.expand(bs, -1, -1), sparseFeat], dim=1)
-
         tenc_out = self.transformer_encoder(sparseFeat, src_mask=None, src_key_padding_mask=None) # (B, 4, 161 * 50)
 
-        if self.mean:
-            tenc_out = tenc_out.mean(dim = 1)
-        else:
-            tenc_out = tenc_out[:, 0]
-
-        tenc_out = tenc_out.reshape(bs, N, T)
+        tenc_out = tenc_out.reshape(bs, N, T) # (B, 161, 50)
 
         label, lastFeat = self.Classifier(tenc_out)
 
@@ -530,10 +509,6 @@ class contrastiveNet(nn.Module):
         if self.fineTune == False:
 
             bz = x.shape[0]//nClip
-
-            if bz < 2:
-                x = x.repeat(2,1,1,1)
-                bz = x.shape[0]
 
             # x: (80, 2, 36, 50)
             x1 = x[:,0] # (80, 36, 50)

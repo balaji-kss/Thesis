@@ -1,0 +1,23 @@
+gumbel thresh: 0.505
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/DIR-CV-tenc-cls-token-mean/ gpu: 1
+is_clstoken  True
+mean   True
+seq_len  5
+embed_dim:  8050
+embed_proj_dim:  8050
+ff_dim:  2048
+num_heads:  7
+num_layers:  2
+dropout:  0.1
+seq_len:  5
+pre_train: /home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/tf-cls-token-mean/80.pth
+start training epoch: 0
+epoch: 0 |loss: 3.9605161286890507 |cls: 1.9752882104367018 |mse: 0.00840059784695768 |bi: 0.01539122404938098
+training time(min): 5.816613574822743
+sample: 0
+Traceback (most recent call last):
+  File "trainDIR_CV_withCL.py", line 185, in <module>
+    Acc = testing(testloader, net, gpu_id, sampling, mode, withMask,gumbel_thresh)
+  File "/home/balaji/crossView_CL/testClassifier_CV.py", line 63, in testing
+    actPred = actPred.reshape(skeletons.shape[0], nClip, actPred.shape[-1])
+RuntimeError: shape '[8, 4, 10]' is invalid for input of size 80

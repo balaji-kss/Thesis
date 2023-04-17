@@ -1,0 +1,105 @@
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/tf-cls-token1/ mask: score
+is_clstoken  True
+mean   False
+seq_len  5
+input projection present encoder:  4025
+output projection present encoder:  4025
+embed_dim:  8050
+embed_proj_dim:  4025
+ff_dim:  2048
+num_heads:  7
+num_layers:  2
+dropout:  0.1
+seq_len:  5
+p  backbone.sparseCoding.rr True
+p  backbone.sparseCoding.theta True
+p  backbone.transformer_encoder.cls_token True
+p  backbone.transformer_encoder.input_layer.weight True
+p  backbone.transformer_encoder.input_layer.bias True
+p  backbone.transformer_encoder.output_layer.weight True
+p  backbone.transformer_encoder.output_layer.bias True
+p  backbone.transformer_encoder.encoder_layer.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.encoder_layer.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.encoder_layer.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.encoder_layer.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.encoder_layer.linear1.weight True
+p  backbone.transformer_encoder.encoder_layer.linear1.bias True
+p  backbone.transformer_encoder.encoder_layer.linear2.weight True
+p  backbone.transformer_encoder.encoder_layer.linear2.bias True
+p  backbone.transformer_encoder.encoder_layer.norm1.weight True
+p  backbone.transformer_encoder.encoder_layer.norm1.bias True
+p  backbone.transformer_encoder.encoder_layer.norm2.weight True
+p  backbone.transformer_encoder.encoder_layer.norm2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm2.bias True
+p  backbone.Classifier.conv1.weight True
+p  backbone.Classifier.conv1.bias True
+p  backbone.Classifier.bn1.weight True
+p  backbone.Classifier.bn1.bias True
+p  backbone.Classifier.conv2.weight True
+p  backbone.Classifier.conv2.bias True
+p  backbone.Classifier.bn2.weight True
+p  backbone.Classifier.bn2.bias True
+p  backbone.Classifier.conv3.weight True
+p  backbone.Classifier.conv3.bias True
+p  backbone.Classifier.bn3.weight True
+p  backbone.Classifier.bn3.bias True
+p  backbone.Classifier.conv4.weight True
+p  backbone.Classifier.conv4.bias True
+p  backbone.Classifier.bn4.weight True
+p  backbone.Classifier.bn4.bias True
+p  backbone.Classifier.conv5.weight True
+p  backbone.Classifier.conv5.bias True
+p  backbone.Classifier.bn5.weight True
+p  backbone.Classifier.bn5.bias True
+p  backbone.Classifier.conv6.weight True
+p  backbone.Classifier.conv6.bias True
+p  backbone.Classifier.bn6.weight True
+p  backbone.Classifier.bn6.bias True
+p  backbone.Classifier.fc.weight True
+p  backbone.Classifier.fc.bias True
+p  backbone.Classifier.fc2.weight True
+p  backbone.Classifier.fc2.bias True
+p  backbone.Classifier.fc3.weight True
+p  backbone.Classifier.fc3.bias True
+p  backbone.Classifier.cls.0.weight True
+p  backbone.Classifier.cls.0.bias True
+p  proj.weight True
+p  proj.bias True
+gpu id:  0
+Classifier lr:  0.001
+Transformer lr:  0.001
+Sparse Coding lr:  0.0001
+experiment setup: True True
+start training epoch: 0
+training time(mins): 6.110371514161428
+epoch: 0 contrastive loss: 3.104761279330534
+start training epoch: 1
+training time(mins): 6.265435194969177
+epoch: 1 contrastive loss: 2.0936655486331266
+start training epoch: 2
+training time(mins): 6.432529540856679
+epoch: 2 contrastive loss: 1.8429768849821653
+start training epoch: 3

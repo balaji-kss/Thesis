@@ -32,7 +32,7 @@ class PositionalEncoding(nn.Module):
 
 class TransformerEncoder(nn.Module):
     
-    def __init__(self, embed_dim=25*2, is_input_proj=None, is_output_proj=None, embed_proj_dim=None, ff_dim=256, num_heads=5, num_layers=6, dropout=0.1, seq_len=36):
+    def __init__(self, embed_dim=25*2, is_input_proj=None, is_output_proj=None, embed_proj_dim=None, ff_dim=256, num_heads=5, num_layers=6, dropout=0.1):
         super().__init__()
         
         self.embed_dim = embed_dim
@@ -47,7 +47,17 @@ class TransformerEncoder(nn.Module):
         self.num_layers = num_layers
         self.is_input_proj = is_input_proj
         self.is_output_proj = is_output_proj
-        self.seq_len = seq_len
+        self.is_clstoken = True
+        self.mean = True
+        
+        if self.is_clstoken:
+            self.seq_len = 5
+        else:
+            self.seq_len = 4
+
+        print('is_clstoken ', self.is_clstoken)
+        print('mean  ', self.mean)
+        print('seq_len ', self.seq_len)
 
         if self.is_input_proj:
             print('input projection present encoder: ', self.embed_proj_dim)
@@ -57,7 +67,9 @@ class TransformerEncoder(nn.Module):
             print('output projection present encoder: ', self.embed_proj_dim)
             self.output_layer = nn.Linear(self.embed_proj_dim, self.embed_dim)
 
-        self.pos_encoder = PositionalEncoding(self.embed_proj_dim, dropout=self.dropout, max_len=seq_len)
+        self.cls_token = nn.Parameter(torch.randn(1, 1, self.embed_proj_dim))
+        self.pos_encoder = PositionalEncoding(self.embed_proj_dim, dropout=self.dropout, max_len=self.seq_len)
+
         self.encoder_layer = nn.TransformerEncoderLayer(d_model=self.embed_proj_dim, nhead=self.num_heads, dim_feedforward=self.ff_dim, activation=self.activation, dropout=self.dropout, batch_first=True)
         self.transformer_encoder = nn.TransformerEncoder(self.encoder_layer, num_layers=self.num_layers)
         
@@ -78,10 +90,18 @@ class TransformerEncoder(nn.Module):
         if self.is_input_proj:
             x = self.input_layer(x)
 
+        if self.is_clstoken:
+            x = torch.cat([self.cls_token.expand(x.shape[0], -1, -1), x], dim=1)
+
         pe_out = self.pos_encoder(x)
 
         tenc_out = self.transformer_encoder(pe_out, mask=src_mask, src_key_padding_mask=src_key_padding_mask)
-        
+
+        if self.mean:
+            tenc_out = tenc_out.mean(dim = 1)
+        else:
+            tenc_out = tenc_out[:, 0]
+
         if self.is_output_proj:
             tenc_out = self.output_layer(tenc_out)
 

@@ -212,15 +212,20 @@ def load_pretrainedModel(stateDict, net):
     new_dict.update(pre_dict)
 
     net.load_state_dict(new_dict)
-    plist = list(net.parameters())
+    plist = list(net.named_parameters())
+    noplist = list(net.parameters())
+
+    print('plist ', len(plist))
+    print('noplist ', len(noplist))
 
     for i in range(0, len(plist)):
-        p = plist[i]
+        name, p = plist[i]
         if len(plist) - 2 <= i <= len(plist):
-
             p.requires_grad = True
+            print('p ', name, p.requires_grad)
         else:
             p.requires_grad = False
+            print('p ', name, p.requires_grad)
 
     return net
 
@@ -233,6 +238,11 @@ def load_pretrainedModel_endtoEnd(stateDict, net):
 
     net.load_state_dict(new_dict)
 
+    plist = list(net.named_parameters())
+    for i in range(0, len(plist)):
+        name, p = plist[i]
+        print('p ', name, p.requires_grad)
+                
     return net
 
 # def load_fineTune_model(state_dict, net):
@@ -257,19 +267,24 @@ def load_pretrainedModel_endtoEnd(stateDict, net):
 #     return net
 
 def load_fineTune_model(state_dict,net):
-    # new_dict = net.state_dict()
 
-    # pre_dict = {k: v for k, v in state_dict.items() if k in new_dict}
+    net_state_dict = net.state_dict()
 
-    #new_dict.update(pre_dict)
     new_dict = state_dict['state_dict']
-    
+
     net.load_state_dict(new_dict)
+
     # pdb.set_trace()
     for p in net.parameters():
-        p.requires_grad = True
+        p.requires_grad = False
     net.backbone.Classifier.cls[0].weight.requires_grad = True
     net.backbone.Classifier.cls[0].bias.requires_grad = True
+
+    plist = list(net.named_parameters())
+    for i in range(0, len(plist)):
+        name, p = plist[i]
+        print('p ', name, p.requires_grad)
+        
     return net
 
 def get_Dictionary(T, numPole, gpu_id, addOne):

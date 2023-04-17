@@ -10,7 +10,7 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 import pdb 
-gpu_id = 1
+gpu_id = 2
 map_loc = "cuda:"+str(gpu_id)
 
 # T = 36
@@ -33,7 +33,7 @@ if sampling == 'Single':
     bz = 64
 else:
     num_workers = 8
-    bz = 10
+    bz = 12
 
 T = 36 # input clip length
 mode = 'dy+bi+cl'
@@ -50,7 +50,7 @@ gumbel_thresh = 0.505
 modelRoot = './ModelFile/crossView_NUCLA/'
 
 
-saveModel = modelRoot + sampling + '/' + mode + '/T36_contrastive_all_v2_tf1/'
+saveModel = modelRoot + sampling + '/' + mode + '/dir-cl-reproduce-e2e/'
 if not os.path.exists(saveModel):
     os.makedirs(saveModel)
 print('mode:',mode, 'model path:', saveModel, 'mask:', maskType)
@@ -81,7 +81,8 @@ net.train()
 pre_trained = './pretrained/NUCLA/setup1/Multi/pretrainedRHdyan_for_CL.pth'
 state_dict = torch.load(pre_trained, map_location=map_loc)['state_dict']
 
-net = load_pretrainedModel(state_dict, net)
+net = load_pretrainedModel_endtoEnd(state_dict, net)
+
 # pdb.set_trace()
 
 print('gpu id: ', gpu_id)
@@ -89,17 +90,17 @@ print('Classifier lr: ', lr)
 print('Transformer lr: ', lr_1)
 print('Sparse Coding lr: ', lr_2)
 
-optimizer = torch.optim.SGD(
-        [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
-        {'params': filter(lambda x: x.requires_grad, net.backbone.transformer_encoder.parameters()), 'lr': lr_1},
-        {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
-        momentum=0.9)
-
 # optimizer = torch.optim.SGD(
 #         [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
-        
-#          {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
+#         {'params': filter(lambda x: x.requires_grad, net.backbone.transformer_encoder.parameters()), 'lr': lr_1},
+#         {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
 #         momentum=0.9)
+
+optimizer = torch.optim.SGD(
+        [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
+        
+         {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
+        momentum=0.9)
 
 
 scheduler = lr_scheduler.MultiStepLR(optimizer, milestones=[50, 100, 150], gamma=0.1)
@@ -161,7 +162,7 @@ for epoch in range(0, Epoch+1):
     print('training time(mins):', (end_time - start_time) / 60.0) #mins
     print('epoch:', epoch, 'contrastive loss:', np.mean(np.asarray(lossVal)))
     # print('rr.grad:', net.backbone.sparseCoding.rr.grad, 'cls grad:', net.backbone.Classifier.cls[-1].weight.grad[0:10,0:10])
-    if epoch % 20 == 0:
+    if epoch % 10 == 0:
         torch.save({'epoch': epoch + 1, 'state_dict': net.state_dict(),
                     'optimizer': optimizer.state_dict()}, saveModel + str(epoch) + '.pth')
 
