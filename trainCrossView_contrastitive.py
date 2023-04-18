@@ -10,7 +10,7 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 import pdb 
-gpu_id = 2
+gpu_id = 5
 map_loc = "cuda:"+str(gpu_id)
 
 # T = 36
@@ -18,7 +18,7 @@ map_loc = "cuda:"+str(gpu_id)
 dataset = 'NUCLA'
 
 N = 80 * 2
-Epoch = 100
+Epoch = 140
 # num_class = 10
 dataType = '2D'
 sampling = 'Multi' #sampling strategy
@@ -50,7 +50,7 @@ gumbel_thresh = 0.505
 modelRoot = './ModelFile/crossView_NUCLA/'
 
 
-saveModel = modelRoot + sampling + '/' + mode + '/dir-cl-reproduce-e2e/'
+saveModel = modelRoot + sampling + '/' + mode + '/dir-tenc-cl-mean/'
 if not os.path.exists(saveModel):
     os.makedirs(saveModel)
 print('mode:',mode, 'model path:', saveModel, 'mask:', maskType)
@@ -78,29 +78,44 @@ testloader = DataLoader(testSet, batch_size=bz, shuffle=True, num_workers=num_wo
 net = contrastiveNet(dim_embed=128, Npole=N+1, Drr=Drr, Dtheta=Dtheta, Inference=True, gpu_id=gpu_id, dim=2, dataType='2D', fistaLam=fistaLam, fineTune=False).cuda(gpu_id)
 net.train()
 
+print('keys ', net.state_dict().keys())
+# print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
+print('rr ', net.state_dict()['backbone.sparseCoding.rr'])
+print('theta ', net.state_dict()['backbone.sparseCoding.theta'])
+print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
+
 pre_trained = './pretrained/NUCLA/setup1/Multi/pretrainedRHdyan_for_CL.pth'
 state_dict = torch.load(pre_trained, map_location=map_loc)['state_dict']
 
-net = load_pretrainedModel_endtoEnd(state_dict, net)
+print('loaded rr ', state_dict['backbone.sparseCoding.rr'])
+print('loaded theta ', state_dict['backbone.sparseCoding.theta'])
+print('cls ', state_dict['backbone.Classifier.bn1.weight'])
+
+net = load_pretrained_DIR0(state_dict, net)
+
+print('rr ', net.state_dict()['backbone.sparseCoding.rr'])
+print('theta ', net.state_dict()['backbone.sparseCoding.theta'])
+print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
 
 # pdb.set_trace()
 
 print('gpu id: ', gpu_id)
-print('Classifier lr: ', lr)
-print('Transformer lr: ', lr_1)
-print('Sparse Coding lr: ', lr_2)
-
-# optimizer = torch.optim.SGD(
-#         [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
-#         {'params': filter(lambda x: x.requires_grad, net.backbone.transformer_encoder.parameters()), 'lr': lr_1},
-#         {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
-#         momentum=0.9)
+# print('Classifier lr: ', lr)
+# print('Transformer lr: ', lr_1)
+# print('Sparse Coding lr: ', lr_2)
 
 optimizer = torch.optim.SGD(
         [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
-        
-         {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
+        {'params': filter(lambda x: x.requires_grad, net.backbone.transformer_encoder.parameters()), 'lr': lr_1},
+        {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
         momentum=0.9)
+
+print('optimizer ', optimizer)
+# optimizer = torch.optim.SGD(
+#         [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
+        
+#          {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
+#         momentum=0.9)
 
 
 scheduler = lr_scheduler.MultiStepLR(optimizer, milestones=[50, 100, 150], gamma=0.1)
@@ -162,7 +177,7 @@ for epoch in range(0, Epoch+1):
     print('training time(mins):', (end_time - start_time) / 60.0) #mins
     print('epoch:', epoch, 'contrastive loss:', np.mean(np.asarray(lossVal)))
     # print('rr.grad:', net.backbone.sparseCoding.rr.grad, 'cls grad:', net.backbone.Classifier.cls[-1].weight.grad[0:10,0:10])
-    if epoch % 10 == 0:
+    if epoch % 20 == 0:
         torch.save({'epoch': epoch + 1, 'state_dict': net.state_dict(),
                     'optimizer': optimizer.state_dict()}, saveModel + str(epoch) + '.pth')
 

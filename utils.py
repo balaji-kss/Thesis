@@ -245,6 +245,56 @@ def load_pretrainedModel_endtoEnd(stateDict, net):
                 
     return net
 
+def load_pretrained_DIR(stateDict, net):
+
+    new_dict = stateDict['state_dict']
+
+    net.load_state_dict(new_dict)
+    
+    plist = list(net.named_parameters())
+    noplist = list(net.parameters())
+
+    print('plist ', len(plist))
+    print('noplist ', len(noplist))
+
+    for i in range(0, len(plist)):
+        name, p = plist[i]
+        if 0 <= i < 2 or 'Classifier' not in name:
+            p.requires_grad = False
+            print('p ', name, p.requires_grad)
+        else:
+            p.requires_grad = True
+            print('p ', name, p.requires_grad)
+
+    return net
+
+def load_pretrained_DIR0(stateDict, net):
+
+    new_dict = net.state_dict()
+    stateDict = stateDict
+    pre_dict = {k: v for k, v in stateDict.items() if k in new_dict}
+
+    new_dict.update(pre_dict)
+
+    net.load_state_dict(new_dict)
+
+    plist = list(net.named_parameters())
+    noplist = list(net.parameters())
+
+    print('plist ', len(plist))
+    print('noplist ', len(noplist))
+
+    for i in range(0, len(plist)):
+        name, p = plist[i]
+        if 0 <= i < 2:
+            p.requires_grad = False
+            print('p ', name, p.requires_grad)
+        else:
+            p.requires_grad = True
+            print('p ', name, p.requires_grad)
+
+    return net
+
 # def load_fineTune_model(state_dict, net):
 #     new_dict = net.state_dict()
 #     state_dict = state_dict['state_dict']
@@ -268,15 +318,13 @@ def load_pretrainedModel_endtoEnd(stateDict, net):
 
 def load_fineTune_model(state_dict,net):
 
-    net_state_dict = net.state_dict()
-
     new_dict = state_dict['state_dict']
 
     net.load_state_dict(new_dict)
 
     # pdb.set_trace()
     for p in net.parameters():
-        p.requires_grad = True
+        p.requires_grad = False
     net.backbone.Classifier.cls[0].weight.requires_grad = True
     net.backbone.Classifier.cls[0].bias.requires_grad = True
 

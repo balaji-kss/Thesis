@@ -16,7 +16,7 @@ map_loc = "cuda:"+str(gpu_id)
 # T = 36
 '------configuration:-------------------------------------------'
 dataset = 'NUCLA'
-Alpha = 0.1# bi loss
+Alpha = 0.1 # bi loss
 lam1 = 2 # cls loss
 lam2 = 1 # mse loss
 
@@ -46,14 +46,14 @@ fusion = False
 num_class = 10
  # v1,v2 train, v3 test;
 lr = 1e-3 # classifier
-lr_1 = 1e-3
+lr_1 = 1e-4
 lr_2 = 1e-4  # sparse codeing
 gumbel_thresh = 0.505
 print('gumbel thresh:',gumbel_thresh)
 'change to your own model path'
 modelRoot = './ModelFile/crossView_NUCLA/'
 
-saveModel = modelRoot + sampling + '/' + mode + '/DIR-cls-token-mean/'
+saveModel = modelRoot + sampling + '/' + mode + '/DIR-tenc-mean-nf-cl1/'
 if not os.path.exists(saveModel):
     os.makedirs(saveModel)
 print('mode:',mode, 'model path:', saveModel,  'gpu:', gpu_id)
@@ -82,27 +82,28 @@ testloader = DataLoader(testSet, batch_size=bz, shuffle=True, num_workers=num_wo
 net = contrastiveNet(dim_embed=128, Npole=N+1, Drr=Drr, Dtheta=Dtheta, Inference=True, gpu_id=gpu_id, dim=2, dataType='2D', fistaLam=fistaLam, fineTune=True).cuda(gpu_id)
 
 print('keys ', net.state_dict().keys())
-# print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
+print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
 print('rr ', net.state_dict()['backbone.sparseCoding.rr'])
 print('theta ', net.state_dict()['backbone.sparseCoding.theta'])
 print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
 
 'load pre-trained contrastive model'
 # pre_train = './pretrained/' + dataset +'/' + setup + '/' +sampling + '/pretrainedRHdyan_CL.pth'
-pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/tf-cls-token-mean1/60.pth'
-# pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/dir-cl-reproduce-e2e/60.pth'
+pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/dir-tenc-cl-mean/120.pth'
+# pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/dir-cl-reproduce/100.pth'
 
 print('pre_train:', pre_train)
 state_dict = torch.load(pre_train, map_location=map_loc)
 
-# print('loaded cls token ', state_dict['state_dict']['backbone.transformer_encoder.cls_token'])
+print('loaded cls token ', state_dict['state_dict']['backbone.transformer_encoder.cls_token'])
 print('loaded rr ', state_dict['state_dict']['backbone.sparseCoding.rr'])
 print('loaded theta ', state_dict['state_dict']['backbone.sparseCoding.theta'])
 print('cls ', state_dict['state_dict']['backbone.Classifier.bn1.weight'])
 
-net = load_fineTune_model(state_dict, net)
+# net = load_fineTune_model(state_dict, net)
+net = load_pretrained_DIR(state_dict, net)
 
-# print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
+print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
 print('after rr ', net.state_dict()['backbone.sparseCoding.rr'])
 print('after theta ', net.state_dict()['backbone.sparseCoding.theta'])
 print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
@@ -111,24 +112,17 @@ print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
 
 # pdb.set_trace()
 
-optimizer = torch.optim.SGD(
-        [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
-        {'params': filter(lambda x: x.requires_grad, net.backbone.transformer_encoder.parameters()), 'lr': lr_1},
-        {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
-        momentum=0.9)
-
 # optimizer = torch.optim.SGD(
 #         [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
-        
-#          {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
-#         momentum=0.9)
-
-
-# optimizer= torch.optim.SGD([
+#         {'params': filter(lambda x: x.requires_grad, net.backbone.transformer_encoder.parameters()), 'lr': lr_1},
 #         {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
 #         momentum=0.9)
 
+optimizer = torch.optim.SGD([
+        {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
+        momentum=0.9)
 
+print('optimizer ', optimizer)
 scheduler = lr_scheduler.MultiStepLR(optimizer, milestones=[50, 70], gamma=0.1)
 Criterion = torch.nn.CrossEntropyLoss()
 mseLoss = torch.nn.MSELoss()
@@ -186,13 +180,9 @@ for epoch in range(0, Epoch+1):
                + Alpha * L1loss(binaryCode, bi_gt)
 
         lossMSE.append(mseLoss(output_skeletons, target_skeletons.squeeze(-1)).data.item())
-        # print('output shape:', output_skeletons.shape, 'mse:', mseLoss(output_skeletons, input_skeletons).data.item())
-
         lossBi.append(L1loss(binaryCode, bi_gt).data.item())
 
         loss.backward()
-        # print('rr.grad:', net.sparseCoding.rr.grad, 'mse:', lossMSE[-1])
-        # pdb.set_trace()
         optimizer.step()
         lossVal.append(loss.data.item())
 
@@ -208,12 +198,12 @@ for epoch in range(0, Epoch+1):
     end_time = time.time()
     print('training time(min):', (end_time - start_time) / 60)
 
-
     scheduler.step()
-    if epoch % 20 == 0:
-        torch.save({'state_dict': net.state_dict(),
-                   'optimizer': optimizer.state_dict()}, saveModel + str(epoch) + '.pth')
-
+    # if epoch % 20 == 0:
+    #     torch.save({'state_dict': net.state_dict(),
+    #                'optimizer': optimizer.state_dict()}, saveModel + str(epoch) + '.pth')
+    
+    if epoch % 10 == 0:
         Acc = testing(testloader, net, gpu_id, sampling, mode, withMask,gumbel_thresh)
         print('testing epoch:', epoch, 'Acc:%.4f' % Acc)
         ACC.append(Acc)
