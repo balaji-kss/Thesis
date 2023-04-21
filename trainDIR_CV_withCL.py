@@ -10,7 +10,7 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 
-gpu_id = 5
+gpu_id = 3
 map_loc = "cuda:"+str(gpu_id)
 
 # T = 36
@@ -22,7 +22,7 @@ lam2 = 1 # mse loss
 
 
 N = 80 * 2
-Epoch = 100
+Epoch = 160
 # num_class = 10
 dataType = '2D'
 sampling = 'Multi' #sampling strategy
@@ -46,14 +46,14 @@ fusion = False
 num_class = 10
  # v1,v2 train, v3 test;
 lr = 1e-3 # classifier
-lr_1 = 1e-4
+lr_1 = 5e-4
 lr_2 = 1e-4  # sparse codeing
 gumbel_thresh = 0.505
 print('gumbel thresh:',gumbel_thresh)
 'change to your own model path'
 modelRoot = './ModelFile/crossView_NUCLA/'
 
-saveModel = modelRoot + sampling + '/' + mode + '/DIR-tenc-mean-nf-cl1/'
+saveModel = modelRoot + sampling + '/' + mode + '/DIR-tenc-cls-mean-new-clh/'
 if not os.path.exists(saveModel):
     os.makedirs(saveModel)
 print('mode:',mode, 'model path:', saveModel,  'gpu:', gpu_id)
@@ -73,57 +73,65 @@ trainSet = NUCLA_CrossView(root_list=path_list, dataType=dataType, sampling=samp
                                 setup=setup)
 # #
 
-trainloader = DataLoader(trainSet, batch_size=bz, shuffle=True, num_workers=num_workers)
+trainloader = DataLoader(trainSet, batch_size=bz, shuffle=True, num_workers=num_workers, drop_last=True)
 
 testSet = NUCLA_CrossView(root_list=path_list, dataType=dataType, sampling=sampling, phase='test', cam='2,1', T=T, maskType= maskType, setup=setup)
-testloader = DataLoader(testSet, batch_size=bz, shuffle=True, num_workers=num_workers)
+testloader = DataLoader(testSet, batch_size=bz, shuffle=True, num_workers=num_workers, drop_last=True)
 
 
 net = contrastiveNet(dim_embed=128, Npole=N+1, Drr=Drr, Dtheta=Dtheta, Inference=True, gpu_id=gpu_id, dim=2, dataType='2D', fistaLam=fistaLam, fineTune=True).cuda(gpu_id)
 
 print('keys ', net.state_dict().keys())
-print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
+# print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
 print('rr ', net.state_dict()['backbone.sparseCoding.rr'])
 print('theta ', net.state_dict()['backbone.sparseCoding.theta'])
-print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
+# print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
 
 'load pre-trained contrastive model'
 # pre_train = './pretrained/' + dataset +'/' + setup + '/' +sampling + '/pretrainedRHdyan_CL.pth'
-pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/dir-tenc-cl-mean/120.pth'
+# pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/dir-tenc-cl-T/140.pth'
 # pre_train = '/home/balaji/crossView_CL/ModelFile/crossView_NUCLA/Multi/dy+bi+cl/dir-cl-reproduce/100.pth'
+pre_train = '/home/balaji/crossView_CL/pretrained/NUCLA/setup1/Multi/pretrainedRHdyan_for_CL.pth'
 
 print('pre_train:', pre_train)
 state_dict = torch.load(pre_train, map_location=map_loc)
 
-print('loaded cls token ', state_dict['state_dict']['backbone.transformer_encoder.cls_token'])
+# print('loaded cls token ', state_dict['state_dict']['backbone.transformer_encoder.cls_token'])
 print('loaded rr ', state_dict['state_dict']['backbone.sparseCoding.rr'])
 print('loaded theta ', state_dict['state_dict']['backbone.sparseCoding.theta'])
-print('cls ', state_dict['state_dict']['backbone.Classifier.bn1.weight'])
+# print('cls ', state_dict['state_dict']['backbone.Classifier.bn1.weight'])
 
 # net = load_fineTune_model(state_dict, net)
-net = load_pretrained_DIR(state_dict, net)
+net = load_pretrained_DIR0(state_dict, net)
 
-print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
+# print('cls token ', net.state_dict()['backbone.transformer_encoder.cls_token'])
 print('after rr ', net.state_dict()['backbone.sparseCoding.rr'])
 print('after theta ', net.state_dict()['backbone.sparseCoding.theta'])
-print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
+# print('cls ', net.state_dict()['backbone.Classifier.bn1.weight'])
 
 'frozen all layers except last classification layer'
 
 # pdb.set_trace()
 
-# optimizer = torch.optim.SGD(
-#         [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
-#         {'params': filter(lambda x: x.requires_grad, net.backbone.transformer_encoder.parameters()), 'lr': lr_1},
-#         {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
-#         momentum=0.9)
-
-optimizer = torch.optim.SGD([
+optimizer = torch.optim.SGD(
+        [{'params': filter(lambda x: x.requires_grad, net.backbone.sparseCoding.parameters()), 'lr': lr_2},
+        {'params': filter(lambda x: x.requires_grad, net.backbone.transformer_encoder.parameters()), 'lr': lr_1},
         {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
         momentum=0.9)
 
+# optimizer = torch.optim.SGD([
+#         {'params': filter(lambda x: x.requires_grad, net.backbone.Classifier.parameters()), 'lr': lr}], weight_decay=1e-3,
+#         momentum=0.9)
+
+lr_step = [50, 100, 140]
+lr_drop = 0.3
+
 print('optimizer ', optimizer)
-scheduler = lr_scheduler.MultiStepLR(optimizer, milestones=[50, 70], gamma=0.1)
+scheduler = lr_scheduler.MultiStepLR(optimizer, milestones=lr_step, gamma=lr_drop)
+print('lr_step ', lr_step)
+print('lr_drop ', lr_drop)
+print('num epochs ', Epoch)
+
 Criterion = torch.nn.CrossEntropyLoss()
 mseLoss = torch.nn.MSELoss()
 
@@ -199,9 +207,9 @@ for epoch in range(0, Epoch+1):
     print('training time(min):', (end_time - start_time) / 60)
 
     scheduler.step()
-    # if epoch % 20 == 0:
-    #     torch.save({'state_dict': net.state_dict(),
-    #                'optimizer': optimizer.state_dict()}, saveModel + str(epoch) + '.pth')
+    if epoch % 20 == 0:
+        torch.save({'state_dict': net.state_dict(),
+                   'optimizer': optimizer.state_dict()}, saveModel + str(epoch) + '.pth')
     
     if epoch % 10 == 0:
         Acc = testing(testloader, net, gpu_id, sampling, mode, withMask,gumbel_thresh)

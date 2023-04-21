@@ -51,7 +51,7 @@ class TransformerEncoder(nn.Module):
         self.mean = True
         
         if self.is_clstoken:
-            self.seq_len = 5
+            self.seq_len = 4 + 1
         else:
             self.seq_len = 4
 
@@ -97,10 +97,11 @@ class TransformerEncoder(nn.Module):
 
         tenc_out = self.transformer_encoder(pe_out, mask=src_mask, src_key_padding_mask=src_key_padding_mask)
 
-        if self.mean:
-            tenc_out = tenc_out.mean(dim = 1)
-        else:
-            tenc_out = tenc_out[:, 0]
+        if self.is_clstoken:
+            if self.mean:
+                tenc_out = tenc_out.mean(dim = 1)
+            else:
+                tenc_out = tenc_out[:, 0]
 
         if self.is_output_proj:
             tenc_out = self.output_layer(tenc_out)

@@ -146,6 +146,93 @@ class binarizeSparseCode(nn.Module):
         # temp = sparseCode*binaryCode
         return binaryCode, sparseCode, Dict
 
+class FC_BN_A(nn.Module):
+    def __init__(self, inp_dim, out_dim):
+        super(FC_BN_A, self).__init__()
+        self.inp_dim = inp_dim
+        self.out_dim = out_dim
+
+        self.cls_fc1 = nn.Linear(self.inp_dim, 1024)        
+        self.cls_bn1 = nn.BatchNorm1d(num_features=1024, eps=1e-5, affine=True)
+
+        self.cls_fc2 = nn.Linear(1024, 256)        
+        self.cls_bn2 = nn.BatchNorm1d(num_features=256, eps=1e-5, affine=True)
+
+        self.cls_fc3 = nn.Linear(256, 64)        
+        self.cls_bn3 = nn.BatchNorm1d(num_features=64, eps=1e-5, affine=True)
+
+        self.cls_fc4 = nn.Linear(64, self.out_dim)        
+        self.cls_bn4 = nn.BatchNorm1d(num_features=self.out_dim, eps=1e-5, affine=True)
+
+        self.cls_relu = nn.LeakyReLU()
+
+        'initialize model weights'
+        for m in self.modules():
+            if isinstance(m, nn.Linear):
+                torch.nn.init.xavier_uniform_(m.weight, gain=1)
+
+
+    def forward(self, x):
+        
+        x_out = self.cls_relu(self.cls_bn1(self.cls_fc1(x)))
+
+        x_out = self.cls_relu(self.cls_bn2(self.cls_fc2(x_out)))
+
+        x_out = self.cls_relu(self.cls_bn3(self.cls_fc3(x_out)))
+        x = x_out
+
+        x_out = self.cls_fc4(x_out)
+
+        return x_out, x
+
+class Conv_BN_A(nn.Module):
+    def __init__(self, inp_dim, out_dim):
+        super(Conv_BN_A, self).__init__()
+        self.inp_dim = inp_dim
+        self.out_dim = out_dim
+
+        self.cls_conv1 = nn.Conv1d(200, 100, 1, stride=1, padding=0)        
+        self.cls_bn1 = nn.BatchNorm1d(num_features=100, eps=1e-5, affine=True)
+
+        self.cls_conv2 = nn.Conv1d(100, 50, 1, stride=1, padding=0)        
+        self.cls_bn2 = nn.BatchNorm1d(num_features=50, eps=1e-5, affine=True)
+
+        self.cls_conv3 = nn.Conv1d(50, 25, 1, stride=1, padding=0)        
+        self.cls_bn3 = nn.BatchNorm1d(num_features=25, eps=1e-5, affine=True)
+
+        self.cls_fc1 = nn.Linear(25 * 161, 1024)        
+        self.cls_fc2 = nn.Linear(1024, 256)
+        self.cls_fc3 = nn.Linear(256, 64)
+        self.cls_fc4 = nn.Linear(64, 10)
+
+        self.cls_relu = nn.LeakyReLU()
+
+        'initialize model weights'
+        for m in self.modules():
+            if isinstance(m, nn.Conv1d):
+                nn.init.kaiming_normal_(m.weight,mode='fan_out', nonlinearity='relu' )
+            elif isinstance(m, nn.Linear):
+                torch.nn.init.xavier_uniform_(m.weight, gain=1)
+
+
+    def forward(self, x):
+        
+        x_out = self.cls_relu(self.cls_bn1(self.cls_conv1(x)))
+
+        x_out = self.cls_relu(self.cls_bn2(self.cls_conv2(x_out)))
+
+        x_out = self.cls_relu(self.cls_bn3(self.cls_conv3(x_out)))
+        
+        x_out = self.cls_relu(self.cls_fc1(x_out))
+
+        x_out = self.cls_relu(self.cls_fc2(x_out))
+
+        x_out = self.cls_relu(self.cls_fc3(x_out))
+
+        x_out = self.cls_fc4(x_out)
+
+        return x_out, x
+
 class classificationGlobal(nn.Module):
     def __init__(self, num_class, Npole, dataType):
         super(classificationGlobal, self).__init__()
@@ -240,7 +327,7 @@ class classificationWBinarization(nn.Module):
         binaryCode = binaryCode.t().reshape(self.num_binary, x.shape[-2], x.shape[-1]).unsqueeze(0)
         label, _ = self.Classifier(binaryCode)
 
-        return label,binaryCode
+        return label, binaryCode
 
 class classificationWSparseCode(nn.Module):
     def __init__(self, num_class, Npole, Drr, Dtheta, dataType,dim,fistaLam, gpu_id):
@@ -289,9 +376,10 @@ class Dyan_Tenc_multi(nn.Module):
 
         self.BinaryCoding = GumbelSigmoid()
 
-        self.transformer_encoder = TransformerEncoder(embed_dim=161*50, embed_proj_dim=161*25, ff_dim=2048, num_heads=7, num_layers=2, dropout=0.1, is_input_proj=True, is_output_proj=True)
+        self.transformer_encoder = TransformerEncoder(embed_dim=161*50, embed_proj_dim=161*25, ff_dim=2048, num_heads=7, num_layers=2, dropout=0.1, is_input_proj=True, is_output_proj=False)
 
-        self.Classifier = classificationGlobal(num_class=self.num_class, Npole=self.Npole, dataType=self.dataType)
+        # self.Classifier = classificationGlobal(num_class=self.num_class, Npole=self.Npole, dataType=self.dataType)
+        self.Classifier = FC_BN_A(161*25, self.num_class)
 
     def forward(self, x, bi_thresh, nclips):
         
@@ -315,9 +403,89 @@ class Dyan_Tenc_multi(nn.Module):
         sparseFeat = sparseFeat.reshape(B, N * T) # (4 * B, 161 * 50)        
         sparseFeat = sparseFeat.reshape(bs, nclips, N * T) # (B, 4, 161 * 50)    
 
-        tenc_out = self.transformer_encoder(sparseFeat, src_mask=None, src_key_padding_mask=None) # (B, 4, 161 * 50)
+        tenc_out = self.transformer_encoder(sparseFeat, src_mask=None, src_key_padding_mask=None) # (bs, 1, 161 * 25)
 
-        tenc_out = tenc_out.reshape(bs, N, T) # (B, 161, 50)
+        tenc_out = tenc_out.view(bs,-1) # (bs, 161 * 25)
+
+        label, lastFeat = self.Classifier(tenc_out)
+
+        return label, lastFeat, binaryCode, Reconstruction
+
+class Dyan_Tenc_multi_joints(nn.Module):
+    def __init__(self, num_class, Npole, Drr, Dtheta, dim, dataType, Inference, gpu_id, fistaLam):
+        super(Dyan_Tenc_multi_joints, self).__init__()
+        self.num_class = num_class
+        self.Npole = Npole
+        self.Drr = Drr
+        self.Dtheta = Dtheta
+        self.gpu_id = gpu_id
+        self.dim = dim
+        self.dataType = dataType
+        self.fistaLam = fistaLam
+        self.Inference = Inference
+
+        self.sparseCoding = DyanEncoder(self.Drr, self.Dtheta, lam=self.fistaLam, gpu_id=self.gpu_id)
+
+        self.BinaryCoding = GumbelSigmoid()
+
+        self.transformer_encoder = TransformerEncoder(embed_dim=161, embed_proj_dim=161, ff_dim=2048, num_heads=7, num_layers=2, dropout=0.1, is_input_proj=False, is_output_proj=False)
+
+        self.Classifier = classificationGlobal(num_class=self.num_class, Npole=self.Npole, dataType=self.dataType)
+
+    def forward(self, x, bi_thresh, nclips):
+        
+        T = x.shape[1]
+        # print('forward ', x.shape)
+        # sparseCode, Dict, R = self.sparseCoding.forward2(x, T) # w.o. RH
+        sparseCode, Dict, Reconstruction  = self.sparseCoding(x, T) # w.RH
+
+        'for GUMBEL'
+        binaryCode = self.BinaryCoding(sparseCode**2, bi_thresh, force_hard=True, temperature=0.1, inference=self.Inference)
+        temp1 = sparseCode * binaryCode
+        
+        Reconstruction = torch.matmul(Dict, temp1)
+        sparseFeat = binaryCode
+
+        B, N, T = sparseFeat.shape # (4 * B, 161, 50)
+        # print(nclips, B, N, T)
+
+        bs = B//nclips
+
+        sparseFeat = torch.permute(sparseFeat, (0, 2, 1)) # (4 * B, 50, 161)        
+
+        sparseFeat = sparseFeat.reshape(bs, nclips * T, N) # (B, 4 * 50, 161)        
+
+        tenc_out = self.transformer_encoder(sparseFeat, src_mask=None, src_key_padding_mask=None) # (B, 4 * 50, 161)
+
+        tenc_out = tenc_out.reshape(bs, nclips, T, N) # (B, 4, 50, 161)
+
+        tenc_out = torch.permute(tenc_out, (0, 1, 3, 2)) # (B, 4, 161, 50)
+
+        tenc_out = tenc_out.reshape(B, N, T) # (4 * B, 161, 50)
+
+        label, lastFeat = self.Classifier(tenc_out)
+
+        return label, lastFeat, binaryCode, Reconstruction
+
+    def forward2(self, x, bi_thresh, nclips):
+        
+        T = x.shape[1]
+        # print('forward ', x.shape)
+        # sparseCode, Dict, R = self.sparseCoding.forward2(x, T) # w.o. RH
+        sparseCode, Dict, Reconstruction  = self.sparseCoding(x, T) # w.RH
+
+        'for GUMBEL'
+        binaryCode = self.BinaryCoding(sparseCode**2, bi_thresh, force_hard=True, temperature=0.1, inference=self.Inference)
+        temp1 = sparseCode * binaryCode
+        
+        Reconstruction = torch.matmul(Dict, temp1)
+        sparseFeat = binaryCode
+
+        sparseFeat = torch.permute(sparseFeat, (0, 2, 1)) # (4 * B, 50, 161)        
+
+        tenc_out = self.transformer_encoder(sparseFeat, src_mask=None, src_key_padding_mask=None) # (4 * B, 50, 161)
+
+        tenc_out = torch.permute(tenc_out, (0, 2, 1)) # (4 * B, 161, 50)
 
         label, lastFeat = self.Classifier(tenc_out)
 
@@ -367,12 +535,11 @@ class Fullclassification(nn.Module):
         'for GUMBEL'
         binaryCode = self.BinaryCoding(sparseCode**2, bi_thresh, force_hard=True, temperature=0.1, inference=self.Inference)
         temp1 = sparseCode * binaryCode
-        # temp = binaryCode.reshape(binaryCode.shape[0], self.Npole, int(x.shape[-1]/self.dim), self.dim)
+        
         Reconstruction = torch.matmul(Dict, temp1)
         sparseFeat = binaryCode
-        # sparseFeat = torch.cat((binaryCode, sparseCode),1)
+        
         label, lastFeat = self.Classifier(sparseFeat)
-        # print('sparseCode:', sparseCode)
 
         return label, lastFeat, binaryCode, Reconstruction
 
@@ -488,18 +655,10 @@ class contrastiveNet(nn.Module):
         self.backbone = Dyan_Tenc_multi(self.num_class, self.Npole, self.Drr, self.Dtheta, self.dim_data, self.dataType, self.Inference, self.gpu_id, self.fistaLam)
         # self.backbone = Fullclassification(self.num_class, self.Npole, self.Drr, self.Dtheta, self.dim_data, self.dataType, self.Inference, self.gpu_id, self.fistaLam,self.useGroup, self.group_reg)
 
-        dim_mlp = self.backbone.Classifier.cls[0].in_features
-        self.proj = nn.Linear(dim_mlp,self.dim_embed)
+        # dim_mlp = self.backbone.Classifier.cls[0].in_features
+        # self.proj = nn.Linear(dim_mlp,self.dim_embed)
         self.relu = nn.LeakyReLU()
-        # if self.fineTune == False:
-        #     'remove projection layer'
-        #     # self.backbone.Classifier.cls = nn.Sequential(nn.Linear(dim_mlp, 512), nn.BatchNorm1d(512), nn.LeakyReLU(),
-        #     #                                          nn.Linear(512, dim_mlp), nn.BatchNorm1d(dim_mlp), nn.LeakyReLU(),
-        #     #                                          self.backbone.Classifier.cls)
-        #     self.backbone.Classifier.cls = nn.Sequential(self.backbone.Classifier.cls)
-        # else:
-        #     self.backbone.Classifier.cls = nn.Sequential(,nn.LeakyReLU(),self.backbone.Classifier.cls)
-
+    
     def forward(self, x, bi_thresh, nClip=4):
         'x: affine skeleton'
         

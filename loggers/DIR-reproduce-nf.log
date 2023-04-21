@@ -351,3 +351,786 @@ start training epoch: 16
 epoch: 16 |loss: 0.18617560149141354 |cls: 0.08810690048858305 |mse: 0.008419275593041675 |bi: 0.015425244517246028
 training time(min): 9.901398595174154
 start training epoch: 17
+epoch: 17 |loss: 0.140175356369582 |cls: 0.06510753137445136 |mse: 0.008416804968874203 |bi: 0.015434888791787671
+training time(min): 10.686471072832743
+start training epoch: 18
+epoch: 18 |loss: 0.13915067671769066 |cls: 0.06459310379045746 |mse: 0.008422136192166363 |bi: 0.015423333850776544
+training time(min): 10.214866534868877
+start training epoch: 19
+epoch: 19 |loss: 0.15047264094027923 |cls: 0.0702472736402342 |mse: 0.008436813228399842 |bi: 0.015412802415085025
+training time(min): 10.33939581712087
+start training epoch: 20
+epoch: 20 |loss: 0.11814597314150888 |cls: 0.05410512719186045 |mse: 0.008395672164624557 |bi: 0.015400458909425652
+training time(min): 10.530908409754435
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 20 Acc:0.8017
+start training epoch: 21
+epoch: 21 |loss: 0.12389901407732395 |cls: 0.056964798033959596 |mse: 0.008426230959230452 |bi: 0.01543186358321691
+training time(min): 11.477578051884969
+start training epoch: 22
+epoch: 22 |loss: 0.13904210219334345 |cls: 0.06453250061372273 |mse: 0.008434261950242217 |bi: 0.015428391063323943
+training time(min): 11.792897915840149
+start training epoch: 23
+epoch: 23 |loss: 0.12270234046809492 |cls: 0.056379013852733806 |mse: 0.008403836543948273 |bi: 0.015404765494167805
+training time(min): 11.395348906517029
+start training epoch: 24
+epoch: 24 |loss: 0.13460123278127867 |cls: 0.06231865688710059 |mse: 0.008422943314144504 |bi: 0.01540976205797051
+training time(min): 11.21788037220637
+start training epoch: 25
+epoch: 25 |loss: 0.10271061081220978 |cls: 0.046385779418301354 |mse: 0.008398960350859852 |bi: 0.015400913867779309
+training time(min): 11.297390059630077
+start training epoch: 26
+epoch: 26 |loss: 0.10435660845178063 |cls: 0.047195848235105586 |mse: 0.008423312930972315 |bi: 0.015415994417708134
+training time(min): 11.249591128031414
+start training epoch: 27
+epoch: 27 |loss: 0.10996405221885652 |cls: 0.05000328963353695 |mse: 0.008415817419518135 |bi: 0.015416555557749234
+training time(min): 11.364417099952698
+start training epoch: 28
+epoch: 28 |loss: 0.09576500745606609 |cls: 0.04290945532397927 |mse: 0.008405373300774954 |bi: 0.015407237260660622
+training time(min): 11.511717935403189
+start training epoch: 29
+epoch: 29 |loss: 0.07307696463249158 |cls: 0.03155754633044694 |mse: 0.00842094791096315 |bi: 0.015409246487251949
+training time(min): 11.428759308656057
+start training epoch: 30
+epoch: 30 |loss: 0.09281081486915355 |cls: 0.04141612578837339 |mse: 0.008436158383119619 |bi: 0.015424046530824853
+training time(min): 11.297299063205719
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 30 Acc:0.8276
+start training epoch: 31
+epoch: 31 |loss: 0.10247816250557662 |cls: 0.04624976398781655 |mse: 0.008437108896032441 |bi: 0.015415236237458885
+training time(min): 11.717223858833313
+start training epoch: 32
+epoch: 32 |loss: 0.11256051672899048 |cls: 0.05130447349478118 |mse: 0.008410988413743326 |bi: 0.015405811845994322
+training time(min): 11.321493065357208
+start training epoch: 33
+epoch: 33 |loss: 0.11542728156928206 |cls: 0.052730605425324484 |mse: 0.008425170688497019 |bi: 0.015408996241603745
+training time(min): 11.181245998541515
+start training epoch: 34
+epoch: 34 |loss: 0.12005005127139157 |cls: 0.05504407033998859 |mse: 0.008421158945566276 |bi: 0.015407510170916794
+training time(min): 11.131012749671935
+start training epoch: 35
+epoch: 35 |loss: 0.13687196787941502 |cls: 0.06345445931953009 |mse: 0.008421123211519443 |bi: 0.015419262312207138
+training time(min): 11.397825396060943
+start training epoch: 36
+epoch: 36 |loss: 0.11973961729017901 |cls: 0.05490008601839236 |mse: 0.0083986388744961 |bi: 0.015408063656650484
+training time(min): 11.312508042653402
+start training epoch: 37
+epoch: 37 |loss: 0.10372556342554162 |cls: 0.04689659441413596 |mse: 0.008391970997763565 |bi: 0.015404022469738265
+training time(min): 11.316803809007009
+start training epoch: 38
+epoch: 38 |loss: 0.11481710720909177 |cls: 0.05242751379233823 |mse: 0.008420716225373326 |bi: 0.015413636447192403
+training time(min): 12.86091612180074
+start training epoch: 39
+epoch: 39 |loss: 0.09715831916764728 |cls: 0.04360174315104359 |mse: 0.008414686728428933 |bi: 0.015401444619783433
+training time(min): 13.053286170959472
+start training epoch: 40
+epoch: 40 |loss: 0.1094490249925002 |cls: 0.04972853768265395 |mse: 0.008448912294625188 |bi: 0.015430369905516272
+training time(min): 12.494296328226726
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 40 Acc:0.8276
+start training epoch: 41
+epoch: 41 |loss: 0.08665104538522428 |cls: 0.03834427190264478 |mse: 0.00842130678211106 |bi: 0.015411953285365598
+training time(min): 13.448799916108449
+start training epoch: 42
+epoch: 42 |loss: 0.06774883617981686 |cls: 0.028898706724021395 |mse: 0.008409762946030241 |bi: 0.015416601028846344
+training time(min): 13.483350841204325
+start training epoch: 43
+epoch: 43 |loss: 0.05302036374996533 |cls: 0.02151993200226343 |mse: 0.008436672082098085 |bi: 0.01543827798377606
+training time(min): 12.76974598566691
+start training epoch: 44
+epoch: 44 |loss: 0.06418724588002078 |cls: 0.027120235086670164 |mse: 0.008406053475482622 |bi: 0.015407222032081336
+training time(min): 13.207245846589407
+start training epoch: 45
+epoch: 45 |loss: 0.056086805161612574 |cls: 0.02306438820977519 |mse: 0.008416904800469638 |bi: 0.015411240536195692
+training time(min): 12.527741944789886
+start training epoch: 46
+epoch: 46 |loss: 0.0401091360636201 |cls: 0.015072641258413455 |mse: 0.008422758930464624 |bi: 0.015410944837640272
+training time(min): 13.242756462097168
+start training epoch: 47
+epoch: 47 |loss: 0.06864637033868348 |cls: 0.02934658512783983 |mse: 0.008412135231992579 |bi: 0.015410656789754285
+training time(min): 13.300765430927276
+start training epoch: 48
+epoch: 48 |loss: 0.06850036285322858 |cls: 0.02927437078383832 |mse: 0.008411291104494012 |bi: 0.01540330974967219
+training time(min): 14.183633728822072
+start training epoch: 49
+epoch: 49 |loss: 0.04870889597077621 |cls: 0.019373973091177277 |mse: 0.008419862984737847 |bi: 0.015410869040351827
+training time(min): 13.710471336046854
+start training epoch: 50
+epoch: 50 |loss: 0.04930725164740579 |cls: 0.01967873224910477 |mse: 0.008407683983023162 |bi: 0.015421028896525968
+training time(min): 14.032007896900177
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 50 Acc:0.8405
+start training epoch: 51
+epoch: 51 |loss: 0.04287650532205589 |cls: 0.016447837854229874 |mse: 0.008437667122052517 |bi: 0.015431628522492247
+training time(min): 13.282447457313538
+start training epoch: 52
+epoch: 52 |loss: 0.06504389160545543 |cls: 0.027535735617135515 |mse: 0.008428537510553724 |bi: 0.015438831484061666
+training time(min): 13.862032727400463
+start training epoch: 53
+epoch: 53 |loss: 0.06787574067493551 |cls: 0.028961875197055065 |mse: 0.0084114909877826 |bi: 0.015404992998810485
+training time(min): 13.225767854849497
+start training epoch: 54
+epoch: 54 |loss: 0.05741293701066752 |cls: 0.023729236087461913 |mse: 0.008414085083131795 |bi: 0.015403795045131119
+training time(min): 12.801959319909413
+start training epoch: 55
+epoch: 55 |loss: 0.056100499432432116 |cls: 0.02307437050059491 |mse: 0.00841046589994221 |bi: 0.0154129237489542
+training time(min): 13.084886340300242
+start training epoch: 56
+epoch: 56 |loss: 0.05550746551307384 |cls: 0.02277115544671915 |mse: 0.008424404033576138 |bi: 0.015407495062390808
+training time(min): 12.938182671864828
+start training epoch: 57
+epoch: 57 |loss: 0.05180789128644392 |cls: 0.020929434951312942 |mse: 0.008408494259128929 |bi: 0.015405273465148639
+training time(min): 12.866563475131988
+start training epoch: 58
+epoch: 58 |loss: 0.05236564807455579 |cls: 0.02121114988446493 |mse: 0.008402117855439428 |bi: 0.015412317246955354
+training time(min): 12.608577819665273
+start training epoch: 59
+epoch: 59 |loss: 0.050009910579319694 |cls: 0.020024074194651575 |mse: 0.008420304673563805 |bi: 0.015414584268000908
+training time(min): 12.574729291598002
+start training epoch: 60
+epoch: 60 |loss: 0.03946150584852148 |cls: 0.014735549820599658 |mse: 0.008446540661680046 |bi: 0.015438657097547548
+training time(min): 12.729488631089529
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 60 Acc:0.8621
+start training epoch: 61
+epoch: 61 |loss: 0.03980324176882277 |cls: 0.014920535801365986 |mse: 0.008420801708780346 |bi: 0.015413681947393343
+training time(min): 13.495402538776398
+start training epoch: 62
+epoch: 62 |loss: 0.03750359460718755 |cls: 0.013756312892297728 |mse: 0.008448291147942655 |bi: 0.015426776077219984
+training time(min): 13.47538321018219
+start training epoch: 63
+epoch: 63 |loss: 0.0489626165581285 |cls: 0.01950164394875742 |mse: 0.008417858311076998 |bi: 0.01541469792209682
+training time(min): 12.949638112386067
+start training epoch: 64
+epoch: 64 |loss: 0.04622489501707605 |cls: 0.018147141716923443 |mse: 0.008390975674046786 |bi: 0.015396357041026931
+training time(min): 12.98896556297938
+start training epoch: 65
+epoch: 65 |loss: 0.05105291291692993 |cls: 0.020534698509948157 |mse: 0.00843980227909924 |bi: 0.015437133064551745
+training time(min): 12.151601227124532
+start training epoch: 66
+epoch: 66 |loss: 0.059747336541477125 |cls: 0.02490397497581398 |mse: 0.008398889762247563 |bi: 0.015404962676257128
+training time(min): 11.75515753030777
+start training epoch: 67
+epoch: 67 |loss: 0.051796032556012506 |cls: 0.020911757629839656 |mse: 0.008431500427832361 |bi: 0.015410171461553546
+training time(min): 10.909597853819529
+start training epoch: 68
+epoch: 68 |loss: 0.07068953769339714 |cls: 0.03037607944145293 |mse: 0.008396944516789517 |bi: 0.015404348530864809
+training time(min): 11.288653405507405
+start training epoch: 69
+epoch: 69 |loss: 0.042650806382880546 |cls: 0.016344922566617015 |mse: 0.008418183620960917 |bi: 0.015427776917931624
+training time(min): 10.41599664290746
+start training epoch: 70
+epoch: 70 |loss: 0.03374669993718271 |cls: 0.011897432428497723 |mse: 0.008411287317358074 |bi: 0.015405478239699733
+training time(min): 10.8490660627683
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 70 Acc:0.8405
+start training epoch: 71
+epoch: 71 |loss: 0.052678298019600334 |cls: 0.02134494447746249 |mse: 0.008446773024843424 |bi: 0.015416358368383953
+training time(min): 10.921605288982391
+start training epoch: 72
+epoch: 72 |loss: 0.0405966828475357 |cls: 0.015331674772056658 |mse: 0.008392806510528317 |bi: 0.015405273486976512
+training time(min): 10.839117868741353
+start training epoch: 73
+epoch: 73 |loss: 0.03326145818573423 |cls: 0.011641469169816787 |mse: 0.00843621235799219 |bi: 0.015423076027218485
+training time(min): 10.743352377414704
+start training epoch: 74
+epoch: 74 |loss: 0.04691123800876085 |cls: 0.018474784759227703 |mse: 0.00841881367705355 |bi: 0.01542855026491452
+training time(min): 10.719888238112132
+start training epoch: 75
+epoch: 75 |loss: 0.034269769577804254 |cls: 0.012151895439444615 |mse: 0.008424598347119172 |bi: 0.01541380330309039
+training time(min): 10.882824993133545
+start training epoch: 76
+epoch: 76 |loss: 0.05432453372122836 |cls: 0.022188495201035607 |mse: 0.008407719225942856 |bi: 0.015398252562590642
+training time(min): 10.555948702494304
+start training epoch: 77
+epoch: 77 |loss: 0.03220299829627038 |cls: 0.011124804215427275 |mse: 0.008411737318965606 |bi: 0.015416525209730025
+training time(min): 10.914276683330536
+start training epoch: 78
+epoch: 78 |loss: 0.031511978473645286 |cls: 0.010784354776234295 |mse: 0.00840233587223338 |bi: 0.015409329877002165
+training time(min): 10.92094010512034
+start training epoch: 79
+epoch: 79 |loss: 0.04112924379660399 |cls: 0.015586607566604016 |mse: 0.008416838147240924 |bi: 0.015391906432341784
+training time(min): 11.13603362639745
+start training epoch: 80
+epoch: 80 |loss: 0.030086010987361078 |cls: 0.010055989691515776 |mse: 0.008431284228208824 |bi: 0.015427473597810604
+training time(min): 10.666644128163655
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 80 Acc:0.8362
+start training epoch: 81
+epoch: 81 |loss: 0.03226860897484585 |cls: 0.011162237029907374 |mse: 0.008403991962040891 |bi: 0.015401429420307977
+training time(min): 10.638563251495361
+start training epoch: 82
+epoch: 82 |loss: 0.04288832157726574 |cls: 0.016465846481111157 |mse: 0.008414661677306867 |bi: 0.015419671744894003
+training time(min): 10.606132531166077
+start training epoch: 83
+epoch: 83 |loss: 0.02856940509082051 |cls: 0.009300792455775309 |mse: 0.008425051479207468 |bi: 0.015427685917529743
+training time(min): 10.167038849989574
+start training epoch: 84
+epoch: 84 |loss: 0.05905641085519164 |cls: 0.0245414646457931 |mse: 0.008431936523265904 |bi: 0.015415456138725858
+training time(min): 9.883548140525818
+start training epoch: 85
+epoch: 85 |loss: 0.050511990433733445 |cls: 0.020280117372891482 |mse: 0.008410854587054928 |bi: 0.015409003794047749
+training time(min): 10.26773640314738
+start training epoch: 86
+epoch: 86 |loss: 0.09427411510114325 |cls: 0.04216355238275682 |mse: 0.00840481659543002 |bi: 0.01542193119894364
+training time(min): 10.335884340604146
+start training epoch: 87
+epoch: 87 |loss: 0.06128126003386569 |cls: 0.025657825504723064 |mse: 0.008423037954344181 |bi: 0.01542570702804369
+training time(min): 10.180068135261536
+start training epoch: 88
+epoch: 88 |loss: 0.03416013174864929 |cls: 0.012100739267850713 |mse: 0.00841805781601579 |bi: 0.015405955928144976
+training time(min): 10.427843836943309
+start training epoch: 89
+epoch: 89 |loss: 0.03411158002563752 |cls: 0.012079564788507469 |mse: 0.008411061970036826 |bi: 0.015413886641908903
+training time(min): 10.526601088047027
+start training epoch: 90
+epoch: 90 |loss: 0.028527408645459218 |cls: 0.009273366651342485 |mse: 0.008438260172624723 |bi: 0.015424152661580592
+training time(min): 10.606111125151317
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 90 Acc:0.8427
+start training epoch: 91
+epoch: 91 |loss: 0.025355014946399024 |cls: 0.007707468480489865 |mse: 0.008399912218010286 |bi: 0.015401656874018954
+training time(min): 10.011215925216675
+start training epoch: 92
+epoch: 92 |loss: 0.031679297775554005 |cls: 0.010859541715262822 |mse: 0.008418939451075858 |bi: 0.015412749322422314
+training time(min): 10.284861266613007
+start training epoch: 93
+epoch: 93 |loss: 0.04360233633815369 |cls: 0.016822099029894844 |mse: 0.008417717726842966 |bi: 0.015404204437800217
+training time(min): 10.221459420522054
+start training epoch: 94
+epoch: 94 |loss: 0.05644830793789879 |cls: 0.023240969379088483 |mse: 0.008424522493442055 |bi: 0.015418473805766553
+training time(min): 10.14643468062083
+start training epoch: 95
+epoch: 95 |loss: 0.03610803370611393 |cls: 0.013070961048853746 |mse: 0.008422391594649525 |bi: 0.015437201338500017
+training time(min): 10.011223558584849
+start training epoch: 96
+epoch: 96 |loss: 0.029192111676820787 |cls: 0.009600921775700044 |mse: 0.00844649572718481 |bi: 0.01543772453442216
+training time(min): 10.276153326034546
+start training epoch: 97
+epoch: 97 |loss: 0.049495183789986186 |cls: 0.01977128972642106 |mse: 0.008412291141212336 |bi: 0.015403127807076089
+training time(min): 9.97761050860087
+start training epoch: 98
+epoch: 98 |loss: 0.057003812838956947 |cls: 0.023510717450463403 |mse: 0.00843958538462175 |bi: 0.015427920945512597
+training time(min): 10.663278575738271
+start training epoch: 99
+epoch: 99 |loss: 0.03438329344135127 |cls: 0.012216378276896478 |mse: 0.008409364474573522 |bi: 0.015411725784360897
+training time(min): 10.259086604913076
+start training epoch: 100
+epoch: 100 |loss: 0.0309183985391428 |cls: 0.010468410913119897 |mse: 0.008438924514848622 |bi: 0.015426525900693377
+training time(min): 9.764603010813396
+sample: 0
+sample: 1
+sample: 2
+sample: 3
+sample: 4
+sample: 5
+sample: 6
+sample: 7
+sample: 8
+sample: 9
+sample: 10
+sample: 11
+sample: 12
+sample: 13
+sample: 14
+sample: 15
+sample: 16
+sample: 17
+sample: 18
+sample: 19
+sample: 20
+sample: 21
+sample: 22
+sample: 23
+sample: 24
+sample: 25
+sample: 26
+sample: 27
+sample: 28
+sample: 29
+sample: 30
+sample: 31
+sample: 32
+sample: 33
+sample: 34
+sample: 35
+sample: 36
+sample: 37
+sample: 38
+sample: 39
+sample: 40
+sample: 41
+sample: 42
+sample: 43
+sample: 44
+sample: 45
+sample: 46
+sample: 47
+sample: 48
+sample: 49
+sample: 50
+sample: 51
+sample: 52
+sample: 53
+sample: 54
+sample: 55
+sample: 56
+sample: 57
+testing epoch: 100 Acc:0.8470
+done

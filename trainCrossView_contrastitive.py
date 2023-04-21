@@ -10,7 +10,7 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 import pdb 
-gpu_id = 5
+gpu_id = 6
 map_loc = "cuda:"+str(gpu_id)
 
 # T = 36
@@ -50,7 +50,7 @@ gumbel_thresh = 0.505
 modelRoot = './ModelFile/crossView_NUCLA/'
 
 
-saveModel = modelRoot + sampling + '/' + mode + '/dir-tenc-cl-mean/'
+saveModel = modelRoot + sampling + '/' + mode + '/dir-tenc-cl-T/'
 if not os.path.exists(saveModel):
     os.makedirs(saveModel)
 print('mode:',mode, 'model path:', saveModel, 'mask:', maskType)

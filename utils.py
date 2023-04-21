@@ -259,7 +259,7 @@ def load_pretrained_DIR(stateDict, net):
 
     for i in range(0, len(plist)):
         name, p = plist[i]
-        if 0 <= i < 2 or 'Classifier' not in name:
+        if 0 <= i < 2: # or 'Classifier' not in name:
             p.requires_grad = False
             print('p ', name, p.requires_grad)
         else:
@@ -271,8 +271,10 @@ def load_pretrained_DIR(stateDict, net):
 def load_pretrained_DIR0(stateDict, net):
 
     new_dict = net.state_dict()
-    stateDict = stateDict
+    stateDict = stateDict['state_dict']
+    print('new_dict ', new_dict.keys())
     pre_dict = {k: v for k, v in stateDict.items() if k in new_dict}
+    print('stateDict keys ', stateDict.keys())
 
     new_dict.update(pre_dict)
 

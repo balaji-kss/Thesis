@@ -1,0 +1,668 @@
+mode: dy+bi+cl model path: ./ModelFile/crossView_NUCLA/Multi/dy+bi+cl/dir-tenc-cl-T/ mask: score
+is_clstoken  False
+mean   False
+seq_len  200
+embed_dim:  161
+embed_proj_dim:  161
+ff_dim:  2048
+num_heads:  7
+num_layers:  2
+dropout:  0.1
+seq_len:  200
+keys  odict_keys(['backbone.sparseCoding.rr', 'backbone.sparseCoding.theta', 'backbone.transformer_encoder.cls_token', 'backbone.transformer_encoder.pos_encoder.pe', 'backbone.transformer_encoder.encoder_layer.self_attn.in_proj_weight', 'backbone.transformer_encoder.encoder_layer.self_attn.in_proj_bias', 'backbone.transformer_encoder.encoder_layer.self_attn.out_proj.weight', 'backbone.transformer_encoder.encoder_layer.self_attn.out_proj.bias', 'backbone.transformer_encoder.encoder_layer.linear1.weight', 'backbone.transformer_encoder.encoder_layer.linear1.bias', 'backbone.transformer_encoder.encoder_layer.linear2.weight', 'backbone.transformer_encoder.encoder_layer.linear2.bias', 'backbone.transformer_encoder.encoder_layer.norm1.weight', 'backbone.transformer_encoder.encoder_layer.norm1.bias', 'backbone.transformer_encoder.encoder_layer.norm2.weight', 'backbone.transformer_encoder.encoder_layer.norm2.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.linear1.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.linear1.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.linear2.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.linear2.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.norm1.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.norm1.bias', 'backbone.transformer_encoder.transformer_encoder.layers.0.norm2.weight', 'backbone.transformer_encoder.transformer_encoder.layers.0.norm2.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.linear1.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.linear1.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.linear2.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.linear2.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.norm1.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.norm1.bias', 'backbone.transformer_encoder.transformer_encoder.layers.1.norm2.weight', 'backbone.transformer_encoder.transformer_encoder.layers.1.norm2.bias', 'backbone.Classifier.conv1.weight', 'backbone.Classifier.conv1.bias', 'backbone.Classifier.bn1.weight', 'backbone.Classifier.bn1.bias', 'backbone.Classifier.bn1.running_mean', 'backbone.Classifier.bn1.running_var', 'backbone.Classifier.bn1.num_batches_tracked', 'backbone.Classifier.conv2.weight', 'backbone.Classifier.conv2.bias', 'backbone.Classifier.bn2.weight', 'backbone.Classifier.bn2.bias', 'backbone.Classifier.bn2.running_mean', 'backbone.Classifier.bn2.running_var', 'backbone.Classifier.bn2.num_batches_tracked', 'backbone.Classifier.conv3.weight', 'backbone.Classifier.conv3.bias', 'backbone.Classifier.bn3.weight', 'backbone.Classifier.bn3.bias', 'backbone.Classifier.bn3.running_mean', 'backbone.Classifier.bn3.running_var', 'backbone.Classifier.bn3.num_batches_tracked', 'backbone.Classifier.conv4.weight', 'backbone.Classifier.conv4.bias', 'backbone.Classifier.bn4.weight', 'backbone.Classifier.bn4.bias', 'backbone.Classifier.bn4.running_mean', 'backbone.Classifier.bn4.running_var', 'backbone.Classifier.bn4.num_batches_tracked', 'backbone.Classifier.conv5.weight', 'backbone.Classifier.conv5.bias', 'backbone.Classifier.bn5.weight', 'backbone.Classifier.bn5.bias', 'backbone.Classifier.bn5.running_mean', 'backbone.Classifier.bn5.running_var', 'backbone.Classifier.bn5.num_batches_tracked', 'backbone.Classifier.conv6.weight', 'backbone.Classifier.conv6.bias', 'backbone.Classifier.bn6.weight', 'backbone.Classifier.bn6.bias', 'backbone.Classifier.bn6.running_mean', 'backbone.Classifier.bn6.running_var', 'backbone.Classifier.bn6.num_batches_tracked', 'backbone.Classifier.fc.weight', 'backbone.Classifier.fc.bias', 'backbone.Classifier.fc2.weight', 'backbone.Classifier.fc2.bias', 'backbone.Classifier.fc3.weight', 'backbone.Classifier.fc3.bias', 'backbone.Classifier.cls.0.weight', 'backbone.Classifier.cls.0.bias', 'proj.weight', 'proj.bias'])
+rr  tensor([1.0738, 0.9827, 0.9756, 1.1247, 0.9363, 1.0295, 1.0171, 0.8772, 1.1414,
+        0.8764, 1.0417, 1.0411, 0.9704, 0.8741, 1.0286, 0.8505, 1.1323, 1.0011,
+        0.8609, 0.8905, 0.9876, 1.0116, 0.9802, 0.8808, 1.0316, 1.0559, 1.1463,
+        1.0903, 0.9350, 1.0455, 0.9752, 0.8884, 0.8512, 1.0178, 1.0932, 1.1434,
+        1.1080, 0.9231, 1.1499, 0.9333, 0.9124, 0.8827, 1.0343, 1.0172, 0.8646,
+        1.1115, 0.8968, 1.1214, 1.1036, 1.0951, 0.9496, 1.1026, 1.0418, 0.9571,
+        1.0756, 1.0673, 0.8579, 1.1263, 1.0073, 1.1280, 1.0781, 0.8988, 0.9347,
+        1.0849, 1.0072, 0.9259, 1.0844, 0.8510, 0.8943, 0.8692, 1.0417, 1.1310,
+        0.9874, 0.8866, 0.9528, 0.9757, 0.9415, 1.1430, 0.9416, 1.1242],
+       device='cuda:6')
+theta  tensor([1.3939, 2.4549, 1.6436, 1.5352, 0.7960, 3.0716, 2.6964, 2.0584, 0.7135,
+        2.3078, 1.8680, 1.5814, 2.5930, 2.1385, 0.6050, 1.4292, 1.4744, 0.3818,
+        2.0396, 2.8664, 0.4994, 2.8990, 1.4337, 2.9520, 2.1435, 1.2748, 0.3789,
+        2.3218, 1.4669, 1.7877, 1.0691, 2.8505, 0.6513, 2.9708, 2.0885, 3.0277,
+        1.2882, 1.7110, 2.6468, 2.2400, 1.1219, 0.2007, 0.5942, 0.7402, 2.4891,
+        0.8861, 1.3891, 2.8232, 2.3094, 0.7382, 2.3175, 1.3819, 0.8533, 0.4777,
+        3.0391, 1.8822, 1.2420, 3.1185, 0.1625, 0.9867, 1.3501, 2.3475, 1.5333,
+        1.8721, 1.7133, 1.3431, 0.9326, 3.1381, 1.3014, 2.0869, 1.4987, 1.2876,
+        2.5508, 0.4858, 1.6475, 0.5840, 1.7340, 1.2651, 3.0234, 2.8446],
+       device='cuda:6')
+cls  tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1.], device='cuda:6')
+loaded rr  tensor([1.0599, 0.9743, 0.9663, 1.0703, 0.9268, 1.0206, 1.0072, 0.8694, 1.0412,
+        0.8684, 1.0341, 1.0315, 0.9607, 0.8662, 0.9808, 0.8436, 1.0713, 0.9619,
+        0.8533, 0.8830, 0.9458, 1.0024, 0.9725, 0.8735, 1.0197, 1.0501, 0.9950,
+        1.0803, 0.9276, 1.0258, 0.9668, 0.8809, 0.8451, 1.0097, 1.0486, 1.0795,
+        1.0817, 0.9156, 1.0775, 0.9241, 0.9034, 0.9111, 0.9747, 1.0095, 0.8571,
+        1.0324, 0.8895, 1.0864, 1.0823, 1.0429, 0.9402, 1.0635, 0.9906, 0.9406,
+        1.0659, 1.0572, 0.8507, 1.0796, 0.9868, 1.0320, 1.0559, 0.8908, 0.9269,
+        1.0619, 0.9963, 0.9183, 1.0403, 0.8440, 0.8867, 0.8616, 1.0331, 1.0858,
+        0.9757, 0.8722, 0.9442, 0.9596, 0.9335, 1.0722, 0.9340, 1.0885],
+       device='cuda:6')
+loaded theta  tensor([1.3831, 2.4351, 1.6302, 1.5173, 0.7894, 3.0460, 2.6738, 2.0410, 0.7377,
+        2.2888, 1.8529, 1.5642, 2.5720, 2.1206, 0.6029, 1.4175, 1.4665, 0.3462,
+        2.0224, 2.8426, 0.5185, 2.8750, 1.4217, 2.9278, 2.1216, 1.2670, 0.3556,
+        2.2961, 1.4546, 1.7748, 1.0654, 2.8268, 0.6468, 2.9488, 2.0768, 3.0085,
+        1.2792, 1.6970, 2.6287, 2.2216, 1.1125, 0.2004, 0.5884, 0.7404, 2.4684,
+        0.9092, 1.3778, 2.8066, 2.2928, 0.7396, 2.2984, 1.3781, 0.8437, 0.4658,
+        3.0172, 1.8672, 1.2320, 3.0912, 0.1108, 0.9424, 1.3398, 2.3283, 1.5204,
+        1.8600, 1.6995, 1.3323, 0.9231, 3.1122, 1.2911, 2.0694, 1.4857, 1.2852,
+        2.5297, 0.4884, 1.6341, 0.5822, 1.7197, 1.2677, 2.9984, 2.8182],
+       device='cuda:6')
+cls  tensor([0.9344, 0.9104, 0.9224, 0.9495, 0.8745, 0.9281, 0.9170, 0.8813, 0.9135,
+        0.9167, 0.9128, 0.9217, 0.9071, 0.9115, 0.9264, 0.9312, 0.9246, 0.9167,
+        0.9412, 0.9388, 0.9369, 0.9092, 0.9272, 0.9028, 0.8999, 0.9275, 0.9200,
+        0.9357, 0.9632, 0.9076, 0.9019, 0.9257, 0.9120, 0.9179, 0.9378, 0.9273,
+        0.9524, 0.9265, 0.9110, 0.9396, 0.9158, 0.9356, 0.9098, 0.8901, 0.9339,
+        0.9193, 0.9158, 0.9250, 0.8982, 0.9240, 0.9092, 0.9396, 0.9270, 0.9223,
+        0.9072, 0.9067, 0.9393, 0.9303, 0.9293, 0.9176, 0.9221, 0.9155, 0.9250,
+        0.9279, 0.9150, 0.9057, 0.9334, 0.9218, 0.9479, 0.9165, 0.9066, 0.9358,
+        0.9068, 0.9154, 0.9170, 0.9256, 0.9381, 0.9110, 0.9388, 0.9214, 0.9144,
+        0.9225, 0.9171, 0.9306, 0.9068, 0.9198, 0.9446, 0.9310, 0.9394, 0.9236,
+        0.9295, 0.9253, 0.9230, 0.9249, 0.9372, 0.9032, 0.9143, 0.9323, 0.9350,
+        0.9225, 0.9066, 0.9104, 0.8945, 0.9438, 0.8875, 0.9379, 0.9098, 0.9301,
+        0.9014, 0.9335, 0.9175, 0.9318, 0.9119, 0.9220, 0.9146, 0.8888, 0.9098,
+        0.9193, 0.9004, 0.9145, 0.9168, 0.9148, 0.9166, 0.8970, 0.9252, 0.9193,
+        0.9231, 0.9227, 0.8900, 0.9313, 0.9002, 0.9104, 0.9166, 0.9223, 0.9125,
+        0.8969, 0.9149, 0.9055, 0.9250, 0.9297, 0.9098, 0.9292, 0.9167, 0.9295,
+        0.8969, 0.8902, 0.9120, 0.9338, 0.9227, 0.9202, 0.9350, 0.9192, 0.9325,
+        0.9409, 0.9116, 0.9070, 0.9167, 0.9036, 0.9052, 0.8936, 0.9224, 0.9325,
+        0.9132, 0.9435, 0.9271, 0.9192, 0.9448, 0.9163, 0.9303, 0.9138, 0.9089,
+        0.9102, 0.9222, 0.9375, 0.9266, 0.9202, 0.8971, 0.9298, 0.9163, 0.9070,
+        0.9352, 0.9076, 0.9224, 0.9370, 0.9420, 0.8945, 0.9343, 0.9397, 0.9243,
+        0.9302, 0.9098, 0.9388, 0.9285, 0.8863, 0.8998, 0.9070, 0.9139, 0.9079,
+        0.9084, 0.9116, 0.9291, 0.9268, 0.9326, 0.9230, 0.9273, 0.9029, 0.9218,
+        0.9615, 0.8997, 0.9194, 0.9240, 0.9326, 0.9510, 0.9165, 0.9293, 0.9099,
+        0.9333, 0.9191, 0.9338, 0.9275, 0.9135, 0.9258, 0.8982, 0.9286, 0.9260,
+        0.9392, 0.9064, 0.9313, 0.9065, 0.9306, 0.9278, 0.9182, 0.8996, 0.8938,
+        0.9251, 0.9209, 0.9128, 0.9052, 0.9056, 0.9440, 0.9503, 0.9302, 0.9201,
+        0.8912, 0.9149, 0.9026, 0.9090, 0.9258, 0.9598, 0.8876, 0.9284, 0.9164,
+        0.9001, 0.9308, 0.8970, 0.9160], device='cuda:6')
+plist  73
+noplist  73
+p  backbone.sparseCoding.rr False
+p  backbone.sparseCoding.theta False
+p  backbone.transformer_encoder.cls_token True
+p  backbone.transformer_encoder.encoder_layer.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.encoder_layer.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.encoder_layer.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.encoder_layer.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.encoder_layer.linear1.weight True
+p  backbone.transformer_encoder.encoder_layer.linear1.bias True
+p  backbone.transformer_encoder.encoder_layer.linear2.weight True
+p  backbone.transformer_encoder.encoder_layer.linear2.bias True
+p  backbone.transformer_encoder.encoder_layer.norm1.weight True
+p  backbone.transformer_encoder.encoder_layer.norm1.bias True
+p  backbone.transformer_encoder.encoder_layer.norm2.weight True
+p  backbone.transformer_encoder.encoder_layer.norm2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.linear2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.0.norm2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.in_proj_bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.self_attn.out_proj.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.linear2.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm1.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm1.bias True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm2.weight True
+p  backbone.transformer_encoder.transformer_encoder.layers.1.norm2.bias True
+p  backbone.Classifier.conv1.weight True
+p  backbone.Classifier.conv1.bias True
+p  backbone.Classifier.bn1.weight True
+p  backbone.Classifier.bn1.bias True
+p  backbone.Classifier.conv2.weight True
+p  backbone.Classifier.conv2.bias True
+p  backbone.Classifier.bn2.weight True
+p  backbone.Classifier.bn2.bias True
+p  backbone.Classifier.conv3.weight True
+p  backbone.Classifier.conv3.bias True
+p  backbone.Classifier.bn3.weight True
+p  backbone.Classifier.bn3.bias True
+p  backbone.Classifier.conv4.weight True
+p  backbone.Classifier.conv4.bias True
+p  backbone.Classifier.bn4.weight True
+p  backbone.Classifier.bn4.bias True
+p  backbone.Classifier.conv5.weight True
+p  backbone.Classifier.conv5.bias True
+p  backbone.Classifier.bn5.weight True
+p  backbone.Classifier.bn5.bias True
+p  backbone.Classifier.conv6.weight True
+p  backbone.Classifier.conv6.bias True
+p  backbone.Classifier.bn6.weight True
+p  backbone.Classifier.bn6.bias True
+p  backbone.Classifier.fc.weight True
+p  backbone.Classifier.fc.bias True
+p  backbone.Classifier.fc2.weight True
+p  backbone.Classifier.fc2.bias True
+p  backbone.Classifier.fc3.weight True
+p  backbone.Classifier.fc3.bias True
+p  backbone.Classifier.cls.0.weight True
+p  backbone.Classifier.cls.0.bias True
+p  proj.weight True
+p  proj.bias True
+rr  tensor([1.0599, 0.9743, 0.9663, 1.0703, 0.9268, 1.0206, 1.0072, 0.8694, 1.0412,
+        0.8684, 1.0341, 1.0315, 0.9607, 0.8662, 0.9808, 0.8436, 1.0713, 0.9619,
+        0.8533, 0.8830, 0.9458, 1.0024, 0.9725, 0.8735, 1.0197, 1.0501, 0.9950,
+        1.0803, 0.9276, 1.0258, 0.9668, 0.8809, 0.8451, 1.0097, 1.0486, 1.0795,
+        1.0817, 0.9156, 1.0775, 0.9241, 0.9034, 0.9111, 0.9747, 1.0095, 0.8571,
+        1.0324, 0.8895, 1.0864, 1.0823, 1.0429, 0.9402, 1.0635, 0.9906, 0.9406,
+        1.0659, 1.0572, 0.8507, 1.0796, 0.9868, 1.0320, 1.0559, 0.8908, 0.9269,
+        1.0619, 0.9963, 0.9183, 1.0403, 0.8440, 0.8867, 0.8616, 1.0331, 1.0858,
+        0.9757, 0.8722, 0.9442, 0.9596, 0.9335, 1.0722, 0.9340, 1.0885],
+       device='cuda:6')
+theta  tensor([1.3831, 2.4351, 1.6302, 1.5173, 0.7894, 3.0460, 2.6738, 2.0410, 0.7377,
+        2.2888, 1.8529, 1.5642, 2.5720, 2.1206, 0.6029, 1.4175, 1.4665, 0.3462,
+        2.0224, 2.8426, 0.5185, 2.8750, 1.4217, 2.9278, 2.1216, 1.2670, 0.3556,
+        2.2961, 1.4546, 1.7748, 1.0654, 2.8268, 0.6468, 2.9488, 2.0768, 3.0085,
+        1.2792, 1.6970, 2.6287, 2.2216, 1.1125, 0.2004, 0.5884, 0.7404, 2.4684,
+        0.9092, 1.3778, 2.8066, 2.2928, 0.7396, 2.2984, 1.3781, 0.8437, 0.4658,
+        3.0172, 1.8672, 1.2320, 3.0912, 0.1108, 0.9424, 1.3398, 2.3283, 1.5204,
+        1.8600, 1.6995, 1.3323, 0.9231, 3.1122, 1.2911, 2.0694, 1.4857, 1.2852,
+        2.5297, 0.4884, 1.6341, 0.5822, 1.7197, 1.2677, 2.9984, 2.8182],
+       device='cuda:6')
+cls  tensor([0.9344, 0.9104, 0.9224, 0.9495, 0.8745, 0.9281, 0.9170, 0.8813, 0.9135,
+        0.9167, 0.9128, 0.9217, 0.9071, 0.9115, 0.9264, 0.9312, 0.9246, 0.9167,
+        0.9412, 0.9388, 0.9369, 0.9092, 0.9272, 0.9028, 0.8999, 0.9275, 0.9200,
+        0.9357, 0.9632, 0.9076, 0.9019, 0.9257, 0.9120, 0.9179, 0.9378, 0.9273,
+        0.9524, 0.9265, 0.9110, 0.9396, 0.9158, 0.9356, 0.9098, 0.8901, 0.9339,
+        0.9193, 0.9158, 0.9250, 0.8982, 0.9240, 0.9092, 0.9396, 0.9270, 0.9223,
+        0.9072, 0.9067, 0.9393, 0.9303, 0.9293, 0.9176, 0.9221, 0.9155, 0.9250,
+        0.9279, 0.9150, 0.9057, 0.9334, 0.9218, 0.9479, 0.9165, 0.9066, 0.9358,
+        0.9068, 0.9154, 0.9170, 0.9256, 0.9381, 0.9110, 0.9388, 0.9214, 0.9144,
+        0.9225, 0.9171, 0.9306, 0.9068, 0.9198, 0.9446, 0.9310, 0.9394, 0.9236,
+        0.9295, 0.9253, 0.9230, 0.9249, 0.9372, 0.9032, 0.9143, 0.9323, 0.9350,
+        0.9225, 0.9066, 0.9104, 0.8945, 0.9438, 0.8875, 0.9379, 0.9098, 0.9301,
+        0.9014, 0.9335, 0.9175, 0.9318, 0.9119, 0.9220, 0.9146, 0.8888, 0.9098,
+        0.9193, 0.9004, 0.9145, 0.9168, 0.9148, 0.9166, 0.8970, 0.9252, 0.9193,
+        0.9231, 0.9227, 0.8900, 0.9313, 0.9002, 0.9104, 0.9166, 0.9223, 0.9125,
+        0.8969, 0.9149, 0.9055, 0.9250, 0.9297, 0.9098, 0.9292, 0.9167, 0.9295,
+        0.8969, 0.8902, 0.9120, 0.9338, 0.9227, 0.9202, 0.9350, 0.9192, 0.9325,
+        0.9409, 0.9116, 0.9070, 0.9167, 0.9036, 0.9052, 0.8936, 0.9224, 0.9325,
+        0.9132, 0.9435, 0.9271, 0.9192, 0.9448, 0.9163, 0.9303, 0.9138, 0.9089,
+        0.9102, 0.9222, 0.9375, 0.9266, 0.9202, 0.8971, 0.9298, 0.9163, 0.9070,
+        0.9352, 0.9076, 0.9224, 0.9370, 0.9420, 0.8945, 0.9343, 0.9397, 0.9243,
+        0.9302, 0.9098, 0.9388, 0.9285, 0.8863, 0.8998, 0.9070, 0.9139, 0.9079,
+        0.9084, 0.9116, 0.9291, 0.9268, 0.9326, 0.9230, 0.9273, 0.9029, 0.9218,
+        0.9615, 0.8997, 0.9194, 0.9240, 0.9326, 0.9510, 0.9165, 0.9293, 0.9099,
+        0.9333, 0.9191, 0.9338, 0.9275, 0.9135, 0.9258, 0.8982, 0.9286, 0.9260,
+        0.9392, 0.9064, 0.9313, 0.9065, 0.9306, 0.9278, 0.9182, 0.8996, 0.8938,
+        0.9251, 0.9209, 0.9128, 0.9052, 0.9056, 0.9440, 0.9503, 0.9302, 0.9201,
+        0.8912, 0.9149, 0.9026, 0.9090, 0.9258, 0.9598, 0.8876, 0.9284, 0.9164,
+        0.9001, 0.9308, 0.8970, 0.9160], device='cuda:6')
+gpu id:  6
+optimizer  SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.0001
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0.001
+
+Parameter Group 1
+    dampening: 0
+    lr: 0.001
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0.001
+
+Parameter Group 2
+    dampening: 0
+    lr: 0.001
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0.001
+)
+experiment setup: True True
+start training epoch: 0
+training time(mins): 11.439135921001434
+epoch: 0 contrastive loss: 1.386155085703906
+start training epoch: 1
+training time(mins): 11.822251864274342
+epoch: 1 contrastive loss: 0.8955684437471277
+start training epoch: 2
+training time(mins): 11.366614059607189
+epoch: 2 contrastive loss: 0.710889308154583
+start training epoch: 3
+training time(mins): 11.28451529343923
+epoch: 3 contrastive loss: 0.569017106294632
+start training epoch: 4
+training time(mins): 11.197645310560862
+epoch: 4 contrastive loss: 0.5362081992275575
+start training epoch: 5
+training time(mins): 11.117819996674855
+epoch: 5 contrastive loss: 0.47133334897020285
+start training epoch: 6
+training time(mins): 11.442107554276784
+epoch: 6 contrastive loss: 0.43721633075791244
+start training epoch: 7
+training time(mins): 11.363981799284618
+epoch: 7 contrastive loss: 0.3605337220956297
+start training epoch: 8
+training time(mins): 11.130935831864674
+epoch: 8 contrastive loss: 0.3470194886055063
+start training epoch: 9
+training time(mins): 12.098253238201142
+epoch: 9 contrastive loss: 0.3434063839890501
+start training epoch: 10
+training time(mins): 11.212812519073486
+epoch: 10 contrastive loss: 0.30339715724043986
+start training epoch: 11
+training time(mins): 11.442575748761495
+epoch: 11 contrastive loss: 0.29260676838457583
+start training epoch: 12
+training time(mins): 11.46969381570816
+epoch: 12 contrastive loss: 0.2717239223201485
+start training epoch: 13
+training time(mins): 11.631278534730276
+epoch: 13 contrastive loss: 0.27329874788137043
+start training epoch: 14
+training time(mins): 11.525737726688385
+epoch: 14 contrastive loss: 0.24627758713767808
+start training epoch: 15
+training time(mins): 11.20781253973643
+epoch: 15 contrastive loss: 0.24459024612956187
+start training epoch: 16
+training time(mins): 11.774956973393758
+epoch: 16 contrastive loss: 0.25179655984701477
+start training epoch: 17
+training time(mins): 10.99965314467748
+epoch: 17 contrastive loss: 0.22481444505426815
+start training epoch: 18
+training time(mins): 13.459554580847422
+epoch: 18 contrastive loss: 0.2296575928106904
+start training epoch: 19
+training time(mins): 13.232181199391682
+epoch: 19 contrastive loss: 0.20573633296196076
+start training epoch: 20
+training time(mins): 13.010360423723856
+epoch: 20 contrastive loss: 0.18830025467802497
+start training epoch: 21
+training time(mins): 13.290075437227886
+epoch: 21 contrastive loss: 0.21485851248178411
+start training epoch: 22
+training time(mins): 14.079416223367055
+epoch: 22 contrastive loss: 0.19292141088448903
+start training epoch: 23
+training time(mins): 13.562279375394185
+epoch: 23 contrastive loss: 0.1934323373853284
+start training epoch: 24
+training time(mins): 14.143162262439727
+epoch: 24 contrastive loss: 0.18789243533769073
+start training epoch: 25
+training time(mins): 14.006512308120728
+epoch: 25 contrastive loss: 0.1815996798905818
+start training epoch: 26
+training time(mins): 13.543536162376403
+epoch: 26 contrastive loss: 0.193304556964294
+start training epoch: 27
+training time(mins): 13.073356254895527
+epoch: 27 contrastive loss: 0.16688428749604262
+start training epoch: 28
+training time(mins): 13.310718301932017
+epoch: 28 contrastive loss: 0.18688876165405793
+start training epoch: 29
+training time(mins): 13.081332004070282
+epoch: 29 contrastive loss: 0.182688439286807
+start training epoch: 30
+training time(mins): 12.971581967671712
+epoch: 30 contrastive loss: 0.15450794354957692
+start training epoch: 31
+training time(mins): 13.753693656126659
+epoch: 31 contrastive loss: 0.14947266291607827
+start training epoch: 32
+training time(mins): 13.008186837037405
+epoch: 32 contrastive loss: 0.16568171349080169
+start training epoch: 33
+training time(mins): 13.54433517853419
+epoch: 33 contrastive loss: 0.16363177295664655
+start training epoch: 34
+training time(mins): 14.016364284356435
+epoch: 34 contrastive loss: 0.14926377944648267
+start training epoch: 35
+training time(mins): 13.140276324748992
+epoch: 35 contrastive loss: 0.15780297538594287
+start training epoch: 36
+training time(mins): 13.499390625953675
+epoch: 36 contrastive loss: 0.13914998395039754
+start training epoch: 37
+training time(mins): 13.988883320490519
+epoch: 37 contrastive loss: 0.1609348546658807
+start training epoch: 38
+training time(mins): 13.634381063779195
+epoch: 38 contrastive loss: 0.14250242659164702
+start training epoch: 39
+training time(mins): 13.738604048887888
+epoch: 39 contrastive loss: 0.13671449908767552
+start training epoch: 40
+training time(mins): 13.155766328175863
+epoch: 40 contrastive loss: 0.1433745268129689
+start training epoch: 41
+training time(mins): 12.98913985490799
+epoch: 41 contrastive loss: 0.13668332665282137
+start training epoch: 42
+training time(mins): 13.127262230714162
+epoch: 42 contrastive loss: 0.13453471828799915
+start training epoch: 43
+training time(mins): 13.266649659474691
+epoch: 43 contrastive loss: 0.14073171025032508
+start training epoch: 44
+training time(mins): 12.614270957310994
+epoch: 44 contrastive loss: 0.11914409889620454
+start training epoch: 45
+training time(mins): 12.234814099470775
+epoch: 45 contrastive loss: 0.13604723093483378
+start training epoch: 46
+training time(mins): 11.254590940475463
+epoch: 46 contrastive loss: 0.12767466875341008
+start training epoch: 47
+training time(mins): 10.890166807174683
+epoch: 47 contrastive loss: 0.12492156471947537
+start training epoch: 48
+training time(mins): 10.579413044452668
+epoch: 48 contrastive loss: 0.1275921434383182
+start training epoch: 49
+training time(mins): 11.021819194157919
+epoch: 49 contrastive loss: 0.1309691736365066
+start training epoch: 50
+training time(mins): 11.329419215520224
+epoch: 50 contrastive loss: 0.11071897075128029
+start training epoch: 51
+training time(mins): 11.072650186220805
+epoch: 51 contrastive loss: 0.12029870763859328
+start training epoch: 52
+training time(mins): 10.571895202000936
+epoch: 52 contrastive loss: 0.11476897133842986
+start training epoch: 53
+training time(mins): 11.25868513584137
+epoch: 53 contrastive loss: 0.11618372004150468
+start training epoch: 54
+training time(mins): 10.741263059775035
+epoch: 54 contrastive loss: 0.1083002085742705
+start training epoch: 55
+training time(mins): 10.694738773504893
+epoch: 55 contrastive loss: 0.10715964106733308
+start training epoch: 56
+training time(mins): 10.377560031414031
+epoch: 56 contrastive loss: 0.09893583537846365
+start training epoch: 57
+training time(mins): 10.627631378173827
+epoch: 57 contrastive loss: 0.10238272839444963
+start training epoch: 58
+training time(mins): 11.047491431236267
+epoch: 58 contrastive loss: 0.11239732325296192
+start training epoch: 59
+training time(mins): 10.862811827659607
+epoch: 59 contrastive loss: 0.10586544621516676
+start training epoch: 60
+training time(mins): 10.652955929438273
+epoch: 60 contrastive loss: 0.09899352535824565
+start training epoch: 61
+training time(mins): 11.169266740481058
+epoch: 61 contrastive loss: 0.10047295727657483
+start training epoch: 62
+training time(mins): 11.000156895319622
+epoch: 62 contrastive loss: 0.09542732787702013
+start training epoch: 63
+training time(mins): 10.378168892860412
+epoch: 63 contrastive loss: 0.11378269886926692
+start training epoch: 64
+training time(mins): 9.597427908579508
+epoch: 64 contrastive loss: 0.10772694937117835
+start training epoch: 65
+training time(mins): 10.00573213895162
+epoch: 65 contrastive loss: 0.10244471766328549
+start training epoch: 66
+training time(mins): 10.276877665519715
+epoch: 66 contrastive loss: 0.09789637795046849
+start training epoch: 67
+training time(mins): 10.361280572414397
+epoch: 67 contrastive loss: 0.10228173598263632
+start training epoch: 68
+training time(mins): 10.068062750498454
+epoch: 68 contrastive loss: 0.095319764762569
+start training epoch: 69
+training time(mins): 10.35147394736608
+epoch: 69 contrastive loss: 0.10233216939548798
+start training epoch: 70
+training time(mins): 9.942342897256216
+epoch: 70 contrastive loss: 0.09903299122610514
+start training epoch: 71
+training time(mins): 10.267255822817484
+epoch: 71 contrastive loss: 0.09794859273687881
+start training epoch: 72
+training time(mins): 10.14027434984843
+epoch: 72 contrastive loss: 0.11448644394164577
+start training epoch: 73
+training time(mins): 10.20975083510081
+epoch: 73 contrastive loss: 0.10536219804164242
+start training epoch: 74
+training time(mins): 10.078445049126943
+epoch: 74 contrastive loss: 0.10146427691968925
+start training epoch: 75
+training time(mins): 9.85477567911148
+epoch: 75 contrastive loss: 0.09659203611423864
+start training epoch: 76
+training time(mins): 10.096077871322631
+epoch: 76 contrastive loss: 0.11013054871274268
+start training epoch: 77
+training time(mins): 9.66671852270762
+epoch: 77 contrastive loss: 0.0958021238555803
+start training epoch: 78
+training time(mins): 10.423341886202495
+epoch: 78 contrastive loss: 0.0949978317353217
+start training epoch: 79
+training time(mins): 10.2471941391627
+epoch: 79 contrastive loss: 0.1060727780821788
+start training epoch: 80
+training time(mins): 9.429463382562002
+epoch: 80 contrastive loss: 0.11014314105953364
+start training epoch: 81
+training time(mins): 9.241643476486207
+epoch: 81 contrastive loss: 0.10521872435312937
+start training epoch: 82
+training time(mins): 8.486707882086437
+epoch: 82 contrastive loss: 0.10893217138946057
+start training epoch: 83
+training time(mins): 8.751915415128073
+epoch: 83 contrastive loss: 0.09367536970359437
+start training epoch: 84
+training time(mins): 8.815650685628254
+epoch: 84 contrastive loss: 0.0981639962972087
+start training epoch: 85
+training time(mins): 7.9144325693448385
+epoch: 85 contrastive loss: 0.1024533881833229
+start training epoch: 86
+training time(mins): 7.602042973041534
+epoch: 86 contrastive loss: 0.09386437127695364
+start training epoch: 87
+training time(mins): 6.892231253782908
+epoch: 87 contrastive loss: 0.10416909091393738
+start training epoch: 88
+training time(mins): 6.810718731085459
+epoch: 88 contrastive loss: 0.09824796505820226
+start training epoch: 89
+training time(mins): 6.770070151487986
+epoch: 89 contrastive loss: 0.10365738256094868
+start training epoch: 90
+training time(mins): 6.869825522104899
+epoch: 90 contrastive loss: 0.09677748908288777
+start training epoch: 91
+training time(mins): 6.842078836758931
+epoch: 91 contrastive loss: 0.09513471895993195
+start training epoch: 92
+training time(mins): 6.800995421409607
+epoch: 92 contrastive loss: 0.10023985611384406
+start training epoch: 93
+training time(mins): 6.900642971197764
+epoch: 93 contrastive loss: 0.10416985112790238
+start training epoch: 94
+training time(mins): 6.823782730102539
+epoch: 94 contrastive loss: 0.10632196665905855
+start training epoch: 95
+training time(mins): 6.564533527692159
+epoch: 95 contrastive loss: 0.10017929714830483
+start training epoch: 96
+training time(mins): 6.891575829188029
+epoch: 96 contrastive loss: 0.10702721779508625
+start training epoch: 97
+training time(mins): 7.227956688404083
+epoch: 97 contrastive loss: 0.115318445376504
+start training epoch: 98
+training time(mins): 7.027110660076142
+epoch: 98 contrastive loss: 0.09940835750004386
+start training epoch: 99
+training time(mins): 6.869161836306254
+epoch: 99 contrastive loss: 0.11233171312795842
+start training epoch: 100
+training time(mins): 6.6269345362981165
+epoch: 100 contrastive loss: 0.09838769707335707
+start training epoch: 101
+training time(mins): 6.75387894709905
+epoch: 101 contrastive loss: 0.09606597227975726
+start training epoch: 102
+training time(mins): 6.750984263420105
+epoch: 102 contrastive loss: 0.1024170074118849
+start training epoch: 103
+training time(mins): 6.9538019816080725
+epoch: 103 contrastive loss: 0.09656250450130113
+start training epoch: 104
+training time(mins): 6.776331667105357
+epoch: 104 contrastive loss: 0.09622555437552578
+start training epoch: 105
+training time(mins): 6.849501268068949
+epoch: 105 contrastive loss: 0.10091190220349852
+start training epoch: 106
+training time(mins): 6.945260286331177
+epoch: 106 contrastive loss: 0.08737120595212806
+start training epoch: 107
+training time(mins): 6.560946389039358
+epoch: 107 contrastive loss: 0.10686619027024682
+start training epoch: 108
+training time(mins): 6.649969518184662
+epoch: 108 contrastive loss: 0.10139917277950136
+start training epoch: 109
+training time(mins): 6.790650320053101
+epoch: 109 contrastive loss: 0.11360776420573102
+start training epoch: 110
+training time(mins): 7.2622147838274635
+epoch: 110 contrastive loss: 0.09242911822272136
+start training epoch: 111
+training time(mins): 9.000138167540232
+epoch: 111 contrastive loss: 0.10301359545658617
+start training epoch: 112
+training time(mins): 8.733302271366119
+epoch: 112 contrastive loss: 0.09900506320683396
+start training epoch: 113
+training time(mins): 8.797045123577117
+epoch: 113 contrastive loss: 0.09642085511209991
+start training epoch: 114
+training time(mins): 9.04064610004425
+epoch: 114 contrastive loss: 0.1050138120265568
+start training epoch: 115
+training time(mins): 9.209219745794933
+epoch: 115 contrastive loss: 0.10202404203660348
+start training epoch: 116
+training time(mins): 9.36299461921056
+epoch: 116 contrastive loss: 0.0939095733276404
+start training epoch: 117
+training time(mins): 8.834946330388387
+epoch: 117 contrastive loss: 0.10597984024926144
+start training epoch: 118
+training time(mins): 8.983346128463745
+epoch: 118 contrastive loss: 0.09656754559563363
+start training epoch: 119
+training time(mins): 8.72154674132665
+epoch: 119 contrastive loss: 0.09881459871197448
+start training epoch: 120
+training time(mins): 8.966145912806192
+epoch: 120 contrastive loss: 0.10202408842468524
+start training epoch: 121
+training time(mins): 9.176383904616038
+epoch: 121 contrastive loss: 0.10338065526174271
+start training epoch: 122
+training time(mins): 8.758533434073131
+epoch: 122 contrastive loss: 0.09081570300109246
+start training epoch: 123
+training time(mins): 9.035501376787822
+epoch: 123 contrastive loss: 0.09934756052406395
+start training epoch: 124
+training time(mins): 9.120720811684926
+epoch: 124 contrastive loss: 0.08510644607903327
+start training epoch: 125
+training time(mins): 9.166090806325277
+epoch: 125 contrastive loss: 0.10199251359273843
+start training epoch: 126
+training time(mins): 8.835839331150055
+epoch: 126 contrastive loss: 0.08949359740568873
+start training epoch: 127
+training time(mins): 8.947386217117309
+epoch: 127 contrastive loss: 0.09009602475253975
+start training epoch: 128
+training time(mins): 8.891095177332561
+epoch: 128 contrastive loss: 0.09930100429885308
+start training epoch: 129
+training time(mins): 8.762174916267394
+epoch: 129 contrastive loss: 0.08998436363797416
+start training epoch: 130
+training time(mins): 9.202026609579722
+epoch: 130 contrastive loss: 0.0933762713403934
+start training epoch: 131
+training time(mins): 8.684174720446268
+epoch: 131 contrastive loss: 0.0969319520134698
+start training epoch: 132
+training time(mins): 8.86272971232732
+epoch: 132 contrastive loss: 0.09810561308198992
+start training epoch: 133
+training time(mins): 8.749797201156616
+epoch: 133 contrastive loss: 0.09720670889843913
+start training epoch: 134
+training time(mins): 8.7812650680542
+epoch: 134 contrastive loss: 0.1057382838033578
+start training epoch: 135
+training time(mins): 8.806461763381957
+epoch: 135 contrastive loss: 0.09673812045332264
+start training epoch: 136
+training time(mins): 8.95953183968862
+epoch: 136 contrastive loss: 0.10716637132196304
+start training epoch: 137
+training time(mins): 9.062911701202392
+epoch: 137 contrastive loss: 0.10179688958314193
+start training epoch: 138
+training time(mins): 8.89427825609843
+epoch: 138 contrastive loss: 0.09074602639850449
+start training epoch: 139
+training time(mins): 8.817649507522583
+epoch: 139 contrastive loss: 0.10009009846047882
+start training epoch: 140
+training time(mins): 8.907445073127747
+epoch: 140 contrastive loss: 0.10092467685942264
+done
